@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
     public static void hi(){}
-
+    public static void there(){}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Event ev1 = new Event(Color.RED,1551427200000L,"Teacher's Professional Day");
 
         compactCalendar.addEvent(ev1);
+        
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
