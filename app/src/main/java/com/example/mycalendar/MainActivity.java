@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
-
+    public static void hi(){}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
