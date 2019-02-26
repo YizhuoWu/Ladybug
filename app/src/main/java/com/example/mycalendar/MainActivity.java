@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static void hi(){}
     public static void there(){}
-    public static void hithere(){}
+    public static void hithere(){int a = 4;}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
