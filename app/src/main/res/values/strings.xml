@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyCalendar</string>
+    <string name="profile">profile</string>
+    <string name="food">food</string>
+    <string name="sleep">sleep</string>
+    <string name="exercise">exercise</string>
+    <string name="stress">stress</string>
 </resources>
