@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
 import android.support.annotation.NonNull;
+import android.support.design.bottomnavigation.LabelVisibilityMode;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
@@ -35,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(0).setCheckable(false);
+        bottomNav.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PorfileFragment()).commit();
 
 
 
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Event ev1 = new Event(Color.RED,1551427200000L,"Teacher's Professional Day");
 
         compactCalendar.addEvent(ev1);
-        
+
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
@@ -83,11 +85,13 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
+
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     Fragment selectedFragment = null;
 
                     switch(menuItem.getItemId()){
                         case R.id.navigation_profile:
+                            menuItem.setCheckable(true);
                             selectedFragment = new PorfileFragment();
                             break;
                         case R.id.navigation_food:
