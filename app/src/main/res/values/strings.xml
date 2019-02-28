@@ -9,4 +9,5 @@
     <string name="days_to_period">Days to period</string>
     <string name="Days">14</string>
     <string name="record">SaveRecord</string>
+    <string name="savedata">SaveData</string>
 </resources>
