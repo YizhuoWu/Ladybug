@@ -6,4 +6,5 @@
     <string name="exercise">exercise</string>
     <string name="stress">stress</string>
     <string name="button">Button</string>
+    <string name="send_home">send_home</string>
 </resources>
