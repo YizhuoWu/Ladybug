@@ -6,4 +6,8 @@
     <string name="exercise">exercise</string>
     <string name="stress">stress</string>
     <string name="homebutton">homeButton</string>
+    <string name="days_to_period">Days to period</string>
+    <string name="Days">14</string>
+    <string name="record">SaveRecord</string>
+    <string name="savedata">SaveData</string>
 </resources>
