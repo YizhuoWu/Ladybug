@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-
+    DatabaseHelper mainDb;
 
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
@@ -33,6 +33,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
+        *Main data base constructed here.
+        * Right now only one table -- "Cycle Table" constructed inside Main DB.
+        * Variable Name = mainDb.
+        * Sample data will be inserted to Main DB Cycle Table.
+        * If success, the message "Sample Data Inserted" will show.
+        * Else failed message will show.
+        *
+        * */
+        mainDb = new DatabaseHelper(this);
+        boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
+        if(isInserted = true){
+            Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
+        }
+        if(isInserted = false){
+            Toast.makeText(MainActivity.this,"Sample Data Not Inserted",Toast.LENGTH_LONG).show();
+        }
+        //Sample Data inserted completed here.
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -75,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
                 actionBar.setTitle(dateFormatMonth.format(firstDayOfNewMonth));
-                println("1");
+
             }
         });
     }
