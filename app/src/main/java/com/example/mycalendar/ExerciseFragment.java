@@ -11,23 +11,19 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 public class ExerciseFragment extends Fragment {
+    ImageButton imageButton;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_exercise,container,false);
-    }
-
-    public void sendHome(View view){
-        Intent Home = new Intent(getActivity(),MainActivity.class);
-        startActivity(Home);
-    }
-
-    ImageButton ib =(ImageButton)myView.findViewById(R.id.img_btn);
-    ib.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            startActivity(new Intent(getActivity(), yourNewActivity.class)) ;
-        }
-    });
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.fragment_exercise, container, false);
+        imageButton = view.findViewById(R.id.HomeButt);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Home = new Intent(getActivity(),MainActivity.class);
+                startActivity(Home);
+            }
+        });
+        return view;}
 }
