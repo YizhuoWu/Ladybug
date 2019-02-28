@@ -5,4 +5,5 @@
     <string name="sleep">sleep</string>
     <string name="exercise">exercise</string>
     <string name="stress">stress</string>
+    <string name="button">Button</string>
 </resources>

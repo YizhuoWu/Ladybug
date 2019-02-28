@@ -4,10 +4,15 @@ import android.app.usage.UsageEvents;
 import android.content.Context;
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
+import android.support.annotation.NonNull;
+import android.support.design.bottomnavigation.LabelVisibilityMode;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
@@ -22,13 +27,21 @@ public class MainActivity extends AppCompatActivity {
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
-    public static void hi(){}
-    public static void there(){}
-    public static void hithere(){int a = 4;}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        bottomNav.getMenu().getItem(0).setCheckable(false);
+        bottomNav.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
+
+
+
+
 
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
@@ -42,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Event ev1 = new Event(Color.RED,1551427200000L,"Teacher's Professional Day");
 
         compactCalendar.addEvent(ev1);
-        
+
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
@@ -69,4 +82,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    Fragment selectedFragment = null;
+
+                    switch(menuItem.getItemId()){
+                        case R.id.navigation_profile:
+                            menuItem.setCheckable(true);
+                            selectedFragment = new PorfileFragment();
+                            break;
+                        case R.id.navigation_food:
+                            selectedFragment = new FoodFragment();
+                            break;
+                        case R.id.navigation_sleep:
+                            selectedFragment = new SleepFragment();
+                            break;
+                        case R.id.navigation_exercise:
+                            selectedFragment = new ExerciseFragment();
+                            break;
+                        case R.id.navigation_stress:
+                            selectedFragment = new StressFragment();
+                            break;
+                    }
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+
+                    return true;
+                }
+            };
 }
