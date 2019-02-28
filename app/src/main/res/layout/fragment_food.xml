@@ -8,19 +8,29 @@
     android:background="@android:color/white">
 
 
-    <ImageButton
-        android:id="@+id/HomeButt"
-        android:layout_width="40dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="186dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginBottom="0dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/homebutton"
-        android:scaleType="fitStart"
-        android:tint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/food_record_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="152dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorAccent"
+        android:text="@string/record"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_action_home" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/food_record_button2"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="152dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorAccent"
+        android:text="@string/record"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
