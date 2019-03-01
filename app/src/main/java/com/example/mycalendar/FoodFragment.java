@@ -8,11 +8,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class FoodFragment extends Fragment {
 
+
+
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+    }
+
     ImageButton imageButton;
+    Button FoodButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -26,8 +34,25 @@ public class FoodFragment extends Fragment {
                 startActivity(Home);
             }
         });
-        return view;}
 
+
+        View record_food =  inflater.inflate(R.layout.fragment_food, container, false);
+        FoodButton = view.findViewById(R.id.food_record_button);
+        FoodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goFoodRecord = new Intent(getActivity(),Record_Food.class);
+                startActivity(goFoodRecord);
+            }
+        });
+
+
+
+
+
+
+        return view;
+    }
 
 }
 

@@ -23,4 +23,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_action_home" />
+
+    <Button
+        android:id="@+id/food_record_button"
+        android:layout_width="138dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="51dp"
+        android:background="@color/colorAccent"
+        android:text="@string/record_food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
