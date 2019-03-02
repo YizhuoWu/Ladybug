@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".Food_History"></activity>
         <activity android:name=".Record_Food"></activity>
+        <activity android:name=".Sleep_History"></activity>
+        <activity android:name=".Record_Sleep"></activity>
+        <activity android:name=".Exercise_History"></activity>
+        <activity android:name=".Record_Exercise"></activity>
+        <activity android:name=".Record_Stress"></activity>
+        <activity android:name=".Stress_History"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

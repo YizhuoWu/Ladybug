@@ -11,4 +11,17 @@
     <string name="record">SaveRecord</string>
     <string name="savedata">SaveData</string>
     <string name="record_food">Record Food</string>
+    <string name="what_did_you_eat_today">What did you eat today?</string>
+    <string name="record_your_food">Record your food!</string>
+    <string name="view_your_history">View your history!</string>
+    <string name="recordsleep">RecordSleep</string>
+    <string name="record_your_sleep">Record your sleep!</string>
+    <string name="How_did_you_sleep_last_night">How did you sleep last night?</string>
+    <string name="record_your_exercise">Record your exercise!</string>
+    <string name="did_you_work_out_today">Did you work out today?</string>
+    <string name="recordexercise">RecordExercise</string>
+    <string name="what_is_your_stress_level_today">What is your stress level today?</string>
+    <string name="record_your_stress">record your stress!</string>
+    <string name="recordstress">RecordStress</string>
+
 </resources>

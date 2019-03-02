@@ -23,4 +23,93 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_action_home" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="390dp"
+        android:layout_height="327dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/recordexercise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"
+        app:srcCompat="@drawable/imageview_exercisefragpic" />
+
+    <Button
+        android:id="@+id/exercise_record_button"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_action_recordmyday"
+        android:lineSpacingExtra="52sp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/RecordButtText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddExerciseText" />
+
+    <TextView
+        android:id="@+id/RecordButtText"
+        android:layout_width="194dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="casual"
+        android:text="@string/record_your_exercise"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_record_button" />
+
+    <TextView
+        android:id="@+id/AddExerciseText"
+        android:layout_width="269dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="casual"
+        android:text="@string/did_you_work_out_today"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/exercise_history_button"
+        android:layout_width="67dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/ic_action_viewhistory"
+        android:lineSpacingExtra="52sp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="casual"
+        android:text="@string/view_your_history"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_history_button" />
 </android.support.constraint.ConstraintLayout>

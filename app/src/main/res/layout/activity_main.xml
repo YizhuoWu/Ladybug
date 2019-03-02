@@ -47,16 +47,15 @@
         android:layout_width="71dp"
         android:layout_height="66dp"
         android:layout_marginTop="24dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="number"
         android:text="@string/Days"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DaystoPeriod"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/DaystoPeriod" />
 
     <ProgressBar
         android:id="@+id/progressBar"

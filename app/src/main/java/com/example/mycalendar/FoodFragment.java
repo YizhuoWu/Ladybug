@@ -21,10 +21,13 @@ public class FoodFragment extends Fragment {
 
     ImageButton imageButton;
     Button FoodButton;
+    Button ViewFoodHistory;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         View view =  inflater.inflate(R.layout.fragment_food, container, false);
         imageButton = view.findViewById(R.id.HomeButt);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +37,6 @@ public class FoodFragment extends Fragment {
                 startActivity(Home);
             }
         });
-
 
         View record_food =  inflater.inflate(R.layout.fragment_food, container, false);
         FoodButton = view.findViewById(R.id.food_record_button);
@@ -46,9 +48,15 @@ public class FoodFragment extends Fragment {
             }
         });
 
-
-
-
+        View food_history =  inflater.inflate(R.layout.fragment_food, container, false);
+        ViewFoodHistory = view.findViewById(R.id.food_history_button);
+        ViewFoodHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goFoodHistory = new Intent(getActivity(),Food_History.class);
+                startActivity(goFoodHistory);
+            }
+        });
 
 
         return view;
