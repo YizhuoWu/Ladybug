@@ -12,3 +12,9 @@ V1.1
 Created Database for application.
 One table created.
 Sample data inserted.
+
+/**
+*Database supported methods:
+*InsertData to cycle table.
+*getAllData from main databse.
+*/
