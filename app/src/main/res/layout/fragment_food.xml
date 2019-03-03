@@ -14,7 +14,6 @@
         android:layout_height="41dp"
         android:layout_marginStart="186dp"
         android:layout_marginEnd="186dp"
-        android:layout_marginBottom="16dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/homebutton"
         android:scaleType="fitStart"
@@ -30,9 +29,9 @@
         android:id="@+id/food_record_button"
         android:layout_width="61dp"
         android:layout_height="56dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="39dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/ic_action_recordmyday"
         android:lineSpacingExtra="52sp"
         android:textSize="20sp"
@@ -58,7 +57,7 @@
 
     <TextView
         android:id="@+id/AddFoodText"
-        android:layout_width="215dp"
+        android:layout_width="294dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
@@ -75,9 +74,9 @@
     <TextView
         android:id="@+id/RecordButtText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="casual"
         android:text="@string/record_your_food"
         android:textAlignment="viewStart"
@@ -101,7 +100,8 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/ViewHistoryText"
+        android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:fontFamily="casual"

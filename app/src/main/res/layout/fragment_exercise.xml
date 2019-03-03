@@ -27,9 +27,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="390dp"
-        android:layout_height="327dp"
+        android:layout_height="332dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/recordexercise"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,13 +49,14 @@
         android:background="@drawable/ic_action_recordmyday"
         android:lineSpacingExtra="52sp"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/RecordButtText"
+        app:layout_constraintEnd_toStartOf="@+id/exercise_history_button"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddExerciseText" />
 
     <TextView
         android:id="@+id/RecordButtText"
-        android:layout_width="194dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -72,10 +72,10 @@
 
     <TextView
         android:id="@+id/AddExerciseText"
-        android:layout_width="269dp"
-        android:layout_height="36dp"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="casual"
         android:text="@string/did_you_work_out_today"
         android:textAlignment="viewStart"
@@ -90,8 +90,8 @@
         android:id="@+id/exercise_history_button"
         android:layout_width="67dp"
         android:layout_height="65dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="44dp"
         android:background="@drawable/ic_action_viewhistory"
         android:lineSpacingExtra="52sp"
         android:textSize="20sp"
@@ -99,9 +99,9 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
+        android:id="@+id/ViewHistoryText"
         android:layout_width="157dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="casual"
         android:text="@string/view_your_history"

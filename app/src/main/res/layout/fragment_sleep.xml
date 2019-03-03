@@ -24,8 +24,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="386dp"
-        android:layout_height="320dp"
+        android:layout_width="390dp"
+        android:layout_height="332dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/recordsleep"
@@ -42,9 +42,9 @@
         android:id="@+id/sleep_record_button"
         android:layout_width="61dp"
         android:layout_height="56dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="39dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/ic_action_recordmyday"
         android:lineSpacingExtra="52sp"
         android:textSize="20sp"
@@ -101,6 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
+        android:id="@+id/ViewHistoryText"
         android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
