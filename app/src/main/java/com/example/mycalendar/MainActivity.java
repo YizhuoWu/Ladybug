@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         * */
         mainDb = new DatabaseHelper(this);
         boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
+        boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
+
         if(isInserted = true){
             Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
         }

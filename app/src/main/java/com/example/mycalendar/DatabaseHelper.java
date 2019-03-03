@@ -55,7 +55,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_NAME_FOOD + " (food_date TEXT PRIMARY KEY,is_breakfast INTEGER ,sugar_fat_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_EXERCISE + " (exercise_date TEXT PRIMARY KEY,type TEXT ,time INTEGER ,weight_change INTEGER) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SLEEP + " (sleep_date TEXT PRIMARY KEY,start_time TEXT ,end_time TEXT ,quality TEXT)");
-
         db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TEXT PRIMARY KEY,stress_level INTEGER) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_RECOMMEND + " (state TEXT PRIMARY KEY,recommendation TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (month TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
@@ -86,6 +85,108 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(CYCLE_COL_4,cycle_length);
         contentValues.put(CYCLE_COL_5,period_length);
         long result = db.insert(TABLE_NAME_CYCLE,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public boolean insertData_food(String food_date,int is_breakfast, String sugar_fat_level){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(FOOD_COL_1,food_date);
+        contentValues.put(FOOD_COL_2,is_breakfast);
+        contentValues.put(FOOD_COL_3,sugar_fat_level);
+        long result = db.insert(TABLE_NAME_FOOD,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+    public boolean insertData_exercise(String exercise_date,String type,int weight_change){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(EXERCISE_COL_1,exercise_date);
+        contentValues.put(EXERCISE_COL_2,type);
+        contentValues.put(EXERCISE_COL_3,weight_change);
+        long result = db.insert(TABLE_NAME_EXERCISE,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+
+    public boolean insertData_sleep(String sleep_date,String start_time,String end_time,String quality){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SLEEP_COL_1,sleep_date);
+        contentValues.put(SLEEP_COL_2,start_time);
+        contentValues.put(SLEEP_COL_3,end_time);
+        contentValues.put(SLEEP_COL_4,quality);
+        long result = db.insert(TABLE_NAME_SLEEP,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+
+    public boolean insertData_stress(String stress_date,int stress_level){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(STRESS_COL_1,stress_date);
+        contentValues.put(STRESS_COL_2,stress_level);
+        long result = db.insert(TABLE_NAME_STRESS,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+
+    public boolean insertData_recommend(String state, String recommendation){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(RECOMMEND_COL_1,state);
+        contentValues.put(RECOMMEND_COL_2,recommendation);
+        long result = db.insert(TABLE_NAME_RECOMMEND,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+
+    public boolean insertData_summary(String month,String overall_state,String food, String sleep, String stress, String exercise,int cycle_len_change){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(SUMMARY_COL_1,month);
+        contentValues.put(SUMMARY_COL_2,overall_state);
+        contentValues.put(SUMMARY_COL_3,food);
+        contentValues.put(SUMMARY_COL_4,sleep);
+        contentValues.put(SUMMARY_COL_5,stress);
+        contentValues.put(SUMMARY_COL_6,exercise);
+        contentValues.put(SUMMARY_COL_7,cycle_len_change);
+        long result = db.insert(TABLE_NAME_SUMMARY,null,contentValues);
         if(result == -1){
             return false;
         }
