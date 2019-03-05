@@ -29,7 +29,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * All table's column names declared here.
      */
-    public static final String CYCLE_COL_1 = "cycle_id",CYCLE_COL_2 = "cycle_start_date",CYCLE_COL_3 = "cycle_end_date",CYCLE_COL_4 = "cycle_length",CYCLE_COL_5 = "period_length";
+    public static final String CYCLE_COL_1 = "cycle_id",CYCLE_COL_2 = "cycle_start_date",CYCLE_COL_3 = "cycle_end_date",CYCLE_COL_4 = "cycle_length";
+    public static final String CYCLE_COL_5 = "period_length";
     public static final String FOOD_COL_1 = "food_date",FOOD_COL_2 = "is_breakfast",FOOD_COL_3 = "sugar_fat_level";
     public static final String EXERCISE_COL_1 = "exercise_date",EXERCISE_COL_2 = "type",EXERCISE_COL_3 = "time",EXERCISE_COL_4 = "weight_change";
     public static final String SLEEP_COL_1 = "sleep_date",SLEEP_COL_2 = "start_time",SLEEP_COL_3 = "end_time",SLEEP_COL_4 = "quality";
