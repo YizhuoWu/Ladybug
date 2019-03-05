@@ -23,17 +23,11 @@
     <string name="what_is_your_stress_level_today">What is your stress level today?</string>
     <string name="record_your_stress">record your stress!</string>
     <string name="recordstress">RecordStress</string>
-    <string name="i_am_going_to_sleep">I am going to sleep</string>
-    <string name="i_am_waked">I am waked</string>
-    <string name="or">Or</string>
-    <string name="please_enter_the_sleep_time">Please enter the sleep time</string>
-    <string name="from">From</string>
-    <string name="starttime">StartTime</string>
-    <string name="to">To</string>
-    <string name="endtime">EndTime</string>
-    <string name="sleep_quality">Sleep Quality</string>
-    <string name="bad">Bad</string>
-    <string name="good">Good</string>
-    <string name="normal">Normal</string>
+    <string name="select_your_exercise_status">Select your exercise status:</string>
+    <string name="tell_us_about_your_exercise">Tell us about your exercise!</string>
+    <string name="if_you_workout_how_long">If you workout, how long?</string>
+    <string name="mins">mins</string>
+    <string name="enter_your_weight">Enter your weight:</string>
+    <string name="lbs">lbs</string>
 
 </resources>

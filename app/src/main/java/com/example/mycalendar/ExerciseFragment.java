@@ -34,7 +34,7 @@ public class ExerciseFragment extends Fragment {
         ExerciseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goExerciseRecord = new Intent(getActivity(),Record_Sleep.class);
+                Intent goExerciseRecord = new Intent(getActivity(),Record_Exercise.class);
                 startActivity(goExerciseRecord);
             }
         });

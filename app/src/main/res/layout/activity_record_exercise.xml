@@ -1,7 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/exercise_type_spinner"
+        android:layout_width="286dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PromptTypeText" />
+
+    <TextView
+        android:id="@+id/PromptTypeText"
+        android:layout_width="260dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="casual"
+        android:text="@string/select_your_exercise_status"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
+
+    <TextView
+        android:id="@+id/WelcomeText"
+        android:layout_width="305dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="129dp"
+        android:fontFamily="casual"
+        android:text="@string/tell_us_about_your_exercise"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PromptWeightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="casual"
+        android:text="@string/if_you_workout_how_long"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercise_type_spinner" />
+
+    <EditText
+        android:id="@+id/Time_Input"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="190dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/mins"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PromptWeightText" />
+
+    <TextView
+        android:id="@+id/PromtWeightText"
+        android:layout_width="240dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="casual"
+        android:text="@string/enter_your_weight"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Time_Input" />
+
+    <EditText
+        android:id="@+id/Weight_Input"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="190dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/lbs"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PromtWeightText" />
+
+    <Button
+        android:id="@+id/exercise_record_save"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="190dp"
+        android:background="@drawable/ic_action_recordmyday"
+        android:lineSpacingExtra="52sp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Weight_Input" />
 
 </android.support.constraint.ConstraintLayout>
