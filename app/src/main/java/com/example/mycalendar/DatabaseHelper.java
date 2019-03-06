@@ -57,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_NAME_FOOD + " (food_date TEXT PRIMARY KEY,is_breakfast INTEGER ,sugar_fat_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_EXERCISE + " (exercise_date TEXT PRIMARY KEY,type TEXT ,time INTEGER ,weight_change INTEGER) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SLEEP + " (sleep_date TEXT PRIMARY KEY,start_time TEXT ,end_time TEXT ,quality TEXT)");
-        db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TEXT PRIMARY KEY,stress_level INTEGER) ");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TE XT PRIMARY KEY,stress_level INTEGER) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_RECOMMEND + " (state TEXT PRIMARY KEY,recommendation TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (month TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
     }

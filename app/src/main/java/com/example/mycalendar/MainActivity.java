@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         * If success, the message "Sample Data Inserted" will show.
         * Else failed message will show.
         *
-        * */
+        *
 
         mainDb = new DatabaseHelper(this);
         boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         if(isInserted = false){
             Toast.makeText(MainActivity.this,"Sample Data Not Inserted",Toast.LENGTH_LONG).show();
         }
-
+        */
         //Sample Data inserted completed here.
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
