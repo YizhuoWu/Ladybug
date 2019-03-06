@@ -37,8 +37,9 @@ public class Record_Exercise extends AppCompatActivity {
         E_weight = (EditText) findViewById(R.id.Weight_Input);
         E_update = (Button) findViewById(R.id.exercise_record_save);
 
-    }
 
+
+    }
     public void AddDate(){
         E_update.setOnClickListener(
                 new View.OnClickListener() {
@@ -52,12 +53,14 @@ public class Record_Exercise extends AppCompatActivity {
                         Date date = Calendar.getInstance().getTime();
                         Format formatter = new SimpleDateFormat("yyyy-MM-dd");
                         String s = formatter.format(date);
-                        myDb.insertData_exercise(s, ExerciseType.getSelectedItem().toString(),
-                                finalTime, finalWeight);
+                        //myDb.insertData_exercise(s, ExerciseType.getSelectedItem().toString(),
+                                //finalTime, finalWeight);
                     }
                 }
         );
     }
 
 }
+
+
 
