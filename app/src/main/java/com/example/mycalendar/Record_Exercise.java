@@ -3,7 +3,6 @@ package com.example.mycalendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +27,7 @@ public class Record_Exercise extends AppCompatActivity {
         setContentView(R.layout.activity_record_exercise);
 
         ExerciseType = (Spinner) findViewById(R.id.exercise_type_spinner);
-        final String[] Etypes = {"    ","Strenuous exercise","Chronic exercise","No additional exercise"};
+        final String[] Etypes = {"(Please select)","Strenuous exercise","Chronic exercise","No additional exercise"};
         ArrayAdapter<String> TypeAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Etypes);
         TypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ExerciseType.setAdapter(TypeAdapter);
@@ -52,9 +51,8 @@ public class Record_Exercise extends AppCompatActivity {
 
                         Date date = Calendar.getInstance().getTime();
                         Format formatter = new SimpleDateFormat("yyyy-MM-dd");
-                        String s = formatter.format(date);
-                        //myDb.insertData_exercise(s, ExerciseType.getSelectedItem().toString(),
-                                //finalTime, finalWeight);
+                        String today = formatter.format(date);
+                        myDb.insertData_exercise(today, ExerciseType.getSelectedItem().toString(),finalTime,finalWeight);
                     }
                 }
         );

@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.Date;
 
 /**
  * DatabaseHelper class for Ladybug application.
@@ -96,7 +95,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertData_food(String food_date,int is_breakfast, String sugar_fat_level){
+    public boolean insertData_food(String food_date, int is_breakfast, String sugar_fat_level){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(FOOD_COL_1,food_date);
@@ -112,13 +111,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertData_exercise(String exercise_date, String type, int time){
+    public boolean insertData_exercise(String exercise_date, String type, int time, int weight_change){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(EXERCISE_COL_1,exercise_date);
         contentValues.put(EXERCISE_COL_2,type);
         contentValues.put(EXERCISE_COL_3,time);
-        //contentValues.put(EXERCISE_COL_4,weight_change);
+        contentValues.put(EXERCISE_COL_4,weight_change);
         long result = db.insert(TABLE_NAME_EXERCISE,null,contentValues);
         if(result == -1){
             return false;
@@ -190,6 +189,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(SUMMARY_COL_6,exercise);
         contentValues.put(SUMMARY_COL_7,cycle_len_change);
         long result = db.insert(TABLE_NAME_SUMMARY,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public boolean insertData_exercise(String exercise_date, String type, int time){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(EXERCISE_COL_1,exercise_date);
+        contentValues.put(EXERCISE_COL_2,type);
+        contentValues.put(EXERCISE_COL_3,time);
+        long result = db.insert(TABLE_NAME_EXERCISE,null,contentValues);
         if(result == -1){
             return false;
         }
