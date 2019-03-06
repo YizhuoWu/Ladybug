@@ -6,4 +6,127 @@
     android:layout_height="match_parent"
     tools:context=".Record_Food">
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="530dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginEnd="80dp"
+        android:max="10"
+        android:progress="0"
+        android:rotation="90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/appleimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="200dp"
+        android:contentDescription="@string/appleimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imageview_apple" />
+
+    <ImageView
+        android:id="@+id/eggimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="200dp"
+        android:contentDescription="@string/eggimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/egg" />
+
+    <ImageView
+        android:id="@+id/oatmealimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="200dp"
+        android:contentDescription="@string/oatmealimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/oatmeal" />
+
+    <ImageView
+        android:id="@+id/milkshakeimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/milkshakeimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/milkshake" />
+
+    <ImageView
+        android:id="@+id/almondimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/almondimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/almond" />
+
+    <ImageView
+        android:id="@+id/burgerimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/burgerimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/burger" />
+
+    <ImageView
+        android:id="@+id/cheesecakeimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/cheesecakeimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cheesecake" />
+
+    <ImageView
+        android:id="@+id/chocolatebarimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/chocolatebarimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chocolatebar" />
+
+    <ImageView
+        android:id="@+id/icecream_image"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="200dp"
+        android:contentDescription="@string/icecream_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icecream" />
+
+    <ImageView
+        android:id="@+id/riceimage"
+        android:layout_width="92dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="200dp"
+        android:contentDescription="@string/rice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rice" />
+
 </android.support.constraint.ConstraintLayout>

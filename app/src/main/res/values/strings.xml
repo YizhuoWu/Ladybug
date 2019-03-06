@@ -41,8 +41,16 @@
     <string name= "or">Or</string>
     <string name= "i_am_waked">I am awake</string>
     <string name= "i_am_going_to_sleep">I am going to sleep</string>
-
-
+    <string name="appleimage">appleimage</string>
+    <string name="rice">rice</string>
+    <string name="eggimage">eggimage</string>
+    <string name="oatmealimage">oatmealimage</string>
+    <string name="milkshakeimage">milkshakeimage</string>
+    <string name="almondimage">almondimage</string>
+    <string name="burgerimage">burgerimage</string>
+    <string name="cheesecakeimage">cheesecakeimage</string>
+    <string name="chocolatebarimage">chocolatebarimage</string>
+    <string name="icecream_image">icecream_image</string>
 
 
 </resources>
