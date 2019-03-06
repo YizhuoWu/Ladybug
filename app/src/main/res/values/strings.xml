@@ -51,6 +51,9 @@
     <string name="cheesecakeimage">cheesecakeimage</string>
     <string name="chocolatebarimage">chocolatebarimage</string>
     <string name="icecream_image">icecream_image</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="have_breakfast">Have Breakfast?</string>
 
 
 </resources>

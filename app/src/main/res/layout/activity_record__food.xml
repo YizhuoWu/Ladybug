@@ -7,13 +7,13 @@
     tools:context=".Record_Food">
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/food_seekBar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="530dp"
         android:layout_height="42dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="80dp"
-        android:max="10"
+        android:max="9"
         android:progress="0"
         android:rotation="90"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/appleimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/appleimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,29 +34,27 @@
         android:id="@+id/eggimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="150dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/eggimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appleimage"
         app:srcCompat="@drawable/egg" />
 
     <ImageView
         android:id="@+id/oatmealimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="250dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/oatmealimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eggimage"
         app:srcCompat="@drawable/oatmeal" />
 
     <ImageView
         android:id="@+id/milkshakeimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/milkshakeimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,66 +65,108 @@
         android:id="@+id/almondimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="150dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/almondimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/milkshakeimage"
         app:srcCompat="@drawable/almond" />
 
     <ImageView
         android:id="@+id/burgerimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="250dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/burgerimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/almondimage"
         app:srcCompat="@drawable/burger" />
 
     <ImageView
         android:id="@+id/cheesecakeimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="350dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/cheesecakeimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/burgerimage"
         app:srcCompat="@drawable/cheesecake" />
 
     <ImageView
         android:id="@+id/chocolatebarimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="450dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/chocolatebarimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cheesecakeimage"
         app:srcCompat="@drawable/chocolatebar" />
 
     <ImageView
         android:id="@+id/icecream_image"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="450dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/icecream_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/riceimage"
         app:srcCompat="@drawable/icecream" />
 
     <ImageView
         android:id="@+id/riceimage"
         android:layout_width="92dp"
         android:layout_height="91dp"
-        android:layout_marginTop="350dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/rice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oatmealimage"
         app:srcCompat="@drawable/rice" />
+
+    <Button
+        android:id="@+id/food_record_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClick"
+        android:text="@string/record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/Breakfast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:checkedButton="@+id/breakfast_yes"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chocolatebarimage">
+
+        <RadioButton
+            android:id="@+id/breakfast_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/breakfast_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/have_breakfast"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/Breakfast"
+        app:layout_constraintTop_toBottomOf="@+id/icecream_image" />
 
 </android.support.constraint.ConstraintLayout>

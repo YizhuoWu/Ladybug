@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         * Else failed message will show.
         *
         * */
+
         mainDb = new DatabaseHelper(this);
         boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
         boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
@@ -56,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(MainActivity.this,"All Sample Data Inserted",Toast.LENGTH_LONG).show();
 
-        //if(isInserted = true){
-            //Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
-        //}
+        if(isInserted = true){
+            Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
+        }
         if(isInserted = false){
             Toast.makeText(MainActivity.this,"Sample Data Not Inserted",Toast.LENGTH_LONG).show();
         }
+
         //Sample Data inserted completed here.
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
