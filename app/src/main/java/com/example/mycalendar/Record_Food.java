@@ -24,7 +24,7 @@ public class Record_Food extends AppCompatActivity {
     }
 
 
-    public void onClick(View view){
+    public void FoodonClick(View view){
         SeekBar food_seekBar = findViewById(R.id.food_seekBar);
         int food_level = food_seekBar.getProgress();
         food_level+=1;

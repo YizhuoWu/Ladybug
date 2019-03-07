@@ -29,7 +29,7 @@ public class Record_Exercise extends AppCompatActivity {
         setContentView(R.layout.activity_record_exercise);
 
         ExerciseType = (Spinner) findViewById(R.id.exercise_type_spinner);
-        final String[] Etypes = {"(Please select)","Strenuous exercise","Chronic exercise","No additional exercise"};
+        final String[] Etypes = {"Please select:","Strenuous exercise","Chronic exercise","No additional exercise"};
         ArrayAdapter<String> TypeAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Etypes);
         TypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ExerciseType.setAdapter(TypeAdapter);
@@ -40,6 +40,8 @@ public class Record_Exercise extends AppCompatActivity {
 
     }
 
+
+
     public void onClick(View view){
         while (true) {
             String weight = E_weight.getText().toString();
@@ -49,7 +51,7 @@ public class Record_Exercise extends AppCompatActivity {
                 Toast.makeText(this, "plz enter your weight ", Toast.LENGTH_SHORT).show();
                 break;
             }
-            else if (type.matches("(Please select)")) {
+            else if (type.matches("Please select:")) {
                 Toast.makeText(this, "plz enter your exercise status ", Toast.LENGTH_SHORT).show();
                 break;
             }
@@ -59,14 +61,13 @@ public class Record_Exercise extends AppCompatActivity {
             }
             else{
                 int finalWeight = Integer.parseInt(weight);
-
-                add_data(type, finalWeight);
-
-                Intent goHome = new Intent(this,MainActivity.class);
+                Intent goHome = new Intent(this, MainActivity.class);
                 startActivity(goHome);
+                add_data(type, finalWeight);
                 break;
             }
         }
+
     }
 
     private void add_data(String exercise_type, int weight){
