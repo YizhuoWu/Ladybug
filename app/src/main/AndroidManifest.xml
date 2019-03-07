@@ -18,6 +18,10 @@
         <activity android:name=".Record_Exercise"></activity>
         <activity android:name=".Record_Stress"></activity>
         <activity android:name=".Stress_History"></activity>
+        <activity android:name=".Record_Cycle"></activity>
+        <activity android:name=".Cycle_History"></activity>
+        <activity android:name=".Status_History"></activity>
+        <activity android:name=".Update_Profile"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

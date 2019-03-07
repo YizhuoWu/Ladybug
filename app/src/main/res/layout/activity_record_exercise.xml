@@ -8,9 +8,9 @@
 
     <Spinner
         android:id="@+id/exercise_type_spinner"
-        android:layout_width="286dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="283dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="260dp"
         android:layout_height="33dp"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="casual"
         android:text="@string/select_your_exercise_status"
         android:textAlignment="viewStart"
@@ -104,7 +104,7 @@
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="190dp"
         android:autofillHints=""
         android:ems="10"
@@ -117,18 +117,24 @@
 
     <Button
         android:id="@+id/exercise_record_save"
-        android:layout_width="61dp"
-        android:layout_height="56dp"
+        android:layout_width="74dp"
+        android:layout_height="52dp"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="190dp"
-        android:background="@drawable/ic_action_recordmyday"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="casual"
         android:lineSpacingExtra="52sp"
         android:onClick="onClick"
-        android:textSize="20sp"
+        android:text="@string/save"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Weight_Input" />
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

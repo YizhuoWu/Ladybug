@@ -10,7 +10,7 @@
         android:layout_width="101dp"
         android:layout_height="89dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="32dp"
         android:text="@string/i_am_going_to_sleep"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,10 +19,10 @@
         android:id="@+id/sleep_record_end"
         android:layout_width="101dp"
         android:layout_height="89dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/i_am_waked"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sleep_record_start"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -109,7 +109,7 @@
         android:layout_width="244dp"
         android:layout_height="31dp"
         android:layout_marginStart="83dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="84dp"
         android:text="@string/sleep_quality"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,8 +119,8 @@
 
     <RadioButton
         android:id="@+id/radioButton2"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:layout_width="110dp"
+        android:layout_height="58dp"
         android:layout_marginStart="83dp"
         android:text="@string/good"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,8 +128,8 @@
 
     <RadioButton
         android:id="@+id/radioButton3"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
         android:layout_marginStart="83dp"
         android:text="@string/normal"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,8 +137,8 @@
 
     <RadioButton
         android:id="@+id/radioButton4"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
+        android:layout_width="110dp"
+        android:layout_height="54dp"
         android:layout_marginStart="83dp"
         android:text="@string/bad"
         app:layout_constraintStart_toStartOf="parent"

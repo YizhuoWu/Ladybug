@@ -54,6 +54,19 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="have_breakfast">Have Breakfast?</string>
+    <string name="_0">0</string>
+    <string name="profileimage">ProfileImage</string>
+    <string name="user_id">User ID</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="record_your_cycle_here">Record your cycle here!</string>
+    <string name="view_past_status">View Past status</string>
+    <string name="view_cycle_record">View cycle record</string>
+    <string name="does_the_period_start_today">Does the period start today?</string>
+    <string name="tell_us_when_does_your_period_start_and_end">Tell us when does your period start and end!</string>
+    <string name="does_the_period_end_today">Does the period end today?</string>
+    <string name="period_knowledge">period_knowledge</string>
+    <string name="save">Save</string>
+    <string name="exercisepic">exercisePic</string>
 
 
 </resources>

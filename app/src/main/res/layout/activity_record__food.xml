@@ -127,8 +127,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="casual"
         android:onClick="FoodonClick"
         android:text="@string/record"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="15sp"
+        android:textStyle="bold"
+
+        android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -148,14 +156,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/yes" />
+            android:text="@string/yes"
+            android:fontFamily="casual"
+            android:onClick="FoodonClick"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="15sp"
+            />
 
         <RadioButton
             android:id="@+id/breakfast_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/no" />
+            android:text="@string/no"
+            android:fontFamily="casual"
+            android:onClick="FoodonClick"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="15sp"/>
     </RadioGroup>
 
     <TextView
@@ -164,8 +183,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
+        android:fontFamily="casual"
         android:text="@string/have_breakfast"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintEnd_toStartOf="@+id/Breakfast"
         app:layout_constraintTop_toBottomOf="@+id/icecream_image" />
 
