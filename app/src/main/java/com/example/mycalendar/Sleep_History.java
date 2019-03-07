@@ -28,7 +28,7 @@ public class Sleep_History extends AppCompatActivity {
 
             //Get Sleep Start time
             result += "Your sleep started from: ";
-            result += data.getString(1) + "\n";
+            result += data.getString(1);
 
             result += "Your sleep ended at: ";
             result += data.getString(2) + "\n";
@@ -42,7 +42,7 @@ public class Sleep_History extends AppCompatActivity {
 
         //Get Sleep Start time
         result += "Start: ";
-        result += data.getString(1) + "\n";
+        result += data.getString(1) ;
 
         result += "End: ";
         result += data.getString(2) + "\n";

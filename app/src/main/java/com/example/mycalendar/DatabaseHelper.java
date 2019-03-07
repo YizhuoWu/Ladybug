@@ -25,7 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * All table's names declared here.
      */
     public static final String TABLE_NAME_CYCLE = "Cycle_table",TABLE_NAME_FOOD = "Food_table",TABLE_NAME_EXERCISE="Exercise_table",TABLE_NAME_SLEEP= "Sleep_table",TABLE_NAME_STRESS="Stress_table";
-    public static final String TABLE_NAME_RECOMMEND= "Recommend_table",TABLE_NAME_SUMMARY= "Summary_table";
+    public static final String TABLE_NAME_RECOMMEND= "Recommend_table",TABLE_NAME_SUMMARY= "Summary_table",TABLE_NAME_PROFILE = "Profile_table";
 
     /**
      * All table's column names declared here.
@@ -38,6 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String STRESS_COL_1 = "stress_date",STRESS_COL_2 = "stress_level";
     public static final String RECOMMEND_COL_1 = "state",RECOMMEND_COL_2 = "recommendation";
     public static final String SUMMARY_COL_1 = "month",SUMMARY_COL_2 = "overall_state",SUMMARY_COL_3 = "food",SUMMARY_COL_4 = "sleep",SUMMARY_COL_5 = "stress",SUMMARY_COL_6 = "exercise",SUMMARY_COL_7 = "cycle_len_change";
+    public static final String PROFILE_COL_1 = "user_id",PROFILE_COL_2 = "age",PROFILE_COL_3 = "height",PROFILE_COL_4 = "weight";
 
 
 
@@ -60,6 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TEXT PRIMARY KEY,stress_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_RECOMMEND + " (state TEXT PRIMARY KEY,recommendation TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (month TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_PROFILE + "(user_id TEXT PRIMARY KEY,age INTEGER, height INTEGER, weight INTEGER) ");
     }
 
     @Override
@@ -95,6 +97,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     *
+     * @param food_date
+     * @param is_breakfast
+     * @param sugar_fat_level
+     * @return
+     */
     public boolean insertData_food(String food_date, int is_breakfast, String sugar_fat_level){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -111,6 +120,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    /**
+     *
+     * @param exercise_date
+     * @param type
+     * @param weight
+     * @return
+     */
     public boolean insertData_exercise(String exercise_date, String type,int weight){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -126,6 +142,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     *
+     * @param sleep_date
+     * @param start_time
+     * @param end_time
+     * @param quality
+     * @return
+     */
     public boolean insertData_sleep(String sleep_date,String start_time,String end_time,String quality){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -143,7 +167,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
+    /**
+     *
+     * @param stress_date
+     * @param stress_level
+     * @return
+     */
     public boolean insertData_stress(String stress_date,String stress_level){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -159,7 +188,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
+    /**
+     *
+     * @param state
+     * @param recommendation
+     * @return
+     */
     public boolean insertData_recommend(String state, String recommendation){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -175,7 +209,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
+    /**
+     *
+     * @param month
+     * @param overall_state
+     * @param food
+     * @param sleep
+     * @param stress
+     * @param exercise
+     * @param cycle_len_change
+     * @return
+     */
     public boolean insertData_summary(String month,String overall_state,String food, String sleep, String stress, String exercise,int cycle_len_change){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -187,6 +231,82 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(SUMMARY_COL_6,exercise);
         contentValues.put(SUMMARY_COL_7,cycle_len_change);
         long result = db.insert(TABLE_NAME_SUMMARY,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    /**
+     *
+     * @param user_id:new user_id
+     * @param age: user age
+     * @param height: user height
+     * @param weight: user weight
+     * @return
+     */
+    public boolean insertData_profile(String user_id, int age, int height, int weight){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(PROFILE_COL_1,user_id);
+        contentValues.put(PROFILE_COL_2,age);
+        contentValues.put(PROFILE_COL_3,height);
+        contentValues.put(PROFILE_COL_4,weight);
+        long result = db.insert(TABLE_NAME_PROFILE,null,contentValues);
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+
+
+    /**
+     * Delete rows from cycle table
+     * no parameter required.
+     * @return
+     */
+    public boolean deleteData_cycle(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete("TABLE_NAME_CYCLE","period_length = ?",new String[]{"0"});
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+    /**
+     * Delete rows from sleep table
+     * no parameter required.
+     * @return
+     */
+    public boolean deleteData_sleep(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete("TABLE_NAME_SLEEP","end_time = ?",new String[]{"0"});
+        if(result == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    /**
+     *
+     * @param username:user_name of the user.
+     * @return whether delete succeed.
+     */
+    public boolean deleteData_profile(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete("TABLE_NAME_PROFILE","user_id = ?",new String[]{username});
         if(result == -1){
             return false;
         }
