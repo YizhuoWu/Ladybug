@@ -27,4 +27,22 @@ public class Record_Sleep extends AppCompatActivity {
         setContentView(R.layout.activity_record_sleep);
     }
 
+
+    public void boo(View view){
+        if(sleep_start.isChecked()){}
+    }
+
+
+
+
+    public void record_sleep_quality(View view){
+
+    }
+
+
+
+    private void insert_data(String quality){
+        Date date = Calendar.getInstance().getTime();
+
+    }
 }
