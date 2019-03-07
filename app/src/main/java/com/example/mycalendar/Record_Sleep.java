@@ -37,8 +37,6 @@ public class Record_Sleep extends AppCompatActivity {
 
     public void record_sleep_quality(View view){
 
-        if(sleep_start.isChecked())
-
     }
 
 

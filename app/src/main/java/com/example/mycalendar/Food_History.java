@@ -16,13 +16,13 @@ public class Food_History extends AppCompatActivity {
         setContentView(R.layout.activity_food_history);
 
 
-        TextView test = findViewById(R.id.test);
+        TextView food_history = findViewById(R.id.food_history);
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_FOOD);
-        data.moveToNext();
+        data.moveToLast();
         String print = "";
-        while (data.isLast() == false){
-
-            print += data.getString(0) + "  ";
+        while (data.isFirst() == false){
+            print += data.getString(0);
+            print += "     ";
             if (data.getInt(1) == 0) {
                 print += "Don't Have Breakfast";
                 print += "    ";
@@ -32,9 +32,10 @@ public class Food_History extends AppCompatActivity {
                 print += "              ";
             }
             print += data.getString(2) + "\n";
-            data.moveToNext();
+            data.moveToPrevious();
         }
         print += data.getString(0) + "  ";
+        print += "     ";
         if (data.getInt(1) == 0) {
             print += "Don't Have Breakfast";
             print += "    ";
@@ -44,14 +45,7 @@ public class Food_History extends AppCompatActivity {
             print += "              ";
         }
         print += data.getString(2) + "\n";
-
-        test.setText(print);
-
-
-
+        food_history.setText(print);
     }
 
-    public void Test(View view){
-
-    }
 }
