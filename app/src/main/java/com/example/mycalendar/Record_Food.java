@@ -34,6 +34,33 @@ public class Record_Food extends AppCompatActivity {
         //Date date = Calendar.getInstance().getTime();
         //String today = date.toString();
 
+        myDb.insertData_food("2019-02-23",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-24",1,"Normal diet");
+        myDb.insertData_food("2019-02-25",0,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-26",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-27",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-28",0,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-29",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-20",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-21",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-22",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-11",1,"High fat and high sugar");
+        myDb.insertData_food("2019-02-12",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-13",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-14",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-15",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-16",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-17",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-18",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-19",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-10",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-11",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-12",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-13",1,"Low fat and low sugar");
+        myDb.insertData_food("2018-02-14",1,"Low fat and low sugar");
+
+
+
         if (breakfast_false.isChecked()){
             add_data(0,food_level);
         }

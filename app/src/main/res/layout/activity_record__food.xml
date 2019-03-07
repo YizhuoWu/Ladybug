@@ -156,25 +156,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/yes"
             android:fontFamily="casual"
-            android:onClick="FoodonClick"
+            android:text="@string/yes"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/breakfast_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/no"
             android:fontFamily="casual"
-            android:onClick="FoodonClick"
+            android:text="@string/no"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
     </RadioGroup>
 
     <TextView
