@@ -1,7 +1,6 @@
 package com.example.mycalendar;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
 import android.support.annotation.NonNull;
@@ -13,8 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
         boolean isInserted_sleep = mainDb.insertData_sleep("20180201","1920","0820","good");
         boolean isInserted_exercise = mainDb.insertData_exercise("20180201","yoga",100);
-        boolean isInserted_stress = mainDb.insertData_stress("20180201",2);
+        boolean isInserted_stress = mainDb.insertData_stress("20180201","stressed");
         boolean isInserted_recommend = mainDb.insertData_recommend("good","late");
         boolean isInserted_summary = mainDb.insertData_summary("April","good","good","good","no","good",2);
 

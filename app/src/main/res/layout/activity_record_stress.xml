@@ -131,7 +131,6 @@
         android:fontFamily="casual"
         android:onClick="StressonClick"
         android:text="@string/save"
-
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="15sp"
