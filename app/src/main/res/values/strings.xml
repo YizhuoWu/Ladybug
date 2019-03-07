@@ -73,10 +73,12 @@
     <string name="medium">Medium</string>
     <string name="extremely_anxious">Extremely Anxious</string>
     <string name="stressed">Stressed</string>
-    <string name="save">Save</string>
     <string name="are_you_going_to_sleep">Are you going to sleep?</string>
     <string name="yep">Yep</string>
     <string name="are_you_wake_up">Are you wake up?</string>
+    <string name="tell_us_about_your_sleep">Tell us about your sleep!</string>
+    <string name="are_you_awake">Are you awake?</string>
+    <string name="save">Save</string>
 
 
 </resources>

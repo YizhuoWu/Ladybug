@@ -6,12 +6,36 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/WelcomeText"
+        android:layout_width="362dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="casual"
+        android:text="@string/tell_us_about_your_sleep"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/sleep_record_text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="176dp"
+        android:fontFamily="casual"
         android:text="@string/are_you_going_to_sleep"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +47,12 @@
         android:layout_marginTop="144dp"
         android:layout_marginEnd="84dp"
         android:text="@string/sleep_quality"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +62,8 @@
         android:id="@+id/radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="183dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="60dp"
         android:text="@string/yep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,8 +72,8 @@
         android:id="@+id/radioButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
         android:text="@string/yep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioButton" />
@@ -82,9 +112,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="121dp"
-        android:text="@string/are_you_wake_up"
+        android:fontFamily="casual"
+        android:text="@string/are_you_awake"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintEnd_toStartOf="@+id/radioButton6"
         app:layout_constraintTop_toBottomOf="@+id/sleep_record_text_1" />
+
+    <Button
+        android:id="@+id/SaveSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+
+    <Button
+        android:id="@+id/SaveAwake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton6" />
 
 </android.support.constraint.ConstraintLayout>
 
