@@ -13,6 +13,8 @@
             android:id="@+id/food_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
             android:lineSpacingExtra="12sp"
             android:textSize="14sp" />
 
