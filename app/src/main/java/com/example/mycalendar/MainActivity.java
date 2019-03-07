@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
         boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
         boolean isInserted_sleep = mainDb.insertData_sleep("20180201","1920","0820","good");
-        boolean isInserted_exercise = mainDb.insertData_exercise("20180201","yoga",20);
+        boolean isInserted_exercise = mainDb.insertData_exercise("20180201","yoga",100);
         boolean isInserted_stress = mainDb.insertData_stress("20180201",2);
         boolean isInserted_recommend = mainDb.insertData_recommend("good","late");
         boolean isInserted_summary = mainDb.insertData_summary("April","good","good","good","no","good",2);

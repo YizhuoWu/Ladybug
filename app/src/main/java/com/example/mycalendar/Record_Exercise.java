@@ -1,5 +1,6 @@
 package com.example.mycalendar;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -15,7 +17,7 @@ import java.util.Date;
 
 public class Record_Exercise extends AppCompatActivity {
 
-    DatabaseHelper myDb;
+    DatabaseHelper myDb = new DatabaseHelper(this);
     Spinner ExerciseType;
     EditText E_time;
     EditText E_weight;
@@ -36,26 +38,65 @@ public class Record_Exercise extends AppCompatActivity {
         E_weight = (EditText) findViewById(R.id.Weight_Input);
         E_update = (Button) findViewById(R.id.exercise_record_save);
 
-
-
     }
-    public void AddDate(){
-        E_update.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String weight = E_weight.getText().toString();
-                        int finalWeight = Integer.parseInt(weight);
-                        String time = E_time.getText().toString();
-                        int finalTime =  Integer.parseInt(time);
 
-                        Date date = Calendar.getInstance().getTime();
-                        Format formatter = new SimpleDateFormat("yyyy-MM-dd");
-                        String today = formatter.format(date);
-                        myDb.insertData_exercise(today, ExerciseType.getSelectedItem().toString(),finalTime,finalWeight);
-                    }
-                }
-        );
+    public void onClick(View view){
+        while (true) {
+            String weight = E_weight.getText().toString();
+            String type = ExerciseType.getSelectedItem().toString();
+
+            if (weight.matches("")) {
+                Toast.makeText(this, "plz enter your weight ", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            else if (type.matches("(Please select)")) {
+                Toast.makeText(this, "plz enter your exercise status ", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            else if ((E_time.getText().toString()).matches("")) {
+                Toast.makeText(this, "plz enter your time for exercise ", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            else{
+                int finalWeight = Integer.parseInt(weight);
+
+                add_data(type, finalWeight);
+
+                Intent goHome = new Intent(this,MainActivity.class);
+                startActivity(goHome);
+                break;
+            }
+        }
+    }
+
+    private void add_data(String exercise_type, int weight){
+        Date date = Calendar.getInstance().getTime();
+        Format formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String today = formatter.format(date);
+        String time = E_time.getText().toString();
+        int finalTime =  Integer.parseInt(time);
+
+        if (exercise_type == "Strenuous exercise")
+        {
+            if (finalTime >= 30) {
+                exercise_type = "Strenuous exercise";
+            } else {
+                exercise_type = "Chronic exercise";
+            }
+        }
+        else if (exercise_type == "Chronic exercise")
+        {
+            if (finalTime >= 45) {
+                exercise_type = "Strenuous exercise";
+            } else {
+                exercise_type = "Chronic exercise";
+            }
+        }
+        else {
+            exercise_type = "No additional exercise";
+        }
+
+        myDb.insertData_exercise(today, exercise_type, weight);
     }
 
 }

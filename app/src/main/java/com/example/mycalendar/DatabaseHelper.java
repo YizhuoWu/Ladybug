@@ -111,13 +111,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertData_exercise(String exercise_date, String type, int time, int weight_change){
+    public boolean insertData_exercise(String exercise_date, String type,int weight){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(EXERCISE_COL_1,exercise_date);
         contentValues.put(EXERCISE_COL_2,type);
-        contentValues.put(EXERCISE_COL_3,time);
-        contentValues.put(EXERCISE_COL_4,weight_change);
+        contentValues.put(EXERCISE_COL_3,weight);
         long result = db.insert(TABLE_NAME_EXERCISE,null,contentValues);
         if(result == -1){
             return false;
@@ -126,7 +125,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-
 
     public boolean insertData_sleep(String sleep_date,String start_time,String end_time,String quality){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -197,20 +195,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertData_exercise(String exercise_date, String type, int time){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(EXERCISE_COL_1,exercise_date);
-        contentValues.put(EXERCISE_COL_2,type);
-        contentValues.put(EXERCISE_COL_3,time);
-        long result = db.insert(TABLE_NAME_EXERCISE,null,contentValues);
-        if(result == -1){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
 
     /**
      * This method would return the whole DB as result.
