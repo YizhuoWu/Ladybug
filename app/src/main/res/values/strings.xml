@@ -65,8 +65,15 @@
     <string name="tell_us_when_does_your_period_start_and_end">Tell us when does your period start and end!</string>
     <string name="does_the_period_end_today">Does the period end today?</string>
     <string name="period_knowledge">period_knowledge</string>
-    <string name="save">Save</string>
     <string name="exercisepic">exercisePic</string>
+    <string name="tell_us_about_your_stress_level">Tell us about your stress level!</string>
+    <string name="emotionpic">emotionPic</string>
+    <string name="relaxed">Relaxed</string>
+    <string name="a_little_stressed">A little stressed</string>
+    <string name="medium">Medium</string>
+    <string name="extremely_anxious">Extremely Anxious</string>
+    <string name="stressed">Stressed</string>
+    <string name="save">Save</string>
 
 
 </resources>

@@ -130,10 +130,10 @@
         android:background="@color/colorPrimaryDark"
         android:fontFamily="casual"
         android:onClick="FoodonClick"
-        android:text="@string/record"
+        android:text="@string/save"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textStyle="bold"
 
         android:typeface="sans"
