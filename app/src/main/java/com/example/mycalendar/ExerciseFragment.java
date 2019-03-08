@@ -29,7 +29,7 @@ public class ExerciseFragment extends Fragment {
             }
         });
 
-        View recordsleep =  inflater.inflate(R.layout.fragment_sleep, container, false);
+        View recordexercise =  inflater.inflate(R.layout.fragment_exercise, container, false);
         ExerciseButton = view.findViewById(R.id.exercise_record_button);
         ExerciseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,12 +39,12 @@ public class ExerciseFragment extends Fragment {
             }
         });
 
-        View exercise_history =  inflater.inflate(R.layout.fragment_food, container, false);
+        View exercise_history =  inflater.inflate(R.layout.fragment_exercise, container, false);
         ViewExerciseHistory = view.findViewById(R.id.exercise_history_button);
         ViewExerciseHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goExerciseHistory = new Intent(getActivity(),Sleep_History.class);
+                Intent goExerciseHistory = new Intent(getActivity(),Exercise_History.class);
                 startActivity(goExerciseHistory);
             }
         });

@@ -15,7 +15,6 @@ public class Food_History extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_history);
 
-
         TextView food_history = findViewById(R.id.food_history);
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_FOOD);
         data.moveToLast();
@@ -34,6 +33,7 @@ public class Food_History extends AppCompatActivity {
             print += data.getString(2) + "\n";
             data.moveToPrevious();
         }
+
         print += data.getString(0) + "  ";
         print += "     ";
         if (data.getInt(1) == 0) {
@@ -45,6 +45,7 @@ public class Food_History extends AppCompatActivity {
             print += "              ";
         }
         print += data.getString(2) + "\n";
+
         food_history.setText(print);
     }
 
