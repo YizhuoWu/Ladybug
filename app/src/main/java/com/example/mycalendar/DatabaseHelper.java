@@ -33,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String CYCLE_COL_1 = "cycle_id",CYCLE_COL_2 = "cycle_start_date",CYCLE_COL_3 = "cycle_end_date",CYCLE_COL_4 = "cycle_length",CYCLE_COL_5 = "period_length";
     public static final String FOOD_COL_1 = "food_date",FOOD_COL_2 = "is_breakfast",FOOD_COL_3 = "sugar_fat_level";
     public static final String EXERCISE_COL_1 = "exercise_date",EXERCISE_COL_2 = "type",EXERCISE_COL_3 = "weight";
-    public static final String SLEEP_COL_1 = "sleep_date",SLEEP_COL_2 = "start_time",SLEEP_COL_3 = "end_time",SLEEP_COL_4 = "quality";
+    public static final String SLEEP_COL_1 = "sleep_date",SLEEP_COL_2 = "start_time",SLEEP_COL_3 = "end_time",SLEEP_COL_4 = "sleep_length",SLEEP_COL_5 = "quality";
     public static final String STRESS_COL_1 = "stress_date",STRESS_COL_2 = "stress_level";
     public static final String RECOMMEND_COL_1 = "state",RECOMMEND_COL_2 = "recommendation";
     public static final String SUMMARY_COL_1 = "month",SUMMARY_COL_2 = "overall_state",SUMMARY_COL_3 = "food",SUMMARY_COL_4 = "sleep",SUMMARY_COL_5 = "stress",SUMMARY_COL_6 = "exercise",SUMMARY_COL_7 = "cycle_len_change";
@@ -56,7 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_NAME_CYCLE + " (cycle_id INTEGER PRIMARY KEY,cycle_start_date TEXT ,cycle_end_date TEXT ,cycle_length INTEGER,period_length INTEGER) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_FOOD + " (food_date TEXT PRIMARY KEY,is_breakfast INTEGER ,sugar_fat_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_EXERCISE + " (exercise_date TEXT PRIMARY KEY,type TEXT ,weight INTEGER) ");
-        db.execSQL("CREATE TABLE " + TABLE_NAME_SLEEP + " (sleep_date TEXT PRIMARY KEY,start_time TEXT ,end_time TEXT ,quality TEXT)");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_SLEEP + " (sleep_date TEXT PRIMARY KEY,start_time TEXT ,end_time TEXT ,sleep_length FLOAT(2), quality TEXT)");
         db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TEXT PRIMARY KEY,stress_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_RECOMMEND + " (state TEXT PRIMARY KEY,recommendation TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (month TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
@@ -146,16 +146,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param sleep_date
      * @param start_time
      * @param end_time
-     * @param quality
+     * @param sleep_length
+     * @oaram quality
      * @return
      */
-    public boolean insertData_sleep(String sleep_date,String start_time,String end_time,String quality){
+    public boolean insertData_sleep(String sleep_date,String start_time,String end_time,float sleep_length, String quality){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SLEEP_COL_1,sleep_date);
         contentValues.put(SLEEP_COL_2,start_time);
         contentValues.put(SLEEP_COL_3,end_time);
-        contentValues.put(SLEEP_COL_4,quality);
+        contentValues.put(SLEEP_COL_4,sleep_length);
+        contentValues.put(SLEEP_COL_5,quality);
         long result = db.insert(TABLE_NAME_SLEEP,null,contentValues);
         if(result == -1){
             return false;
@@ -305,7 +307,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public boolean deleteData_sleep(){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(TABLE_NAME_SLEEP,"end_time = ?",new String[]{Integer.toString(0)});
+        long result = db.delete(TABLE_NAME_SLEEP,"end_time = ?",new String[]{"NULL"});
         if(result == -1){
             return false;
         }

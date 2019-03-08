@@ -21,11 +21,6 @@ public class Record_Stress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_stress);
 
-
-
-
-
-
     }
 
     public void StressonClick(View view){

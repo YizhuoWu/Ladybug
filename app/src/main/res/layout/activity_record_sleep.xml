@@ -167,6 +167,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textStyle="bold"
         android:typeface="sans"
+        android:onClick="SleeponClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/SleepYes" />
 
@@ -183,6 +184,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textStyle="bold"
         android:typeface="sans"
+        android:onClick="AwakeonClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/AwakeYes" />
 

@@ -45,7 +45,6 @@ public class Record_Exercise extends AppCompatActivity {
     public void onClick(View view){
 
 
-
         while (true) {
             String weight = E_weight.getText().toString();
             String type = ExerciseType.getSelectedItem().toString();
