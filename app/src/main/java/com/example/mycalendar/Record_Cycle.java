@@ -24,8 +24,6 @@ public class Record_Cycle extends AppCompatActivity {
         setContentView(R.layout.activity_record_cycle);
 
         myDb.insertData_cycle(1,"2019-02-06","2019-02-12",25,6);
-        Boolean a = myDb.deleteData_cycle();
-        System.out.print(a);
 
     }
 
@@ -72,7 +70,7 @@ public class Record_Cycle extends AppCompatActivity {
 
 
             int difference = period_differentce(startdateString, today);
-
+            myDb.deleteData_cycle();
 
 
             myDb.insertData_cycle(2,startdateString,today,cycle_difference,difference);
