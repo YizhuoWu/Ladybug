@@ -42,13 +42,8 @@ public class Record_Exercise extends AppCompatActivity {
 
     }
 
+
     public void onClick(View view){
-
-        myDb.insertData_exercise("2018-03-04", "S", 100);
-        myDb.insertData_exercise("2018-03-05", "A", 120);
-        myDb.insertData_exercise("2018-03-06", "D", 130);
-        myDb.insertData_exercise("2018-03-07", "c", 140);
-
 
         while (true) {
             String weight = E_weight.getText().toString();
@@ -75,7 +70,10 @@ public class Record_Exercise extends AppCompatActivity {
                 break;
             }
         }
-
+        myDb.insertData_exercise("2018-03-04", "S", 100);
+        myDb.insertData_exercise("2018-03-05", "A", 120);
+        myDb.insertData_exercise("2018-03-06", "D", 130);
+        myDb.insertData_exercise("2018-03-07", "c", 140);
     }
 
     private void add_data(String exercise_type, int weight){
