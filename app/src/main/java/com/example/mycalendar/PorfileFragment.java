@@ -13,6 +13,10 @@ import android.widget.ImageButton;
 
 
 public class PorfileFragment extends Fragment {
+
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+    }
     ImageButton imageButton;
 
     Button CycleButton;
