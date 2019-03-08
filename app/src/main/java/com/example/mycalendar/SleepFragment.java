@@ -40,7 +40,7 @@ public class SleepFragment extends Fragment {
             }
         });
 
-        View sleep_history =  inflater.inflate(R.layout.fragment_food, container, false);
+        View sleep_history =  inflater.inflate(R.layout.fragment_sleep, container, false);
         ViewFoodHistory = view.findViewById(R.id.sleep_history_button);
         ViewFoodHistory.setOnClickListener(new View.OnClickListener() {
             @Override
