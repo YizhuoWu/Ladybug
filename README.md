@@ -17,7 +17,7 @@ Sample data inserted.
 *Database supported methods:
 *InsertData to cycle table.
 *getAllData from main databse.
-*/\n
+*/
 
 
 V1.2
