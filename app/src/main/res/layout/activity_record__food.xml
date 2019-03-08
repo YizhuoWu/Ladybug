@@ -21,9 +21,9 @@
 
     <ImageView
         android:id="@+id/appleimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="90dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/appleimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/eggimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/eggimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +42,8 @@
 
     <ImageView
         android:id="@+id/oatmealimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/oatmealimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,9 +52,9 @@
 
     <ImageView
         android:id="@+id/milkshakeimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="90dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/milkshakeimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,8 +63,8 @@
 
     <ImageView
         android:id="@+id/almondimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/almondimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,8 +73,8 @@
 
     <ImageView
         android:id="@+id/burgerimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/burgerimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,8 +83,8 @@
 
     <ImageView
         android:id="@+id/cheesecakeimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/cheesecakeimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,8 +93,8 @@
 
     <ImageView
         android:id="@+id/chocolatebarimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/chocolatebarimage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,8 +103,8 @@
 
     <ImageView
         android:id="@+id/icecream_image"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/icecream_image"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,8 +113,8 @@
 
     <ImageView
         android:id="@+id/riceimage"
-        android:layout_width="92dp"
-        android:layout_height="91dp"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
         android:layout_marginEnd="200dp"
         android:contentDescription="@string/rice"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,9 +123,8 @@
 
     <Button
         android:id="@+id/food_record_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
         android:fontFamily="casual"
@@ -133,23 +132,24 @@
         android:text="@string/save"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
+
         android:textSize="18sp"
         android:textStyle="bold"
-
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/Breakfast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="85dp"
         android:checkedButton="@+id/breakfast_yes"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chocolatebarimage">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
             android:id="@+id/breakfast_yes"
@@ -178,16 +178,66 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
         android:fontFamily="casual"
         android:text="@string/have_breakfast"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans"
-        app:layout_constraintEnd_toStartOf="@+id/Breakfast"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icecream_image" />
+
+    <TextView
+        android:id="@+id/WelcomeText"
+        android:layout_width="293dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="casual"
+        android:text="@string/tell_us_what_did_you_eat"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Level1-5"
+        android:layout_width="117dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="53dp"
+        android:fontFamily="casual"
+        android:text="@string/level_1_5"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toStartOf="@+id/Level6-10"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
+
+    <TextView
+        android:id="@+id/Level6-10"
+        android:layout_width="110dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="casual"
+        android:text="@string/level_6_10"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
+
 
 </android.support.constraint.ConstraintLayout>

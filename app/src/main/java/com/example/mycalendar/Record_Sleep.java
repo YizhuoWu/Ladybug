@@ -22,13 +22,5 @@ public class Record_Sleep extends AppCompatActivity {
         setContentView(R.layout.activity_record_sleep);
     }
 
-    public void I_just_put_all_the_button_here_first(){
-        RadioButton sleep_end = findViewById(R.id.radioButton6);
-        RadioButton sleep_start = findViewById(R.id.radioButton);
-        RadioButton quality_good = findViewById(R.id.radioButton2);
-        RadioButton quality_normal = findViewById(R.id.radioButton3);
-        RadioButton quality_bad = findViewById(R.id.radioButton4);
-    }
-
 
 }

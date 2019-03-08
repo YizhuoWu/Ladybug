@@ -79,6 +79,9 @@
     <string name="tell_us_about_your_sleep">Tell us about your sleep!</string>
     <string name="are_you_awake">Are you awake?</string>
     <string name="save">Save</string>
+    <string name="tell_us_what_did_you_eat">Tell us what did you eat!</string>
+    <string name="level_1_5">Level 1-5</string>
+    <string name="level_6_10">Level 6-10</string>
 
 
 </resources>

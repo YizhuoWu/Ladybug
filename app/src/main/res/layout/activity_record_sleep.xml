@@ -9,36 +9,51 @@
         android:id="@+id/sleeo_quality_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sleep_record_text_3">
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/SleepBad"
             android:layout_width="110dp"
             android:layout_height="54dp"
             android:layout_marginStart="80dp"
             android:text="@string/bad"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton3" />
+            app:layout_constraintTop_toBottomOf="@id/SleepNormal" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/SleepNormal"
             android:layout_width="110dp"
             android:layout_height="55dp"
             android:layout_marginStart="80dp"
             android:layout_marginTop="1dp"
             android:text="@string/normal"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+            app:layout_constraintTop_toBottomOf="@id/SleepGood" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/SleepGood"
             android:layout_width="110dp"
             android:layout_height="58dp"
             android:layout_marginStart="80dp"
             android:text="@string/good"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sleep_record_text_3" />
     </RadioGroup>
@@ -47,7 +62,7 @@
         android:id="@+id/WelcomeText"
         android:layout_width="362dp"
         android:layout_height="34dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="casual"
         android:text="@string/tell_us_about_your_sleep"
         android:textAlignment="center"
@@ -65,8 +80,8 @@
         android:id="@+id/sleep_record_text_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="casual"
         android:text="@string/are_you_going_to_sleep"
         android:textAlignment="center"
@@ -75,53 +90,60 @@
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
 
     <TextView
         android:id="@+id/sleep_record_text_3"
-        android:layout_width="244dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="84dp"
-        android:text="@string/sleep_quality"
+        android:layout_width="158dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="casual"
+        android:text="@string/sleep_quality"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sleep_record_text_2"
+        app:layout_constraintTop_toBottomOf="@+id/SaveSleep" />
+
+    <RadioButton
+        android:id="@+id/SleepYes"
+        android:layout_width="63dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/yes"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton6" />
+        app:layout_constraintTop_toBottomOf="@+id/sleep_record_text_1" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/AwakeYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/yes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
-        android:id="@+id/radioButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/yes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleep_record_text_2" />
 
     <TextView
         android:id="@+id/sleep_record_text_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="casual"
         android:text="@string/are_you_awake"
         android:textAlignment="center"
@@ -129,28 +151,40 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton6"
-        app:layout_constraintTop_toBottomOf="@+id/sleep_record_text_1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SaveSleep" />
 
     <Button
         android:id="@+id/SaveSleep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="73dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SleepYes" />
 
     <Button
         android:id="@+id/SaveAwake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="73dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton6" />
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/AwakeYes" />
 
 </android.support.constraint.ConstraintLayout>
 
