@@ -15,7 +15,7 @@ public class SleepFragment extends Fragment {
 
     ImageButton imageButton;
     Button SleepButton;
-    Button ViewFoodHistory;
+    Button ViewSleepHistory;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -40,9 +40,9 @@ public class SleepFragment extends Fragment {
             }
         });
 
-        View sleep_history =  inflater.inflate(R.layout.fragment_food, container, false);
-        ViewFoodHistory = view.findViewById(R.id.sleep_history_button);
-        ViewFoodHistory.setOnClickListener(new View.OnClickListener() {
+        View sleep_history =  inflater.inflate(R.layout.fragment_sleep, container, false);
+        ViewSleepHistory = view.findViewById(R.id.sleep_history_button);
+        ViewSleepHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent goSleepHistory = new Intent(getActivity(),Sleep_History.class);
