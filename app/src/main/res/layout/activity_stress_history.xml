@@ -10,7 +10,7 @@
 
 
         <TextView
-            android:id="@+id/food_history"
+            android:id="@+id/stress_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="12sp"

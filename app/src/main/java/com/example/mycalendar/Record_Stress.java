@@ -20,6 +20,12 @@ public class Record_Stress extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_stress);
+
+        myDb.insertData_stress("123","relaxed");
+
+
+
+
     }
 
     public void StressonClick(View view){

@@ -272,7 +272,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public boolean deleteData_cycle(){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete("TABLE_NAME_CYCLE","period_length = ?",new String[]{"0"});
+        long result = db.delete(TABLE_NAME_CYCLE,"period_length=?", new String[]{Integer.toString(0)});
         if(result == -1){
             return false;
         }
@@ -289,7 +289,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor r = db.rawQuery("select MAX(cycle_id) from "+ TABLE_NAME_CYCLE,null);
         String temp = r.getString(0);
-        long result = db.delete("TABLE_NAME_CYCLE","cycle_id = ?",new String[]{temp});
+        long result = db.delete(TABLE_NAME_CYCLE,"cycle_id = ?",new String[]{temp});
         if(result == -1){
             return false;
         }
@@ -305,7 +305,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public boolean deleteData_sleep(){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete("TABLE_NAME_SLEEP","end_time = ?",new String[]{"0"});
+        long result = db.delete(TABLE_NAME_SLEEP,"end_time = ?",new String[]{Integer.toString(0)});
         if(result == -1){
             return false;
         }
@@ -321,7 +321,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public boolean deleteData_profile(String username){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete("TABLE_NAME_PROFILE","user_id = ?",new String[]{username});
+        long result = db.delete(TABLE_NAME_PROFILE,"user_id = ?",new String[]{username});
         if(result == -1){
             return false;
         }
