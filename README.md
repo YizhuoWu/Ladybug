@@ -18,3 +18,12 @@ Sample data inserted.
 *InsertData to cycle table.
 *getAllData from main databse.
 */
+
+
+V1.2
+Database now supported delete specific rows for cycle table, profile table and sleep_record table.
+UI features implemented.
+Support:
+  *Record food data,sleep data, exercise data, stress_level data.
+  *Different pages can jump to each other.
+  *View different activities' history.
