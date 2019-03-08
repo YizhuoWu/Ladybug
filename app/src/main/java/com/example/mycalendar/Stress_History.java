@@ -18,18 +18,25 @@ public class Stress_History extends AppCompatActivity {
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_STRESS);
         data.moveToLast();
         String print = "";
-        while (data.isFirst() == false){
+
+        if (data.getCount() != 0) {
+
+            while (data.isFirst() == false) {
+                print += data.getString(0);
+                print += "     ";
+                print += data.getString(1) + "\n";
+                data.moveToPrevious();
+            }
             print += data.getString(0);
             print += "     ";
-            print += data.getString(1)+ "\n";
+            print += data.getString(1) + "\n";
             data.moveToPrevious();
-        }
-        print += data.getString(0);
-        print += "     ";
-        print += data.getString(1)+ "\n";
-        data.moveToPrevious();
 
-        stress_history.setText(print);
+            stress_history.setText(print);
+        }
+        else{
+            stress_history.setText("You don't have any data");
+        }
     }
 
 }
