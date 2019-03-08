@@ -46,7 +46,7 @@ public class Cycle_History extends AppCompatActivity {
             cycle_history.setText(print);
         }
         else{
-            cycle_history.setText("You don't have any data");
+            cycle_history.setText("There is no history. Come and record your cycle!");
         }
     }
 }

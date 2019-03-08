@@ -41,7 +41,7 @@ public class Exercise_History extends AppCompatActivity {
             exercise_history.setText(print);
         }
         else{
-            exercise_history.setText("You don't have any data");
+            exercise_history.setText("There is no history. Come and record your day!");
         }
     }
 }

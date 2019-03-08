@@ -25,37 +25,50 @@ public class Sleep_History extends AppCompatActivity {
 
             while (data.isFirst() == false) {
                 //Get Sleep date (Columnn0)
-                result += "Your sleep Date: ";
+                result += "Date: ";
                 result += data.getString(0);
                 result += "  ";
 
                 //Get Sleep Start time
-                result += "Your sleep started from: ";
+                result += "Start: ";
                 result += data.getString(1);
+                result += "  ";
 
-                result += "Your sleep ended at: ";
-                result += data.getString(2) + "\n";
+                result += "End: ";
+                result += data.getString(2) + '\n';
 
-                result += "Sleep Quality: ";
-                result += data.getString(3) + "\n";
+                result += "Sleep length: ";
+                result += data.getString(3);
+                result += "  ";
+
+                result += "Quality: ";
+                result += data.getString(4) + "\n\n";
                 data.moveToPrevious();
             }
+            result += "Date: ";
             result += data.getString(0);
             result += "  ";
 
             //Get Sleep Start time
             result += "Start: ";
             result += data.getString(1);
+            result += "  ";
 
             result += "End: ";
-            result += data.getString(2) + "\n";
+            result += data.getString(2) + '\n';
 
-            result += "Sleep Quality: ";
-            result += data.getString(3) + "\n";
+            result += "Sleep length: ";
+            result += data.getString(3);
+            result += "  ";
+
+            result += "Quality: ";
+            result += data.getString(4) + "\n\n";
+            data.moveToPrevious();
+
             sleep_history.setText(result);
         }
         else{
-            sleep_history.setText("You don't have any data");
+            sleep_history.setText("There is no history. Come and record your day!");
         }
     }
 

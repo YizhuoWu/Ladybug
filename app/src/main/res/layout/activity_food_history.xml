@@ -4,34 +4,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-        <ImageView
-            android:id="@+id/Foodhistory_image"
-            android:layout_width="0dp"
-            android:layout_height="285dp"
-            android:contentDescription="@string/burgerimage"
+        <TextView
+            android:id="@+id/WelcomeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="casual"
+            android:text="@string/food_history"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/burger" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/food_history"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Foodhistory_image"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="casual"
             android:lineSpacingExtra="12sp"
+            android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/Foodhistory_image"
-            tools:layout_editor_absoluteX="0dp" />
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WelcomeText" />
+
 
 
     </android.support.constraint.ConstraintLayout>

@@ -30,7 +30,6 @@ public class Record_Sleep extends AppCompatActivity {
             Format formatter = new SimpleDateFormat("HH:mm");
             String time = formatter.format(Time);
 
-
             add_data("NULL", time, "NULL", 0,"NULL");
 
             Intent goHome = new Intent(this,MainActivity.class);

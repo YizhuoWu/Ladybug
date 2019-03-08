@@ -82,6 +82,12 @@
     <string name="tell_us_what_did_you_eat">Tell us what did you eat!</string>
     <string name="level_1_5">Level 1-5</string>
     <string name="level_6_10">Level 6-10</string>
+    <string name="sleep_history">Sleep History</string>
+    <string name="sleeppic">SleepPic</string>
+    <string name="food_history">Food History</string>
+    <string name="stress_history">Stress History</string>
+    <string name="cycle_history">Cycle History</string>
+    <string name="exercise_history">Exercise History</string>
 
 
 </resources>

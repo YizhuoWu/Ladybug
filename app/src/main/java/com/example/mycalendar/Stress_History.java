@@ -35,7 +35,7 @@ public class Stress_History extends AppCompatActivity {
             stress_history.setText(print);
         }
         else{
-            stress_history.setText("You don't have any data");
+            stress_history.setText("There is no history. Come and record your day!");
         }
     }
 

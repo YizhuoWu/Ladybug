@@ -47,7 +47,7 @@ public class Food_History extends AppCompatActivity {
             food_history.setText(print);
         }
         else{
-            food_history.setText("There is no history");
+            food_history.setText("There is no history. Come and record your day!");
         }
     }
 
