@@ -84,7 +84,7 @@ public class Record_Food extends AppCompatActivity {
         Format formatter = new SimpleDateFormat("yyyy-MM-dd");
         String today = formatter.format(date);
         if (food_level <= 3){
-            myDb.insertData_food(null,breakfast,"Low fat and low sugar");
+            myDb.insertData_food(today,breakfast,"Low fat and low sugar");
         }
         if (food_level <= 6 && food_level> 3){
             myDb.insertData_food(today,breakfast,"Normal diet");

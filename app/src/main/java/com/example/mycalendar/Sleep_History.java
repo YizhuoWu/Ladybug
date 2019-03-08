@@ -20,36 +20,43 @@ public class Sleep_History extends AppCompatActivity {
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_SLEEP);
         data.moveToLast();
         String result = "";
-        while (data.isFirst() == false){
-            //Get Sleep date (Columnn0)
-            result += "Your sleep Date: ";
+
+        if (data.getCount() != 0) {
+
+            while (data.isFirst() == false) {
+                //Get Sleep date (Columnn0)
+                result += "Your sleep Date: ";
+                result += data.getString(0);
+                result += "  ";
+
+                //Get Sleep Start time
+                result += "Your sleep started from: ";
+                result += data.getString(1);
+
+                result += "Your sleep ended at: ";
+                result += data.getString(2) + "\n";
+
+                result += "Sleep Quality: ";
+                result += data.getString(3) + "\n";
+                data.moveToPrevious();
+            }
             result += data.getString(0);
             result += "  ";
 
             //Get Sleep Start time
-            result += "Your sleep started from: ";
+            result += "Start: ";
             result += data.getString(1);
 
-            result += "Your sleep ended at: ";
+            result += "End: ";
             result += data.getString(2) + "\n";
 
             result += "Sleep Quality: ";
-            result += data.getString(3)+ "\n";
-            data.moveToPrevious();
+            result += data.getString(3) + "\n";
+            sleep_history.setText(result);
         }
-        result += data.getString(0);
-        result += "  ";
-
-        //Get Sleep Start time
-        result += "Start: ";
-        result += data.getString(1) ;
-
-        result += "End: ";
-        result += data.getString(2) + "\n";
-
-        result += "Sleep Quality: ";
-        result += data.getString(3)+ "\n";
-        sleep_history.setText(result);
+        else{
+            sleep_history.setText("You don't have any data");
+        }
     }
 
 }

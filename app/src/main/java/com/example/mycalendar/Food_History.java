@@ -17,36 +17,38 @@ public class Food_History extends AppCompatActivity {
 
         TextView food_history = findViewById(R.id.food_history);
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_FOOD);
-        data.moveToLast();
-        String print = "";
-        while (data.isFirst() == false){
-            print += data.getString(0);
+        if (data.getCount() != 0) {
+            data.moveToLast();
+            String print = "";
+            while (data.isFirst() == false) {
+                print += data.getString(0);
+                print += "     ";
+                if (data.getInt(1) == 0) {
+                    print += "Don't Have Breakfast";
+                    print += "    ";
+                } else {
+                    print += "Have Breakfast";
+                    print += "              ";
+                }
+                print += data.getString(2) + "\n";
+                data.moveToPrevious();
+            }
+            print += data.getString(0) + "  ";
             print += "     ";
             if (data.getInt(1) == 0) {
                 print += "Don't Have Breakfast";
                 print += "    ";
-            }
-            else{
+            } else {
                 print += "Have Breakfast";
                 print += "              ";
             }
             print += data.getString(2) + "\n";
-            data.moveToPrevious();
-        }
 
-        print += data.getString(0) + "  ";
-        print += "     ";
-        if (data.getInt(1) == 0) {
-            print += "Don't Have Breakfast";
-            print += "    ";
+            food_history.setText(print);
         }
         else{
-            print += "Have Breakfast";
-            print += "              ";
+            food_history.setText("There is no history");
         }
-        print += data.getString(2) + "\n";
-
-        food_history.setText(print);
     }
 
 }

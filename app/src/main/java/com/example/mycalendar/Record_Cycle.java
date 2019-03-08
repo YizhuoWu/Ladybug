@@ -58,13 +58,14 @@ public class Record_Cycle extends AppCompatActivity {
             Cursor data = myDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
             data.moveToLast();
 
-            int ID = data.getInt(0);
+
 
             String startdateString = data.getString(1);
 
 
             data.moveToPrevious();
             String laststartdateString = data.getString(1);
+            int ID = data.getInt(0) + 1;
 
             int cycle_difference = period_differentce(laststartdateString,startdateString);
 
@@ -73,7 +74,7 @@ public class Record_Cycle extends AppCompatActivity {
             myDb.deleteData_cycle();
 
 
-            myDb.insertData_cycle(2,startdateString,today,cycle_difference,difference);
+            myDb.insertData_cycle(ID,startdateString,today,cycle_difference,difference);
             //Get current time
         }
 
