@@ -18,7 +18,22 @@ public class Cycle_History extends AppCompatActivity {
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
         data.moveToLast();
         String print = "";
-        while (data.isFirst() == false) {
+
+        if (data.getCount() != 0) {
+
+            while (data.isFirst() == false) {
+                print += data.getInt(0);
+                print += "     ";
+                print += data.getString(1);
+                print += "     ";
+                print += data.getString(2);
+                print += "     ";
+                print += data.getInt(3);
+                print += "     ";
+                print += data.getInt(4) + "\n";
+                data.moveToPrevious();
+            }
+
             print += data.getInt(0);
             print += "     ";
             print += data.getString(1);
@@ -28,19 +43,10 @@ public class Cycle_History extends AppCompatActivity {
             print += data.getInt(3);
             print += "     ";
             print += data.getInt(4) + "\n";
-            data.moveToPrevious();
+            cycle_history.setText(print);
         }
-
-        print += data.getInt(0);
-        print += "     ";
-        print += data.getString(1);
-        print += "     ";
-        print += data.getString(2);
-        print += "     ";
-        print += data.getInt(3);
-        print += "     ";
-        print += data.getInt(4) + "\n";
-        cycle_history.setText(print);
-
+        else{
+            cycle_history.setText("You don't have any data");
+        }
     }
 }
