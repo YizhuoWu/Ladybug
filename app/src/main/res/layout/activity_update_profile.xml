@@ -183,14 +183,14 @@
             android:typeface="sans"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Period" />
+            app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
         <TextView
             android:id="@+id/LastStart"
             android:layout_width="381dp"
             android:layout_height="37dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="casual"
             android:text="@string/start_date_of_last_period"
             android:textAlignment="viewStart"
@@ -199,7 +199,7 @@
             android:textStyle="bold"
             android:typeface="sans"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editWeight" />
+            app:layout_constraintTop_toBottomOf="@+id/NewUserText" />
 
         <EditText
             android:id="@+id/editStartDate"
@@ -328,5 +328,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/PeriodLength" />
 
+        <Button
+            android:id="@+id/cycle_record_button"
+            android:layout_width="56dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:fontFamily="casual"
+            android:onClick="FirstCycleonClick"
+            android:text="@string/save"
+            android:textAlignment="center"
+
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Period" />
+
+        <TextView
+            android:id="@+id/NewUserText"
+            android:layout_width="381dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="casual"
+            android:text="@string/new_user_enter_your_period_info"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_record_button" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

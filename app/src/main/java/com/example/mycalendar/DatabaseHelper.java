@@ -60,7 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TEXT PRIMARY KEY,stress_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_RECOMMEND + " (state TEXT PRIMARY KEY,recommendation TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (month TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
-        db.execSQL("CREATE TABLE " + TABLE_NAME_PROFILE + "(user_id TEXT PRIMARY KEY,age INTEGER, height INTEGER, weight INTEGER) ");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_PROFILE + "(user_id TEXT PRIMARY KEY,age INTEGER, height FLOAT(2), weight INTEGER) ");
     }
 
     @Override
@@ -248,7 +248,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param weight: user weight
      * @return
      */
-    public boolean insertData_profile(String user_id, int age, int height, int weight){
+    public boolean insertData_profile(String user_id, int age, float height, int weight){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PROFILE_COL_1,user_id);

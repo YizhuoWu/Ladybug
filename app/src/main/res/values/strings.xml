@@ -100,6 +100,7 @@
     <string name="number_of_days_default_28">Number of days: (default=28)</string>
     <string name="normal_period_length">Nomal period length</string>
     <string name="number_of_days_default_7">Number of days: (defult=7)</string>
+    <string name="new_user_enter_your_period_info">New user? Enter your period info</string>
 
 
 </resources>

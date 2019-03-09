@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
-import android.widget.SeekBar;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -23,7 +22,7 @@ public class Record_Cycle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_cycle);
 
-        myDb.insertData_cycle(1,"2019-02-06","2019-02-12",25,6);
+        //myDb.insertData_cycle(1,"2019-02-06","2019-02-12",25,6);
 
     }
 

@@ -49,17 +49,15 @@
         app:srcCompat="@drawable/imageview_profilefragpic" />
 
     <TextView
-        android:id="@+id/UserNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/UserInfoText"
+        android:layout_width="331dp"
+        android:layout_height="157dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="165dp"
-        android:text="@string/user_id"
         android:fontFamily="casual"
-        android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/background_dark"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,7 +67,7 @@
         android:layout_width="170dp"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="245dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="casual"
         android:text="@string/record_your_cycle_here"
         android:textAlignment="viewStart"
@@ -78,7 +76,7 @@
         android:textSize="15sp"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/UserInfoText" />
 
     <Button
         android:id="@+id/EditProfileButt"
@@ -136,8 +134,8 @@
     <TextView
         android:id="@+id/ViewCycleText"
         android:layout_width="116dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="245dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="28dp"
         android:fontFamily="casual"
         android:text="@string/view_cycle_record"
@@ -149,6 +147,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/RecordCycleText"
-        app:layout_constraintTop_toBottomOf="@+id/UserNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/UserInfoText" />
+
+
 
 </android.support.constraint.ConstraintLayout>
