@@ -39,8 +39,9 @@ public class Record_Cycle extends AppCompatActivity {
             add_data(1000, today, "NULL", 0, 0);
         }
 
-        Intent goHome = new Intent(this,MainActivity.class);
+        Intent goHome = new Intent(this, MainActivity.class);
         startActivity(goHome);
+
     }
 
     public void EndonClick(View view){
@@ -59,7 +60,6 @@ public class Record_Cycle extends AppCompatActivity {
             data.moveToLast();
 
 
-
             String startdateString = data.getString(1);
 
 
@@ -67,21 +67,21 @@ public class Record_Cycle extends AppCompatActivity {
             String laststartdateString = data.getString(1);
             int ID = data.getInt(0) + 1;
 
-            int cycle_difference = period_differentce(laststartdateString,startdateString);
+            int cycle_difference = period_differentce(laststartdateString, startdateString);
 
 
             int difference = period_differentce(startdateString, today);
             myDb.deleteData_cycle();
 
 
-            myDb.insertData_cycle(ID,startdateString,today,cycle_difference,difference);
+            myDb.insertData_cycle(ID, startdateString, today, cycle_difference, difference);
             //Get current time
         }
 
-
-
         Intent goHome = new Intent(this,MainActivity.class);
         startActivity(goHome);
+
+
     }
 
     private int period_differentce(String startdate, String enddate){
@@ -93,8 +93,6 @@ public class Record_Cycle extends AppCompatActivity {
         oneMoreDay.add(8);
         oneMoreDay.add(10);
         oneMoreDay.add(12);
-
-
 
 
         int startmonth = Integer.parseInt(startdate.substring(5,7));

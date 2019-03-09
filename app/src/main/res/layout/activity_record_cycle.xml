@@ -60,7 +60,6 @@
             android:layout_weight="1"
             android:text="@string/yes"
             android:fontFamily="casual"
-            android:onClick="FoodonClick"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="15sp"/>
@@ -72,7 +71,6 @@
             android:layout_weight="1"
             android:text="@string/no"
             android:fontFamily="casual"
-            android:onClick="FoodonClick"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="15sp"/>
@@ -130,7 +128,6 @@
             android:layout_weight="1"
             android:text="@string/yes"
             android:fontFamily="casual"
-            android:onClick="FoodonClick"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="15sp"/>
@@ -142,7 +139,6 @@
             android:layout_weight="1"
             android:text="@string/no"
             android:fontFamily="casual"
-            android:onClick="FoodonClick"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="15sp"/>

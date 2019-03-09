@@ -1,7 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorAccent">
 
-</android.support.constraint.ConstraintLayout>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/NameText"
+            android:layout_width="99dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="356dp"
+            android:fontFamily="casual"
+            android:text="@string/user_id"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/NameText" />
+
+
+        <TextView
+            android:id="@+id/AgeText"
+            android:layout_width="99dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/age"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="casual"
+            android:hint="@string/age"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AgeText" />
+
+        <TextView
+            android:id="@+id/HeightText"
+            android:layout_width="99dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/height"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAge" />
+
+        <EditText
+            android:id="@+id/editHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="118dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/feet"
+            android:fontFamily="casual"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HeightText" />
+
+        <TextView
+            android:id="@+id/WeightText"
+            android:layout_width="77dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/weight"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editHeight" />
+
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="118dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/lbs"
+            android:fontFamily="casual"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WeightText" />
+
+        <Button
+            android:id="@+id/profile_record_button"
+            android:layout_width="56dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:fontFamily="casual"
+            android:onClick="ProfileonClick"
+            android:text="@string/save"
+            android:textAlignment="center"
+
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Period" />
+
+        <TextView
+            android:id="@+id/LastStart"
+            android:layout_width="381dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/start_date_of_last_period"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editWeight" />
+
+        <EditText
+            android:id="@+id/editStartDate"
+            android:layout_width="255dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="@string/yyyy_mm_dd"
+            android:inputType="date"
+            android:fontFamily="casual"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LastStart"
+            android:autofillHints="" />
+
+        <TextView
+            android:id="@+id/LastEnd"
+            android:layout_width="381dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/end_date_of_last_period"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editStartDate" />
+
+        <EditText
+            android:id="@+id/editEndDate"
+            android:layout_width="255dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/yyyy_mm_dd"
+            android:inputType="date"
+            android:fontFamily="casual"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LastEnd" />
+
+        <TextView
+            android:id="@+id/CycleLength"
+            android:layout_width="381dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/normal_cycle_length"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editEndDate" />
+
+        <EditText
+            android:id="@+id/Cycle"
+            android:layout_width="255dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/number_of_days_default_28"
+            android:inputType="numberDecimal"
+            android:fontFamily="casual"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CycleLength" />
+
+        <TextView
+            android:id="@+id/PeriodLength"
+            android:layout_width="381dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/normal_period_length"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Cycle" />
+
+        <EditText
+            android:id="@+id/Period"
+            android:layout_width="255dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/number_of_days_default_7"
+            android:inputType="numberDecimal"
+            android:fontFamily="casual"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PeriodLength" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
