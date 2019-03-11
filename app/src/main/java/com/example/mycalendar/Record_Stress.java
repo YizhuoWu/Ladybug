@@ -15,6 +15,7 @@ import java.util.Date;
 public class Record_Stress extends AppCompatActivity {
 
     DatabaseHelper myDb = new DatabaseHelper(this);
+    Algorithm myAlgorithm = new Algorithm();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +25,44 @@ public class Record_Stress extends AppCompatActivity {
     }
 
     public void StressonClick(View view){
+
+        /* 29 days*/
+        myDb.insertData_stress("2019-02-09", "Medium");
+        myDb.insertData_stress("2019-02-10", "Medium");
+        myDb.insertData_stress("2019-02-11", "Stressful");
+        myDb.insertData_stress("2019-02-12", "Medium");
+        myDb.insertData_stress("2019-02-13", "Medium");
+        myDb.insertData_stress("2019-02-14", "Stressful");
+        myDb.insertData_stress("2019-02-15", "Stressful");
+        myDb.insertData_stress("2019-02-16", "Medium");
+        myDb.insertData_stress("2019-02-17", "Medium");
+        myDb.insertData_stress("2019-02-18", "Stressful");
+        myDb.insertData_stress("2019-02-19", "Medium");
+        myDb.insertData_stress("2019-02-20", "Medium");
+        myDb.insertData_stress("2019-02-21", "Medium");
+        myDb.insertData_stress("2019-02-22", "Medium");
+        myDb.insertData_stress("2019-02-23", "Medium");
+        myDb.insertData_stress("2019-02-24", "Medium");
+        myDb.insertData_stress("2019-02-25", "Stressful");
+        myDb.insertData_stress("2019-02-26", "Medium");
+        myDb.insertData_stress("2019-02-27", "Medium");
+        myDb.insertData_stress("2019-02-28", "Medium");
+        myDb.insertData_stress("2019-03-01", "Medium");
+        myDb.insertData_stress("2019-03-02", "Stressful");
+        myDb.insertData_stress("2019-03-03", "Medium");
+        myDb.insertData_stress("2019-03-04", "Medium");
+        myDb.insertData_stress("2019-03-05", "Medium");
+        myDb.insertData_stress("2019-03-06", "Medium");
+        myDb.insertData_stress("2019-03-07", "Stressful");
+        myDb.insertData_stress("2019-03-08", "Medium");
+        myDb.insertData_stress("2019-03-09", "Medium");
+
         SeekBar stress_seekBar = findViewById(R.id.emotion_seekBar);
         int stress_level = stress_seekBar.getProgress();
         stress_level+=1;
 
         add_data(stress_level);
+        myAlgorithm.Record_Summary(myDb);
 
         Intent goHome = new Intent(this,MainActivity.class);
         startActivity(goHome);
@@ -42,13 +76,13 @@ public class Record_Stress extends AppCompatActivity {
         Format formatter = new SimpleDateFormat("yyyy-MM-dd");
         String today = formatter.format(date);
         if (stress_level < 3){
-            myDb.insertData_stress(today,"relaxed");
+            myDb.insertData_stress(today,"Relaxed");
         }
         else if (stress_level == 3){
-            myDb.insertData_stress(today,"medium");
+            myDb.insertData_stress(today,"Medium");
         }
         else if (stress_level > 3){
-            myDb.insertData_stress(today,"stress");
+            myDb.insertData_stress(today,"Stressful");
         }
 
     }

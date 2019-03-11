@@ -18,6 +18,8 @@ public class Stress_History extends AppCompatActivity {
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_STRESS);
         data.moveToLast();
         String print = "";
+        print += "     Date";
+        print += "      Stress Level\n";
 
         if (data.getCount() != 0) {
 

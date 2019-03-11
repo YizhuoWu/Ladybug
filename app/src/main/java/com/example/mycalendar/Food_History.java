@@ -20,27 +20,30 @@ public class Food_History extends AppCompatActivity {
         if (data.getCount() != 0) {
             data.moveToLast();
             String print = "";
+            print += "    Date      ";
+            print += "      Breakfast?     ";
+            print += "                Sugar & Fat Level \n";
             while (data.isFirst() == false) {
                 print += data.getString(0);
-                print += "     ";
+                print += "       ";
                 if (data.getInt(1) == 0) {
                     print += "Don't Have Breakfast";
                     print += "    ";
                 } else {
                     print += "Have Breakfast";
-                    print += "              ";
+                    print += "         ";
                 }
                 print += data.getString(2) + "\n";
                 data.moveToPrevious();
             }
-            print += data.getString(0) + "  ";
-            print += "     ";
+            print += data.getString(0);
+            print += "       ";
             if (data.getInt(1) == 0) {
                 print += "Don't Have Breakfast";
                 print += "    ";
             } else {
                 print += "Have Breakfast";
-                print += "              ";
+                print += "         ";
             }
             print += data.getString(2) + "\n";
 

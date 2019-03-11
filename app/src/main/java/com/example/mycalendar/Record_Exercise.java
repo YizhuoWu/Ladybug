@@ -18,6 +18,7 @@ import java.util.Date;
 public class Record_Exercise extends AppCompatActivity {
 
     DatabaseHelper myDb = new DatabaseHelper(this);
+    Algorithm myAlgorithm = new Algorithm();
     Spinner ExerciseType;
     EditText E_time;
     EditText E_weight;
@@ -43,7 +44,36 @@ public class Record_Exercise extends AppCompatActivity {
     }
 
     public void onClick(View view){
-
+        /* 29 days*/
+        myDb.insertData_exercise("2019-02-09", "Strenuous exercise", 111);
+        myDb.insertData_exercise("2019-02-10", "Strenuous exercise", 110);
+        myDb.insertData_exercise("2019-02-11", "Strenuous exercise", 110);
+        myDb.insertData_exercise("2019-02-12", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-13", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-14", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-15", "Chronic exercise", 110);
+        myDb.insertData_exercise("2019-02-16", "Strenuous exercise", 108);
+        myDb.insertData_exercise("2019-02-17", "Chronic exercise", 108);
+        myDb.insertData_exercise("2019-02-18", "Strenuous exercise", 107);
+        myDb.insertData_exercise("2019-02-19", "Strenuous exercise", 108);
+        myDb.insertData_exercise("2019-02-20", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-21", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-22", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-23", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-24", "Chronic exercise", 109);
+        myDb.insertData_exercise("2019-02-25", "Strenuous exercise", 109);
+        myDb.insertData_exercise("2019-02-26", "No additional exercise", 110);
+        myDb.insertData_exercise("2019-02-27", "Chronic exercise", 110);
+        myDb.insertData_exercise("2019-02-28", "No additional exercise", 110);
+        myDb.insertData_exercise("2019-03-01", "No additional exercise", 112);
+        myDb.insertData_exercise("2019-03-02", "No additional exercise", 112);
+        myDb.insertData_exercise("2019-03-03", "Strenuous exercise", 110);
+        myDb.insertData_exercise("2019-03-04", "No additional exercise", 108);
+        myDb.insertData_exercise("2019-03-05", "Strenuous exercise", 107);
+        myDb.insertData_exercise("2019-03-06", "Strenuous exercise", 107);
+        myDb.insertData_exercise("2019-03-07", "Chronic exercise", 106);
+        myDb.insertData_exercise("2019-03-08", "Strenuous exercise", 106);
+        myDb.insertData_exercise("2019-03-09", "Strenuous exercise", 104);
 
         while (true) {
             String weight = E_weight.getText().toString();
@@ -67,9 +97,13 @@ public class Record_Exercise extends AppCompatActivity {
                 startActivity(goHome);
 
                 add_data(type, finalWeight);
+                myAlgorithm.Record_Summary(myDb);
                 break;
             }
         }
+
+
+
 
     }
 
@@ -101,11 +135,6 @@ public class Record_Exercise extends AppCompatActivity {
         }
 
         myDb.insertData_exercise(today, exercise_type, weight);
-        myDb.insertData_exercise("2019-02-05", "D", 100);
-        myDb.insertData_exercise("2019-02-06", "B", 130);
-        myDb.insertData_exercise("2019-02-07", "D", 110);
-        myDb.insertData_exercise("2019-02-08", "A", 100);
-
     }
 
 }

@@ -36,37 +36,36 @@ public class Record_Food extends AppCompatActivity {
         //Date date = Calendar.getInstance().getTime();
         //String today = date.toString();
 
-        /* 29 days
-        myDb.insertData_food("2019-02-23",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-24",1,"Normal diet");
-        myDb.insertData_food("2019-02-25",0,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-26",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-27",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-28",0,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-29",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-20",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-21",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-22",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-11",1,"High fat and high sugar");
+        /* 29 days*/
+        myDb.insertData_food("2019-02-09",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-10",1,"Normal diet");
+        myDb.insertData_food("2019-02-11",0,"Low fat and low sugar");
         myDb.insertData_food("2019-02-12",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-13",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-14",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-14",0,"Low fat and low sugar");
         myDb.insertData_food("2019-02-15",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-16",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-17",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-18",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-19",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-10",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-04",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-03",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-02",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-01",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-05",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-06",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-07",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-08",1,"Low fat and low sugar");
-        myDb.insertData_food("2019-02-09",1,"Low fat and low sugar");
-        */
+        myDb.insertData_food("2019-02-19",1,"High fat and high sugar");
+        myDb.insertData_food("2019-02-20",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-21",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-22",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-23",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-24",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-25",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-26",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-27",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-28",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-01",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-02",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-03",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-04",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-05",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-06",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-07",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-08",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-09",1,"Low fat and low sugar");
 
 
 
