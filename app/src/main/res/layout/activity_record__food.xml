@@ -145,7 +145,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginEnd="110dp"
         android:checkedButton="@+id/breakfast_yes"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -178,6 +178,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
         android:fontFamily="casual"
@@ -188,6 +189,7 @@
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icecream_image" />
 
     <TextView

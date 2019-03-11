@@ -55,28 +55,26 @@ public class Record_Sleep extends AppCompatActivity {
             data.moveToLast();
 
             String sleepTimeString = data.getString(1);
-            int sleepHour = Integer.parseInt(sleepTimeString.substring(0, 1));
-            int awakeHour = Integer.parseInt(time.substring(0, 1));
-            //having trouble to calculate the length;
-            System.out.print(sleepTimeString.substring(3,4));
-            System.out.print(time.substring(0,1));
-
-            int sleepMin = Integer.parseInt(sleepTimeString.substring(3, 4));
-            int awakeMin = Integer.parseInt(time.substring(3, 4));
+            int sleepHour = Integer.parseInt(sleepTimeString.substring(0, 2));
+            int awakeHour = Integer.parseInt(time.substring(0, 2));
 
 
-            float MinDiff;
-            if (awakeMin >= sleepMin){
-                MinDiff = (awakeMin - sleepMin)/60;
-            }else{
-                MinDiff = (awakeMin + (60 - sleepMin))/60;
+            int sleepMin = Integer.parseInt(sleepTimeString.substring(3, 5));
+            int awakeMin = Integer.parseInt(time.substring(3, 5));
+
+
+            float MinDiff = 0;
+            if ((awakeMin >= sleepMin) && (awakeMin - sleepMin) >= 30){
+                MinDiff = 1;
+            }else if ((awakeMin < sleepMin) && ((awakeMin + 60 - sleepMin) >= 30)){
+                MinDiff = 1;
             }
 
             float HourDiff;
             if (awakeHour <= sleepHour){
-                HourDiff = awakeHour + (24 - sleepHour);
+                HourDiff = awakeHour + (24 - sleepHour) + MinDiff;
             }else{
-                HourDiff = awakeHour - sleepHour;
+                HourDiff = awakeHour - sleepHour + MinDiff;
             }
 
             String quality = "normal";

@@ -19,50 +19,42 @@ public class Sleep_History extends AppCompatActivity {
         TextView sleep_history = findViewById(R.id.sleep_history);
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_SLEEP);
         data.moveToLast();
-        String result = "";
+        String result = "Date           Start       End     Sleep length    Quality \n";
 
         if (data.getCount() != 0) {
 
             while (data.isFirst() == false) {
                 //Get Sleep date (Columnn0)
-                result += "Date: ";
                 result += data.getString(0);
-                result += "  ";
+                result += "   ";
 
                 //Get Sleep Start time
-                result += "Start: ";
                 result += data.getString(1);
-                result += "  ";
+                result += "       ";
 
-                result += "End: ";
-                result += data.getString(2) + '\n';
+                result += data.getString(2);
+                result += "       ";
 
-                result += "Sleep length: ";
                 result += data.getString(3);
-                result += "  ";
+                result += "             ";
 
-                result += "Quality: ";
-                result += data.getString(4) + "\n\n";
+                result += data.getString(4) + "\n";
                 data.moveToPrevious();
             }
-            result += "Date: ";
             result += data.getString(0);
-            result += "  ";
+            result += "   ";
 
             //Get Sleep Start time
-            result += "Start: ";
             result += data.getString(1);
-            result += "  ";
+            result += "       ";
 
-            result += "End: ";
-            result += data.getString(2) + '\n';
+            result += data.getString(2);
+            result += "       ";
 
-            result += "Sleep length: ";
             result += data.getString(3);
-            result += "  ";
+            result += "             ";
 
-            result += "Quality: ";
-            result += data.getString(4) + "\n\n";
+            result += data.getString(4) + "\n";
             data.moveToPrevious();
 
             sleep_history.setText(result);

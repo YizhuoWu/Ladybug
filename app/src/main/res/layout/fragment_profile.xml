@@ -57,7 +57,7 @@
         android:fontFamily="casual"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/background_dark"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

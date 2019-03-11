@@ -90,16 +90,16 @@ public class PorfileFragment extends Fragment{
             data.moveToLast();
             String print = "";
             while (data.isFirst() == false) {
-                print += "ID:  ";
+                print += "ID:       ";
                 print += data.getString(0)+"\n";
 
-                print += "Age:  ";
+                print += "Age:      ";
                 print += data.getInt(1)+"\n";
 
-                print += "Height:  ";
+                print += "Height:   ";
                 print += data.getFloat(2)+"\n";
 
-                print += "Weight:  ";
+                print += "Weight:   ";
                 print += data.getInt(3) + "\n";
                 data.moveToPrevious();
             }

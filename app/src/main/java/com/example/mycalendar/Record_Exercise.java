@@ -102,9 +102,6 @@ public class Record_Exercise extends AppCompatActivity {
             }
         }
 
-
-
-
     }
 
     private void add_data(String exercise_type, int weight){
