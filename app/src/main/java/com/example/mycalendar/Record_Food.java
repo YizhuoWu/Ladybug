@@ -17,6 +17,7 @@ import java.util.Date;
 public class Record_Food extends AppCompatActivity {
 
     DatabaseHelper myDb = new DatabaseHelper(this);
+    Algorithm myAlgorithm = new Algorithm();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,8 @@ public class Record_Food extends AppCompatActivity {
         RadioButton breakfast_false = findViewById(R.id.breakfast_no);
         //Date date = Calendar.getInstance().getTime();
         //String today = date.toString();
-/**
+
+        /* 29 days
         myDb.insertData_food("2019-02-23",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-24",1,"Normal diet");
         myDb.insertData_food("2019-02-25",0,"Low fat and low sugar");
@@ -50,17 +52,23 @@ public class Record_Food extends AppCompatActivity {
         myDb.insertData_food("2019-02-13",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-14",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-15",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-16",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-17",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-18",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-19",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-10",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-11",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-12",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-13",1,"Low fat and low sugar");
-        myDb.insertData_food("2018-02-14",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-16",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-17",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-18",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-19",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-10",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-04",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-03",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-02",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-01",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-05",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-06",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-07",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-08",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-02-09",1,"Low fat and low sugar");
+        */
 
-*/
+
 
         if (breakfast_false.isChecked()){
             add_data(0,food_level);
@@ -70,7 +78,7 @@ public class Record_Food extends AppCompatActivity {
             add_data(1,food_level);
         }
 
-
+        myAlgorithm.Record_Summary(myDb);
 
         Intent goHome = new Intent(this,MainActivity.class);
         startActivity(goHome);

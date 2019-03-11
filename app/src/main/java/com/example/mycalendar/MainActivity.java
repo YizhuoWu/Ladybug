@@ -22,6 +22,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper mainDb;
+    //Algorithm mainalgo;
 
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
@@ -33,33 +34,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /**
-        *Main data base constructed here.
-        * Right now only one table -- "Cycle Table" constructed inside Main DB.
-        * Variable Name = mainDb.
-        * Sample data will be inserted to Main DB Cycle Table.
-        * If success, the message "Sample Data Inserted" will show.
-        * Else failed message will show.
-        *
-        *
-
-        mainDb = new DatabaseHelper(this);
-        boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
-        boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
-        boolean isInserted_sleep = mainDb.insertData_sleep("20180201","1920","0820","good");
-        boolean isInserted_exercise = mainDb.insertData_exercise("20180201","yoga",100);
-        boolean isInserted_stress = mainDb.insertData_stress("20180201","stressed");
-        boolean isInserted_recommend = mainDb.insertData_recommend("good","late");
-        boolean isInserted_summary = mainDb.insertData_summary("April","good","good","good","no","good",2);
-
-        Toast.makeText(MainActivity.this,"All Sample Data Inserted",Toast.LENGTH_LONG).show();
-
-        if(isInserted = true){
-            Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
-        }
-        if(isInserted = false){
-            Toast.makeText(MainActivity.this,"Sample Data Not Inserted",Toast.LENGTH_LONG).show();
-        }
-        */
+         *Main data base constructed here.
+         * Right now only one table -- "Cycle Table" constructed inside Main DB.
+         * Variable Name = mainDb.
+         * Sample data will be inserted to Main DB Cycle Table.
+         * If success, the message "Sample Data Inserted" will show.
+         * Else failed message will show.
+         *
+         *
+         mainDb = new DatabaseHelper(this);
+         boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
+         boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
+         boolean isInserted_sleep = mainDb.insertData_sleep("20180201","1920","0820","good");
+         boolean isInserted_exercise = mainDb.insertData_exercise("20180201","yoga",100);
+         boolean isInserted_stress = mainDb.insertData_stress("20180201","stressed");
+         boolean isInserted_recommend = mainDb.insertData_recommend("good","late");
+         boolean isInserted_summary = mainDb.insertData_summary("April","good","good","good","no","good",2);
+         Toast.makeText(MainActivity.this,"All Sample Data Inserted",Toast.LENGTH_LONG).show();
+         if(isInserted = true){
+         Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
+         }
+         if(isInserted = false){
+         Toast.makeText(MainActivity.this,"Sample Data Not Inserted",Toast.LENGTH_LONG).show();
+         }
+         */
         //Sample Data inserted completed here.
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);

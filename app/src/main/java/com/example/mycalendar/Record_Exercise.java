@@ -101,6 +101,11 @@ public class Record_Exercise extends AppCompatActivity {
         }
 
         myDb.insertData_exercise(today, exercise_type, weight);
+        myDb.insertData_exercise("2019-02-05", "D", 100);
+        myDb.insertData_exercise("2019-02-06", "B", 130);
+        myDb.insertData_exercise("2019-02-07", "D", 110);
+        myDb.insertData_exercise("2019-02-08", "A", 100);
+
     }
 
 }

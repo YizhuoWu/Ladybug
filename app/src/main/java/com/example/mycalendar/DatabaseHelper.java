@@ -36,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String SLEEP_COL_1 = "sleep_date",SLEEP_COL_2 = "start_time",SLEEP_COL_3 = "end_time",SLEEP_COL_4 = "sleep_length",SLEEP_COL_5 = "quality";
     public static final String STRESS_COL_1 = "stress_date",STRESS_COL_2 = "stress_level";
     public static final String RECOMMEND_COL_1 = "state",RECOMMEND_COL_2 = "recommendation";
-    public static final String SUMMARY_COL_1 = "month",SUMMARY_COL_2 = "overall_state",SUMMARY_COL_3 = "food",SUMMARY_COL_4 = "sleep",SUMMARY_COL_5 = "stress",SUMMARY_COL_6 = "exercise",SUMMARY_COL_7 = "cycle_len_change";
+    public static final String SUMMARY_COL_1 = "summary_date",SUMMARY_COL_2 = "overall_state",SUMMARY_COL_3 = "food",SUMMARY_COL_4 = "sleep",SUMMARY_COL_5 = "stress",SUMMARY_COL_6 = "exercise",SUMMARY_COL_7 = "cycle_len_change";
     public static final String PROFILE_COL_1 = "user_id",PROFILE_COL_2 = "age",PROFILE_COL_3 = "height",PROFILE_COL_4 = "weight";
 
 
@@ -59,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_NAME_SLEEP + " (sleep_date TEXT PRIMARY KEY,start_time TEXT ,end_time TEXT ,sleep_length FLOAT(2), quality TEXT)");
         db.execSQL("CREATE TABLE " + TABLE_NAME_STRESS + " (stress_date TEXT PRIMARY KEY,stress_level TEXT) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_RECOMMEND + " (state TEXT PRIMARY KEY,recommendation TEXT) ");
-        db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (month TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_SUMMARY + " (summary_date TEXT PRIMARY KEY,overall_state TEXT ,food TEXT ,sleep TEXT,stress TEXT,exercise TEXT,cycle_len_change INTEGER) ");
         db.execSQL("CREATE TABLE " + TABLE_NAME_PROFILE + "(user_id TEXT PRIMARY KEY,age INTEGER, height FLOAT(2), weight INTEGER) ");
     }
 
@@ -212,7 +212,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      *
-     * @param month
+     * @param summary_date
      * @param overall_state
      * @param food
      * @param sleep
@@ -221,10 +221,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param cycle_len_change
      * @return
      */
-    public boolean insertData_summary(String month,String overall_state,String food, String sleep, String stress, String exercise,int cycle_len_change){
+    public boolean insertData_summary(String summary_date,String overall_state,String food, String sleep, String stress, String exercise,int cycle_len_change){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SUMMARY_COL_1,month);
+        contentValues.put(SUMMARY_COL_1,summary_date);
         contentValues.put(SUMMARY_COL_2,overall_state);
         contentValues.put(SUMMARY_COL_3,food);
         contentValues.put(SUMMARY_COL_4,sleep);
@@ -342,4 +342,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor result = db.rawQuery("select * from "+ table,null);
         return result;
     }
+
+
 }

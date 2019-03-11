@@ -3,6 +3,7 @@ package com.example.mycalendar;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ViewDebug;
 import android.widget.TextView;
 
 public class Exercise_History extends AppCompatActivity {
@@ -19,7 +20,6 @@ public class Exercise_History extends AppCompatActivity {
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_EXERCISE);
         data.moveToLast();
         String print = "";
-
         if (data.getCount() != 0) {
 
             while (data.isFirst() == false) {
