@@ -22,50 +22,18 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper mainDb;
-    //Algorithm mainalgo;
-
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
-         *Main data base constructed here.
-         * Right now only one table -- "Cycle Table" constructed inside Main DB.
-         * Variable Name = mainDb.
-         * Sample data will be inserted to Main DB Cycle Table.
-         * If success, the message "Sample Data Inserted" will show.
-         * Else failed message will show.
-         *
-         *
-         mainDb = new DatabaseHelper(this);
-         boolean isInserted = mainDb.insertData_cycle(0,"Sample Start","Sample End",10,5);
-         boolean isInserted_food = mainDb.insertData_food("20180201",1,"High High");
-         boolean isInserted_sleep = mainDb.insertData_sleep("20180201","1920","0820","good");
-         boolean isInserted_exercise = mainDb.insertData_exercise("20180201","yoga",100);
-         boolean isInserted_stress = mainDb.insertData_stress("20180201","stressed");
-         boolean isInserted_recommend = mainDb.insertData_recommend("good","late");
-         boolean isInserted_summary = mainDb.insertData_summary("April","good","good","good","no","good",2);
-         Toast.makeText(MainActivity.this,"All Sample Data Inserted",Toast.LENGTH_LONG).show();
-         if(isInserted = true){
-         Toast.makeText(MainActivity.this,"Sample Data Inserted",Toast.LENGTH_LONG).show();
-         }
-         if(isInserted = false){
-         Toast.makeText(MainActivity.this,"Sample Data Not Inserted",Toast.LENGTH_LONG).show();
-         }
-         */
-        //Sample Data inserted completed here.
-
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(0).setCheckable(false);
         bottomNav.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
-
-
 
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
@@ -73,29 +41,22 @@ public class MainActivity extends AppCompatActivity {
 
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
-
-        //Set an event for Teacher's Professional Day 2016 which is 21st of October
-
-        Event ev1 = new Event(Color.RED,1551427200000L,"Teacher's Professional Day");
-
-        compactCalendar.addEvent(ev1);
-
-
+        final String s = "2019-03-03";
+        add_event(s);
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
                 Context context = getApplicationContext();
-
-                if (dateClicked.toString().compareTo("Fri Mar 01 00:00:00 PST 2019") == 0){
+                if (dateClicked.toString().compareTo(make_compare_str(s)) == 0){
                     String temp = dateClicked.toString();
                     Log.d("mytag",temp);
-                    Toast.makeText(context, "Teachers' Professional Day", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "This is a period day", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     String temp = dateClicked.toString();
                     Log.d("mytag",temp);
 
-                    Toast.makeText(context, "No Events Planned for that day", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Not a Period day", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -139,4 +100,52 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+    /**
+     *
+     * @param s:formatted data returned by mainDB. Format:yyyy-MM-DD.
+     * @return a Date object used for getting seconds from 1970.01.01.
+     */
+    private Date get_date(String s){
+        String y = s.substring(0,4);
+        int year = Integer.parseInt(y) -1900;
+        String m = s.substring(5,7);
+        int month = Integer.parseInt(m)-1;
+        String d = s.substring(8,10);
+        int day = Integer.parseInt(d);
+        Date date = new Date(year,month,day);
+        return date;
+    }
+
+    /**
+     *
+     * @param s
+     */
+    private void add_event(String s){
+        Date d = get_date(s);
+        long long_date = d.getTime();
+        Event ev1 = new Event(Color.RED,long_date,"Period day");
+        compactCalendar.addEvent(ev1);
+    }
+
+    /**
+     *
+     * @param s
+     * @return
+     */
+    private String make_compare_str(String s){
+        String result = "";
+        Date d = get_date(s);
+        SimpleDateFormat weekday = new SimpleDateFormat("E");
+        SimpleDateFormat month = new SimpleDateFormat("MMM");
+        SimpleDateFormat day = new SimpleDateFormat("dd");
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
+        result += weekday.format(d);
+        result += " ";
+        result += month.format(d);
+        result += " ";
+        result += day.format(d);
+        result += " 00:00:00 PST ";
+        result += year.format(d);
+        return result;
+    }
 }
