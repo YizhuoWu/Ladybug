@@ -62,7 +62,6 @@ public class Record_Stress extends AppCompatActivity {
         stress_level+=1;
 
         add_data(stress_level);
-        myAlgorithm.Record_Summary(myDb);
 
         Intent goHome = new Intent(this,MainActivity.class);
         startActivity(goHome);

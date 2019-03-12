@@ -15,6 +15,7 @@ import java.util.Date;
 
 public class Record_Cycle extends AppCompatActivity {
 
+    Algorithm myAlgorithm = new Algorithm();
     DatabaseHelper myDb = new DatabaseHelper(this);
 
     @Override
@@ -64,6 +65,7 @@ public class Record_Cycle extends AppCompatActivity {
 
             data.moveToPrevious();
             String laststartdateString = data.getString(1);
+            String lastenddateString = data.getString(2);
             int ID = data.getInt(0) + 1;
 
             int cycle_difference = period_differentce(laststartdateString, startdateString);
@@ -74,11 +76,14 @@ public class Record_Cycle extends AppCompatActivity {
 
 
             myDb.insertData_cycle(ID, startdateString, today, cycle_difference, difference);
+
+            myAlgorithm.Record_Summary(myDb, lastenddateString, today);
             //Get current time
         }
 
         Intent goHome = new Intent(this,MainActivity.class);
         startActivity(goHome);
+
 
 
     }

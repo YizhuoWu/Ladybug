@@ -77,8 +77,6 @@ public class Record_Food extends AppCompatActivity {
             add_data(1,food_level);
         }
 
-        myAlgorithm.Record_Summary(myDb);
-
         Intent goHome = new Intent(this,MainActivity.class);
         startActivity(goHome);
 

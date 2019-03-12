@@ -98,7 +98,6 @@ public class Record_Exercise extends AppCompatActivity {
                 startActivity(goHome);
 
                 add_data(type, finalWeight);
-                myAlgorithm.Record_Summary(myDb);
                 break;
             }
         }

@@ -16,18 +16,17 @@ public class Algorithm extends AppCompatActivity{
     String sleep_state;
     String Overall_state;
 
-    private void food_summary(DatabaseHelper Db){
+    private void food_summary(DatabaseHelper Db, String LastEndDate){
 
         int no_breakfast_count = 0;
         int high_foodlevel_count = 0;
         int low_foodlevel_count = 0;
         Cursor food_data = Db.getAllData(DatabaseHelper.TABLE_NAME_FOOD);
         int row_num  = food_data.getCount();
-        if (row_num != 0 && row_num % 30 == 0){
-            int days = 30;
+        if (row_num != 0){
             food_data.moveToLast();
             summary_date = food_data.getString(0);
-            while (days > 1) {
+            while (!food_data.getString(0).equals(LastEndDate)) {
                 if (food_data.getInt(1) == 0){
                     no_breakfast_count += 1;
                 }
@@ -37,7 +36,6 @@ public class Algorithm extends AppCompatActivity{
                 if (food_data.getString(2).equals("Low fat and low sugar")){
                     low_foodlevel_count +=1;
                 }
-                days -= 1;
                 food_data.moveToPrevious();
             }
 
@@ -85,26 +83,23 @@ public class Algorithm extends AppCompatActivity{
         }
     }
 
-    private void stress_summary(DatabaseHelper Db){
+    private void stress_summary(DatabaseHelper Db, String LastEndDate){
 
         int stressful_count = 0;
         Cursor stress_data = Db.getAllData(DatabaseHelper.TABLE_NAME_STRESS);
         int row_num  = stress_data.getCount();
-        if (row_num != 0 && row_num % 30 == 0){
-            int days = 30;
+        if (row_num != 0){
             stress_data.moveToLast();
-            while (days > 1) {
+            while (!stress_data.getString(0).equals(LastEndDate)) {
                 if (stress_data.getString(1).equals("Stressful")){
                     stressful_count +=1;
                 }
-                days -= 1;
                 stress_data.moveToPrevious();
             }
 
             if (stress_data.getString(1).equals("Stressful")){
                 stressful_count +=1;
             }
-
 
             if (stressful_count > 7){
                 stress_state = "Stressful";
@@ -115,24 +110,21 @@ public class Algorithm extends AppCompatActivity{
         }
     }
 
-    private void sleep_summary(DatabaseHelper Db){
+    private void sleep_summary(DatabaseHelper Db, String LastEndDate){
 
         int bad_sleep_count = 0;
         int insufficient_sleep_count = 0;
         Cursor sleep_data = Db.getAllData(DatabaseHelper.TABLE_NAME_SLEEP);
         int row_num  = sleep_data.getCount();
-        if (row_num != 0 && row_num % 30 == 0){
-            int days = 30;
+        if (row_num != 0){
             sleep_data.moveToLast();
-            while (days > 1) {
+            while (!sleep_data.getString(0).equals(LastEndDate)) {
                 if (sleep_data.getString(4).equals("Bad")){
                     bad_sleep_count +=1;
                 }
                 if (sleep_data.getFloat(3) < 7){
                     insufficient_sleep_count +=1;
                 }
-
-                days -= 1;
                 sleep_data.moveToPrevious();
             }
 
@@ -162,7 +154,7 @@ public class Algorithm extends AppCompatActivity{
             }
         }
     }
-    private void exercise_summary(DatabaseHelper Db){
+    private void exercise_summary(DatabaseHelper Db, String LastEndDate){
 
         int strenuous_exercise_count = 0;
         int no_exercise_count = 0;
@@ -172,18 +164,16 @@ public class Algorithm extends AppCompatActivity{
 
         Cursor exercise_data = Db.getAllData(DatabaseHelper.TABLE_NAME_EXERCISE);
         int row_num  = exercise_data.getCount();
-        if (row_num != 0 && row_num % 30 == 0){
-            int days = 30;
+        if (row_num != 0){
             exercise_data.moveToLast();
             current_weight = exercise_data.getInt(2);
-            while (days > 1 ) {
+            while (!exercise_data.getString(0).equals(LastEndDate)) {
                 if (exercise_data.getString(1).equals("Strenuous exercise")){
                     strenuous_exercise_count += 1;
                 }
                 else if (exercise_data.getString(1).equals("No additional exercise")){
                     no_exercise_count += 1;
                 }
-                days -= 1;
                 exercise_data.moveToPrevious();
             }
 
@@ -199,44 +189,46 @@ public class Algorithm extends AppCompatActivity{
             int max = Math.max(strenuous_exercise_count,no_exercise_count);
             weight_change = current_weight - start_weight;
 
-            if (max > 7){
-                if (max == no_exercise_count && weight_change > 5){
-                    exercise_state = "No additional exercise with Increased weight";
-                }
-                else if (max == strenuous_exercise_count && weight_change < -5){
-                    exercise_state = "Strenuous exercise with Reduced weight";
+            if (max > 7) {
+                if (max == no_exercise_count) {
+                    if (weight_change > 5) {
+                        exercise_state = "No additional exercise with Increased weight";
+                    } else if (max == strenuous_exercise_count) {
+                        if (weight_change < -5) {
+                            exercise_state = "Strenuous exercise with Reduced weight";
+                        } else if (weight_change > 5) {
+                            exercise_state = "Strenuous exercise with Increased weight";
+                        } else {
+                            exercise_state = "Strenuous exercise";
+                        }
+                    }
+                } else {
+                    if (weight_change > 5) {
+                        exercise_state = "Increased weight";
+                    }
+                    if (weight_change < -5) {
+                        exercise_state = "Reduced weight";
+                    } else {
+                        exercise_state = "Healthy";
+                    }
                 }
             }
-            else{
-                if (weight_change > 5){
-                    exercise_state = "Increased weight";
-                }
-                if (weight_change < -5){
-                    exercise_state = "Reduced weight";
-                }
-                else{
-                    exercise_state = "Healthy";
-                }
-            }
-
-
-
         }
     }
 
-    public void Record_Summary(DatabaseHelper Db){
-        food_summary(Db);
-        stress_summary(Db);
-        sleep_summary(Db);
-        exercise_summary(Db);
+    public void Record_Summary(DatabaseHelper Db, String LastEndDate, String CurrentDate){
+        food_summary(Db, LastEndDate);
+        stress_summary(Db, LastEndDate);
+        sleep_summary(Db, LastEndDate);
+        exercise_summary(Db, LastEndDate);
         if (food_state != null && exercise_state != null && stress_state != null && sleep_state != null){
             if (food_state.equals("Healthy")&& exercise_state.equals("Healthy")&& stress_state.equals("Healthy")&& sleep_state.equals("Healthy")){
-                Overall_state = "Healthy";
+                Overall_state = "Healthy/Regular";
             }
             else{
-                Overall_state = "Unhealthy";
+                Overall_state = "Unhealthy/Irregular";
             }
-            Db.insertData_summary(summary_date,Overall_state,food_state,sleep_state ,stress_state,exercise_state,300);
+            Db.insertData_summary(CurrentDate,Overall_state,food_state,sleep_state ,stress_state,exercise_state,300);
         }
 
     }
@@ -246,3 +238,5 @@ public class Algorithm extends AppCompatActivity{
         //Db.insertData_summary(summary_date,overall_state, food, sleep, stress, exercise, cycle_len_change);
     //}
 }
+
+

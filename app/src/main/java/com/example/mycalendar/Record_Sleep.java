@@ -72,7 +72,7 @@ public class Record_Sleep extends AppCompatActivity {
             }
 
             float HourDiff;
-            if (awakeHour <= sleepHour){
+            if (awakeHour < sleepHour){
                 HourDiff = awakeHour + (24 - sleepHour) + MinDiff;
             }else{
                 HourDiff = awakeHour - sleepHour + MinDiff;
@@ -129,7 +129,6 @@ public class Record_Sleep extends AppCompatActivity {
 
 
             add_data(today, sleepTimeString, time, HourDiff, quality);
-            myAlgorithm.Record_Summary(myDb);
 
             Intent goHome = new Intent(this,MainActivity.class);
             startActivity(goHome);
