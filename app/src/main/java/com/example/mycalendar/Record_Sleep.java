@@ -92,8 +92,10 @@ public class Record_Sleep extends AppCompatActivity {
             String today = dateFormat.format(DATE);
             myDb.deleteData_sleep();
 
-            /*29 days*/
-
+            /*36 days*/
+            myDb.insertData_sleep("2019-02-7","23:01", "07:10", 6, "Good");
+            myDb.insertData_sleep("2019-02-8","23:01", "07:10", 12, "Good");
+            myDb.insertData_sleep("2019-02-9","20:01", "06:10", 10, "Good");
             myDb.insertData_sleep("2019-02-10","23:01", "07:10", 8, "Good");
             myDb.insertData_sleep("2019-02-11","22:01", "06:10", 8, "Bad");
             myDb.insertData_sleep("2019-02-12","23:01", "07:10", 8, "Good");
@@ -123,9 +125,10 @@ public class Record_Sleep extends AppCompatActivity {
             myDb.insertData_sleep("2019-03-08","23:01", "07:10", 5, "Bad");
             myDb.insertData_sleep("2019-03-09","23:01", "07:10", 8, "Good");
             myDb.insertData_sleep("2019-03-10","23:01", "07:10", 8, "Good");
-
-
-
+            myDb.insertData_sleep("2019-03-11","23:01", "07:10", 5, "Good");
+            myDb.insertData_sleep("2019-03-12","23:01", "07:10", 7, "Good");
+            myDb.insertData_sleep("2019-03-13","23:01", "07:10", 8, "Bad");
+            myDb.insertData_sleep("2019-03-14","23:01", "07:10", 6, "Normal");
 
 
             add_data(today, sleepTimeString, time, HourDiff, quality);
