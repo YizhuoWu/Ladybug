@@ -16,6 +16,7 @@ import java.util.Date;
 public class Record_Sleep extends AppCompatActivity {
 
     DatabaseHelper myDb = new DatabaseHelper(this);
+    Algorithm myAlgorithm = new Algorithm();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +129,7 @@ public class Record_Sleep extends AppCompatActivity {
 
 
             add_data(today, sleepTimeString, time, HourDiff, quality);
+            myAlgorithm.Record_Summary(myDb);
 
             Intent goHome = new Intent(this,MainActivity.class);
             startActivity(goHome);
