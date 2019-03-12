@@ -13,6 +13,8 @@ public class Algorithm extends AppCompatActivity{
     String food_state;
     String exercise_state;
     String stress_state;
+    String sleep_state;
+    String Overall_state;
 
     private void food_summary(DatabaseHelper Db){
 
@@ -22,9 +24,10 @@ public class Algorithm extends AppCompatActivity{
         Cursor food_data = Db.getAllData(DatabaseHelper.TABLE_NAME_FOOD);
         int row_num  = food_data.getCount();
         if (row_num != 0 && row_num % 30 == 0){
+            int days = 30;
             food_data.moveToLast();
             summary_date = food_data.getString(0);
-            while (food_data.isFirst() == false) {
+            while (days > 1) {
                 if (food_data.getInt(1) == 0){
                     no_breakfast_count += 1;
                 }
@@ -34,6 +37,7 @@ public class Algorithm extends AppCompatActivity{
                 if (food_data.getString(2).equals("Low fat and low sugar")){
                     low_foodlevel_count +=1;
                 }
+                days -= 1;
                 food_data.moveToPrevious();
             }
 
@@ -47,21 +51,34 @@ public class Algorithm extends AppCompatActivity{
                 low_foodlevel_count +=1;
             }
 
-            int max = Math.max(high_foodlevel_count,Math.max(low_foodlevel_count,no_breakfast_count));
+            int max = Math.max(high_foodlevel_count,low_foodlevel_count);
 
-            if (max > 7){
-                if (max == high_foodlevel_count){
-                    food_state = "High fat and high sugar";
-                }
-                else if (max == no_breakfast_count){
-                    food_state = "No Breakfast";
+            if (no_breakfast_count > 7){
+                if (max > 7){
+                    if (max == high_foodlevel_count){
+                        food_state = "High fat and high sugar with No Breakfast";
+                    }
+                    else{
+                        food_state = "Low fat and low sugar with No Breakfast";
+                    }
                 }
                 else{
-                 food_state = "Low fat and low sugar";
+                    food_state = "No Breakfast";
                 }
+
             }
             else{
-                food_state = "Healthy";
+                if (max > 7){
+                    if (max == high_foodlevel_count){
+                        food_state = "High fat and high sugar";
+                    }
+                    else{
+                        food_state = "Low fat and low sugar";
+                    }
+                }
+                else{
+                    food_state = "Healthy";
+                }
             }
 
 
@@ -74,11 +91,13 @@ public class Algorithm extends AppCompatActivity{
         Cursor stress_data = Db.getAllData(DatabaseHelper.TABLE_NAME_STRESS);
         int row_num  = stress_data.getCount();
         if (row_num != 0 && row_num % 30 == 0){
+            int days = 30;
             stress_data.moveToLast();
-            while (stress_data.isFirst() == false) {
+            while (days > 1) {
                 if (stress_data.getString(1).equals("Stressful")){
                     stressful_count +=1;
                 }
+                days -= 1;
                 stress_data.moveToPrevious();
             }
 
@@ -96,6 +115,53 @@ public class Algorithm extends AppCompatActivity{
         }
     }
 
+    private void sleep_summary(DatabaseHelper Db){
+
+        int bad_sleep_count = 0;
+        int insufficient_sleep_count = 0;
+        Cursor sleep_data = Db.getAllData(DatabaseHelper.TABLE_NAME_SLEEP);
+        int row_num  = sleep_data.getCount();
+        if (row_num != 0 && row_num % 30 == 0){
+            int days = 30;
+            sleep_data.moveToLast();
+            while (days > 1) {
+                if (sleep_data.getString(4).equals("Bad")){
+                    bad_sleep_count +=1;
+                }
+                if (sleep_data.getFloat(3) < 7){
+                    insufficient_sleep_count +=1;
+                }
+
+                days -= 1;
+                sleep_data.moveToPrevious();
+            }
+
+            if (sleep_data.getString(4).equals("Bad")){
+                bad_sleep_count +=1;
+            }
+            if (sleep_data.getFloat(3) < 7){
+                insufficient_sleep_count +=1;
+            }
+
+            if (bad_sleep_count > 7){
+                if (insufficient_sleep_count > 7){
+                    sleep_state = "Insufficient sleep with Bad sleep quality";
+                }
+                else{
+                    sleep_state = "Bad sleep quality";
+                }
+            }
+            else{
+                if (insufficient_sleep_count > 7){
+                    sleep_state = "Insufficient sleep";
+                }
+                else{
+                    sleep_state = "Healthy";
+                }
+
+            }
+        }
+    }
     private void exercise_summary(DatabaseHelper Db){
 
         int strenuous_exercise_count = 0;
@@ -107,16 +173,17 @@ public class Algorithm extends AppCompatActivity{
         Cursor exercise_data = Db.getAllData(DatabaseHelper.TABLE_NAME_EXERCISE);
         int row_num  = exercise_data.getCount();
         if (row_num != 0 && row_num % 30 == 0){
+            int days = 30;
             exercise_data.moveToLast();
             current_weight = exercise_data.getInt(2);
-            while (exercise_data.isFirst() == false) {
+            while (days > 1 ) {
                 if (exercise_data.getString(1).equals("Strenuous exercise")){
                     strenuous_exercise_count += 1;
                 }
                 else if (exercise_data.getString(1).equals("No additional exercise")){
                     no_exercise_count += 1;
                 }
-
+                days -= 1;
                 exercise_data.moveToPrevious();
             }
 
@@ -134,10 +201,10 @@ public class Algorithm extends AppCompatActivity{
 
             if (max > 7){
                 if (max == no_exercise_count && weight_change > 5){
-                    exercise_state = "No additional exercise with increased weight";
+                    exercise_state = "No additional exercise with Increased weight";
                 }
                 else if (max == strenuous_exercise_count && weight_change < -5){
-                    exercise_state = "Strenuous exercise with reduced weight";
+                    exercise_state = "Strenuous exercise with Reduced weight";
                 }
             }
             else{
@@ -160,9 +227,16 @@ public class Algorithm extends AppCompatActivity{
     public void Record_Summary(DatabaseHelper Db){
         food_summary(Db);
         stress_summary(Db);
+        sleep_summary(Db);
         exercise_summary(Db);
-        if (food_state != null && exercise_state != null && stress_state != null){
-            Db.insertData_summary(summary_date,"health1",food_state,"2" ,stress_state,exercise_state,300);
+        if (food_state != null && exercise_state != null && stress_state != null && sleep_state != null){
+            if (food_state.equals("Healthy")&& exercise_state.equals("Healthy")&& stress_state.equals("Healthy")&& sleep_state.equals("Healthy")){
+                Overall_state = "Healthy";
+            }
+            else{
+                Overall_state = "Unhealthy";
+            }
+            Db.insertData_summary(summary_date,Overall_state,food_state,sleep_state ,stress_state,exercise_state,300);
         }
 
     }

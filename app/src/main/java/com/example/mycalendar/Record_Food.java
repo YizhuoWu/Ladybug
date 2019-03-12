@@ -37,7 +37,6 @@ public class Record_Food extends AppCompatActivity {
         //String today = date.toString();
 
         /* 29 days*/
-        myDb.insertData_food("2019-02-09",1,"Low fat and low sugar");
         myDb.insertData_food("2019-02-10",1,"Normal diet");
         myDb.insertData_food("2019-02-11",0,"Low fat and low sugar");
         myDb.insertData_food("2019-02-12",1,"Low fat and low sugar");
@@ -66,6 +65,7 @@ public class Record_Food extends AppCompatActivity {
         myDb.insertData_food("2019-03-07",1,"Low fat and low sugar");
         myDb.insertData_food("2019-03-08",1,"Low fat and low sugar");
         myDb.insertData_food("2019-03-09",1,"Low fat and low sugar");
+        myDb.insertData_food("2019-03-10",1,"Low fat and low sugar");
 
 
 

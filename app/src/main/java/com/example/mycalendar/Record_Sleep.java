@@ -77,19 +77,55 @@ public class Record_Sleep extends AppCompatActivity {
                 HourDiff = awakeHour - sleepHour + MinDiff;
             }
 
-            String quality = "normal";
+            String quality = "Normal";
             if (Bad_true.isChecked()){
-                quality = "bad";
+                quality = "Bad";
             }else if (Normal_true.isChecked()){
-                quality = "normal";
+                quality = "Normal";
             }else if (Good_true.isChecked()) {
-                quality = "good";
+                quality = "Good";
             }
 
             Date DATE = Calendar.getInstance().getTime();
             Format dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String today = dateFormat.format(DATE);
             myDb.deleteData_sleep();
+
+            /*29 days*/
+
+            myDb.insertData_sleep("2019-02-10","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-02-11","22:01", "06:10", 8, "Bad");
+            myDb.insertData_sleep("2019-02-12","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-02-13","23:01", "07:10", 5, "Bad");
+            myDb.insertData_sleep("2019-02-14","23:01", "07:10", 5, "Bad");
+            myDb.insertData_sleep("2019-02-15","23:01", "07:10", 6, "Bad");
+            myDb.insertData_sleep("2019-02-16","23:01", "07:10", 7, "Normal");
+            myDb.insertData_sleep("2019-02-17","23:01", "07:10", 9, "Good");
+            myDb.insertData_sleep("2019-02-18","23:01", "07:10", 10, "Good");
+            myDb.insertData_sleep("2019-02-19","23:01", "07:10", 5, "Bad");
+            myDb.insertData_sleep("2019-02-20","23:01", "07:10", 6, "Good");
+            myDb.insertData_sleep("2019-02-21","23:01", "07:10", 6, "Good");
+            myDb.insertData_sleep("2019-02-22","23:01", "07:10", 7, "Bad");
+            myDb.insertData_sleep("2019-02-23","23:01", "07:10", 9, "Good");
+            myDb.insertData_sleep("2019-02-24","23:01", "07:10", 9, "Good");
+            myDb.insertData_sleep("2019-02-25","23:01", "07:10", 8, "Bad");
+            myDb.insertData_sleep("2019-02-26","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-02-27","23:01", "07:10", 10, "Good");
+            myDb.insertData_sleep("2019-02-28","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-03-01","23:01", "07:10", 8, "Bad");
+            myDb.insertData_sleep("2019-03-02","23:01", "07:10", 6, "Normal");
+            myDb.insertData_sleep("2019-03-03","23:01", "07:10", 6, "Good");
+            myDb.insertData_sleep("2019-03-04","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-03-05","23:01", "07:10", 9, "Good");
+            myDb.insertData_sleep("2019-03-06","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-03-07","23:01", "07:10", 6, "Normal");
+            myDb.insertData_sleep("2019-03-08","23:01", "07:10", 5, "Bad");
+            myDb.insertData_sleep("2019-03-09","23:01", "07:10", 8, "Good");
+            myDb.insertData_sleep("2019-03-10","23:01", "07:10", 8, "Good");
+
+
+
+
 
             add_data(today, sleepTimeString, time, HourDiff, quality);
 

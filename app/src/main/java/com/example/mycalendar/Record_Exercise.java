@@ -45,7 +45,7 @@ public class Record_Exercise extends AppCompatActivity {
 
     public void onClick(View view){
         /* 29 days*/
-        myDb.insertData_exercise("2019-02-09", "Strenuous exercise", 111);
+
         myDb.insertData_exercise("2019-02-10", "Strenuous exercise", 110);
         myDb.insertData_exercise("2019-02-11", "Strenuous exercise", 110);
         myDb.insertData_exercise("2019-02-12", "Strenuous exercise", 109);
@@ -74,6 +74,7 @@ public class Record_Exercise extends AppCompatActivity {
         myDb.insertData_exercise("2019-03-07", "Chronic exercise", 106);
         myDb.insertData_exercise("2019-03-08", "Strenuous exercise", 106);
         myDb.insertData_exercise("2019-03-09", "Strenuous exercise", 104);
+        myDb.insertData_exercise("2019-03-10", "Strenuous exercise", 104);
 
         while (true) {
             String weight = E_weight.getText().toString();

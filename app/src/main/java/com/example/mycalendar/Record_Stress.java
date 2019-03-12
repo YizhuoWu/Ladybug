@@ -27,7 +27,6 @@ public class Record_Stress extends AppCompatActivity {
     public void StressonClick(View view){
 
         /* 29 days*/
-        myDb.insertData_stress("2019-02-09", "Medium");
         myDb.insertData_stress("2019-02-10", "Medium");
         myDb.insertData_stress("2019-02-11", "Stressful");
         myDb.insertData_stress("2019-02-12", "Medium");
@@ -56,6 +55,7 @@ public class Record_Stress extends AppCompatActivity {
         myDb.insertData_stress("2019-03-07", "Stressful");
         myDb.insertData_stress("2019-03-08", "Medium");
         myDb.insertData_stress("2019-03-09", "Medium");
+        myDb.insertData_stress("2019-03-10", "Medium");
 
         SeekBar stress_seekBar = findViewById(R.id.emotion_seekBar);
         int stress_level = stress_seekBar.getProgress();
