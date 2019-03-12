@@ -138,13 +138,16 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat weekday = new SimpleDateFormat("E");
         SimpleDateFormat month = new SimpleDateFormat("MMM");
         SimpleDateFormat day = new SimpleDateFormat("dd");
+        SimpleDateFormat timezone = new SimpleDateFormat("zzz");
         SimpleDateFormat year = new SimpleDateFormat("yyyy");
         result += weekday.format(d);
         result += " ";
         result += month.format(d);
         result += " ";
         result += day.format(d);
-        result += " 00:00:00 PST ";
+        result += " 00:00:00 ";
+        result += timezone.format(d);
+        result += " ";
         result += year.format(d);
         return result;
     }
