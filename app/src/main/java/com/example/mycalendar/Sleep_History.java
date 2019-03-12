@@ -55,7 +55,6 @@ public class Sleep_History extends AppCompatActivity {
             result += "             ";
 
             result += data.getString(4) + "\n";
-            data.moveToPrevious();
 
             sleep_history.setText(result);
         }

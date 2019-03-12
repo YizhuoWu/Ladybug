@@ -287,11 +287,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * Delete the last row of the cycle table.
      * @return
      */
-    public boolean deleteData_cycle_last_row(){
+    public boolean deleteData_cycle_predicted_row(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor r = db.rawQuery("select MAX(cycle_id) from "+ TABLE_NAME_CYCLE,null);
-        String temp = r.getString(0);
-        long result = db.delete(TABLE_NAME_CYCLE,"cycle_id = ?",new String[]{temp});
+        long result = db.delete(TABLE_NAME_CYCLE,"cycle_id = ?",new String[]{Integer.toString(0)});
         if(result == -1){
             return false;
         }

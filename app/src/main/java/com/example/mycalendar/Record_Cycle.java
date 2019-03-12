@@ -36,7 +36,8 @@ public class Record_Cycle extends AppCompatActivity {
             Date date = Calendar.getInstance().getTime();
             Format formatter = new SimpleDateFormat("yyyy-MM-dd");
             String today = formatter.format(date);
-            add_data(1000, today, "NULL", 0, 0);
+            myDb.deleteData_cycle_predicted_row();
+            add_data(0, today, "NULL", 0, 0);
         }
 
         Intent goHome = new Intent(this, MainActivity.class);
