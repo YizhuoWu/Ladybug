@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import static java.lang.Float.parseFloat;
 
 
@@ -103,5 +105,19 @@ public class Update_Profile extends AppCompatActivity {
                 break;
             }
         }
+
+        Cursor data = myDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
+        data.moveToLast();
+
+        String startdata = data.getString(1);
+        int cycleLenghth = data.getInt(3);
+        int periodLenghth = data.getInt(4);
+
+        ArrayList<String> nextInfo = Algorithm.next_period_info(startdata,cycleLenghth,periodLenghth);
+
+        myDb.insertData_cycle(0,nextInfo.get(0), nextInfo.get(1),cycleLenghth,periodLenghth);
+
+
+
     }
 }

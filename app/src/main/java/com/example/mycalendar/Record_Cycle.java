@@ -72,16 +72,18 @@ public class Record_Cycle extends AppCompatActivity {
             String lastenddateString = data.getString(2);
             int ID = data.getInt(0) + 1;
 
-            int cycle_difference = period_differentce(laststartdateString, startdateString);
+            int cycle_difference = Algorithm.period_differentce(laststartdateString, startdateString);
 
 
-            int difference = period_differentce(startdateString, today);
+            int difference = Algorithm.period_differentce(startdateString, today);
             myDb.deleteData_cycle();
 
 
             myDb.insertData_cycle(ID, startdateString, today, cycle_difference, difference);
 
             myAlgorithm.Record_Summary(myDb, lastenddateString, today);
+
+            Algorithm.predict_next_period(myDb);
             //Get current time
         }
 
@@ -92,49 +94,7 @@ public class Record_Cycle extends AppCompatActivity {
 
     }
 
-    private int period_differentce(String startdate, String enddate){
-        ArrayList<Integer> oneMoreDay = new ArrayList<>();
-        oneMoreDay.add(1);
-        oneMoreDay.add(3);
-        oneMoreDay.add(5);
-        oneMoreDay.add(7);
-        oneMoreDay.add(8);
-        oneMoreDay.add(10);
-        oneMoreDay.add(12);
 
-
-        int startmonth = Integer.parseInt(startdate.substring(5,7));
-        int endmonth = Integer.parseInt(enddate.substring(5,7));
-
-        int startday = Integer.parseInt(startdate.substring(8,10));
-        int endday = Integer.parseInt(enddate.substring(8,10));
-
-        System.out.println(endday);
-
-        int difference = 0;
-
-        if (startmonth != endmonth){
-            if (oneMoreDay.contains(startmonth)){
-                difference = (31-startday) + endday;
-            }
-            else if (startmonth == 2){
-                difference = (28-startday) + endday;
-            }
-            else{
-                difference = (30-startday) + endday;
-            }
-
-        }
-        else{
-            difference = endday - startday;
-        }
-
-        System.out.println(difference);
-
-        return difference;
-
-
-    }
 
     private void add_data(int cycle_id, String start_date, String end_date,
                           int cycle_length, int period_length){

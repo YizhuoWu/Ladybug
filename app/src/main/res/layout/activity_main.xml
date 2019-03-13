@@ -31,10 +31,9 @@
 
     <TextView
         android:id="@+id/to_period"
-        android:layout_width="54dp"
+        android:layout_width="107dp"
         android:layout_height="66dp"
         android:layout_marginTop="36dp"
-        android:text="@string/_0"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

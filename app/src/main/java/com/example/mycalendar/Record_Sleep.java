@@ -144,7 +144,6 @@ public class Record_Sleep extends AppCompatActivity {
     }
 
     private void add_data(String date, String sleep_time, String awake_time, float sleep_length, String quality){
-
         myDb.insertData_sleep(date,sleep_time, awake_time, sleep_length, quality);
     }
 

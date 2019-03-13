@@ -1,6 +1,7 @@
 package com.example.mycalendar;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
 import android.support.annotation.NonNull;
@@ -12,16 +13,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 
+import java.text.Format;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    DatabaseHelper mainDb;
+    DatabaseHelper mainDb = new DatabaseHelper(this);
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
@@ -29,6 +33,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Cursor periodTable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
+        if (periodTable.getCount() != 0) {
+            TextView toNextPeriod = findViewById(R.id.to_period);
+
+            periodTable.moveToFirst();
+            Date date = Calendar.getInstance().getTime();
+            Format formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
+            String today = formatter.format(date);
+            toNextPeriod.setText(Integer.toString(
+                    Algorithm.period_differentce(today, periodTable.getString(1))));
+
+        }
+
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
