@@ -331,6 +331,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+
     /**
      * This method would return the whole DB as result.
      * @return
@@ -340,6 +342,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor result = db.rawQuery("select * from "+ table,null);
         return result;
     }
+
 
 
 }

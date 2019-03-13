@@ -9,19 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Food_History"></activity>
-        <activity android:name=".Record_Food"></activity>
-        <activity android:name=".Sleep_History"></activity>
-        <activity android:name=".Record_Sleep"></activity>
-        <activity android:name=".Exercise_History"></activity>
-        <activity android:name=".Record_Exercise"></activity>
-        <activity android:name=".Record_Stress"></activity>
-        <activity android:name=".Stress_History"></activity>
-        <activity android:name=".Record_Cycle"></activity>
-        <activity android:name=".Cycle_History"></activity>
-        <activity android:name=".Status_History"></activity>
-        <activity android:name=".Update_Profile"></activity>
+        <activity android:name=".Food_History" />
+        <activity android:name=".Record_Food" />
+        <activity android:name=".Sleep_History" />
+        <activity android:name=".Record_Sleep" />
+        <activity android:name=".Exercise_History" />
+        <activity android:name=".Record_Exercise" />
+        <activity android:name=".Record_Stress" />
+        <activity android:name=".Stress_History" />
+        <activity android:name=".Record_Cycle" />
+        <activity android:name=".Cycle_History" />
+        <activity android:name=".Status_History" />
+        <activity android:name=".Update_Profile" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
