@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,9 @@ public class Algorithm extends AppCompatActivity{
     String stress_state;
     String sleep_state;
     String Overall_state;
+    String Recom = "";
+    Recommendation recommendation;
+    HashMap<String, String> recommendation_dictionary = recommendation.Build();
 
     private void food_summary(DatabaseHelper Db, String LastEndDate){
 
@@ -231,6 +236,17 @@ public class Algorithm extends AppCompatActivity{
             else{
                 Overall_state = "Unhealthy/Irregular";
             }
+
+            String arrays[] = {food_state,exercise_state,stress_state,sleep_state};
+            for (String s: arrays) {
+                for (Map.Entry<String, String> map : recommendation_dictionary.entrySet()) {
+                    if (s.contains(map.getKey())) {
+                        Recom += map.getValue();
+                    }
+                }
+            }
+            //Recom is Overall Recommendation
+            //System.out.println(map.getKey() + " " + map.getValue());
             Db.insertData_summary(CurrentDate,Overall_state,food_state,sleep_state ,stress_state,exercise_state,300);
         }
 
