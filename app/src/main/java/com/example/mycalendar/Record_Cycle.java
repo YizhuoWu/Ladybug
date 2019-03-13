@@ -31,7 +31,7 @@ public class Record_Cycle extends AppCompatActivity {
 
         RadioButton start_true = findViewById(R.id.PeriodStart_yes);
         RadioButton start_false = findViewById(R.id.PeriodStart_no);
-
+        //myDb.insertData_cycle(3,"2019-03-12","2019-03-18",28,7);
         if (start_true.isChecked()){
             Date date = Calendar.getInstance().getTime();
             Format formatter = new SimpleDateFormat("yyyy-MM-dd");
