@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
 
+        /*
         Cursor periodTable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
         if (periodTable.getCount() != 0) {
             TextView toNextPeriod = findViewById(R.id.to_period);
@@ -64,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
                     Algorithm.period_differentce(today, periodTable.getString(1))));
 
         }
-
-
-
+        */
+        
         /*Inserr Cycle sample here*/
         DatabaseHelper myDb = new DatabaseHelper(this);
         boolean r = myDb.insertData_cycle(3,"2019-03-13","2019-03-18",28,7);

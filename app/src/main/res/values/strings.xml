@@ -102,6 +102,7 @@
     <string name="number_of_days_default_7">Number of days: (defult=7)</string>
     <string name="new_user_enter_your_period_info">New user? Enter your period info</string>
     <string name="past_states_history_recommendations"><![CDATA[Past States History & Recommendations]]></string>
+    <string name="welcome_to_ladybug">Welcome to Ladybug!</string>
 
 
 </resources>
