@@ -28,7 +28,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    DatabaseHelper mainDb;
+    DatabaseHelper mainDb = new DatabaseHelper(this);
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
