@@ -14,7 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.Format;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -48,6 +51,19 @@ public class MainActivity extends AppCompatActivity {
 
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
+
+        Cursor periodTable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
+        if (periodTable.getCount() != 0) {
+            TextView toNextPeriod = findViewById(R.id.to_period);
+
+            periodTable.moveToFirst();
+            Date date = Calendar.getInstance().getTime();
+            Format formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
+            String today = formatter.format(date);
+            toNextPeriod.setText(Integer.toString(
+                    Algorithm.period_differentce(today, periodTable.getString(1))));
+
+        }
 
 
 
