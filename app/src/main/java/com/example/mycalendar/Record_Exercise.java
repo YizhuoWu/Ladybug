@@ -44,7 +44,7 @@ public class Record_Exercise extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        /* 29 days*/
+        /* 36 days*/
 
         myDb.insertData_exercise("2019-02-10", "Strenuous exercise", 110);
         myDb.insertData_exercise("2019-02-11", "Strenuous exercise", 110);

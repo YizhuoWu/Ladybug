@@ -40,6 +40,9 @@ public class Record_Cycle extends AppCompatActivity {
             add_data(0, today, "NULL", 0, 0);
         }
 
+        //Inserting data for 1 month
+        myDb.insertData_summary("2019-01-15","Unhealthy/Irregular","Low fat and low sugar with No Breakfast","healthy" ,"healthy","healthy",-5);
+
         Intent goHome = new Intent(this, MainActivity.class);
         startActivity(goHome);
 

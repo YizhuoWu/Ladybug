@@ -24,60 +24,60 @@ public class Status_History extends AppCompatActivity {
                 //Get Sleep date (Columnn0)
                 result += "Month: ";
                 result += data.getString(0);
-                result += "   ";
+                result += "\n";
 
                 //Get Sleep Start time
                 result += "Health State: ";
                 result += data.getString(1);
                 result += "\n";
 
-                result += "Substate--Food: ";
+                result += "Substate--Food:  ";
                 result += data.getString(2);
-                result += "  ";
+                result += " \n";
 
 
-                result += "Substate--Sleep: ";
+                result += "Substate--Sleep:  ";
                 result += data.getString(3);
                 result += "\n";
 
-                result += "Substate--Stress: ";
+                result += "Substate--Stress:  ";
                 result += data.getString(4);
-                result += "  ";
+                result += " \n";
 
-                result += "Substate--Exercise: ";
-                result += data.getString(5) + "\n";
+                result += "Substate--Exercise:  ";
+                result += data.getString(5) + "\n\n";
 
-                result += "Recommendation: ";
-                result += data.getString(7) + "\n";
+                //result += "Recommendation: ";
+                //result += data.getString(7) + "\n";
                 data.moveToPrevious();
             }
             result += "Month: ";
             result += data.getString(0);
-            result += "   ";
+            result += "\n";
 
             //Get Sleep Start time
-            result += "Health State: ";
+            result += "Health State:  ";
             result += data.getString(1);
             result += "\n";
 
-            result += "Substate--Food: ";
+            result += "Substate--Food:  ";
             result += data.getString(2);
-            result += "  ";
+            result += "\n";
 
 
-            result += "Substate--Sleep: ";
+            result += "Substate--Sleep:  ";
             result += data.getString(3);
             result += "\n";
 
-            result += "Substate--Stress: ";
+            result += "Substate--Stress:  ";
             result += data.getString(4);
-            result += "  ";
+            result += "\n";
 
-            result += "Substate--Exercise: ";
-            result += data.getString(5) + "\n";
+            result += "Substate--Exercise:  ";
+            result += data.getString(5) + "\n\n";
 
-            result += "Recommendation: ";
-            result += data.getString(7) + "\n";
+            //result += "Recommendation: ";
+            //result += data.getString(7) + "\n";
 
             status_history.setText(result);
 
