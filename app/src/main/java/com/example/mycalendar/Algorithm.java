@@ -21,7 +21,7 @@ public class Algorithm extends AppCompatActivity{
     String sleep_state;
     String Overall_state;
     String Recom = "";
-    Recommendation recommendation;
+    Recommendation recommendation = new Recommendation();
     HashMap<String, String> recommendation_dictionary = recommendation.Build();
 
     private void food_summary(DatabaseHelper Db, String LastEndDate){
