@@ -103,6 +103,7 @@
     <string name="new_user_enter_your_period_info">New user? Enter your period info</string>
     <string name="past_states_history_recommendations"><![CDATA[Past States History & Recommendations]]></string>
     <string name="welcome_to_ladybug">Welcome to Ladybug!</string>
+    <string name="todo">TODO</string>
 
 
 </resources>
