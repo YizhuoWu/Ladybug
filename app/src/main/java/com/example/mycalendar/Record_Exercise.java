@@ -41,9 +41,6 @@ public class Record_Exercise extends AppCompatActivity {
         E_weight = (EditText) findViewById(R.id.Weight_Input);
         E_update = (Button) findViewById(R.id.exercise_record_save);
 
-    }
-
-    public void onClick(View view){
         /* 36 days*/
 
         myDb.insertData_exercise("2019-02-10", "Strenuous exercise", 110);
@@ -75,6 +72,11 @@ public class Record_Exercise extends AppCompatActivity {
         myDb.insertData_exercise("2019-03-08", "Strenuous exercise", 106);
         myDb.insertData_exercise("2019-03-09", "Strenuous exercise", 104);
         myDb.insertData_exercise("2019-03-10", "Strenuous exercise", 104);
+
+    }
+
+    public void onClick(View view){
+
 
         while (true) {
             String weight = E_weight.getText().toString();

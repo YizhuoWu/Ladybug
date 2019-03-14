@@ -31,12 +31,16 @@
 
     <TextView
         android:id="@+id/to_period"
-        android:layout_width="107dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="36dp"
-        android:textSize="50sp"
+        android:layout_width="95dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:fontFamily="casual"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DaystoPeriod" />
 
@@ -44,14 +48,46 @@
         android:id="@+id/DaystoPeriod"
         android:layout_width="195dp"
         android:layout_height="41dp"
+        android:layout_marginTop="230dp"
         android:text="@string/days_to_period"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="25sp"
+        android:fontFamily="casual"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textStyle="bold"
+        android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintTop_toTopOf="@+id/fragment_container" />
+
+    <TextView
+        android:id="@+id/ViewRecomText"
+        android:layout_width="361dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="casual"
+        android:text="@string/recommendations_summaries"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+
+    <Button
+        android:id="@+id/RecomButt"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_action_viewhistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <ProgressBar
         android:id="@+id/progressBar"

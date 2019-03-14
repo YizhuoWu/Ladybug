@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        /*Inserr Cycle sample here*/
+        /*Insert Cycle sample here
         DatabaseHelper myDb = new DatabaseHelper(this);
-        boolean r = myDb.insertData_cycle(102,"2019-03-13","2019-03-18",28,7);
+        boolean r = myDb.insertData_cycle(2,"2019-03-13","2019-03-18",28,7);
         String start = get_start_date_from_db(myDb);
         String end = get_end_date_from_db(myDb);
         Date st = get_date(start);
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        );
+        );*/
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

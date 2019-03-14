@@ -23,18 +23,6 @@ public class Record_Food extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record__food);
-    }
-
-
-    public void FoodonClick(View view){
-        SeekBar food_seekBar = findViewById(R.id.food_seekBar);
-        int food_level = food_seekBar.getProgress();
-        food_level+=1;
-
-        RadioButton breakfast_true = findViewById(R.id.breakfast_yes);
-        RadioButton breakfast_false = findViewById(R.id.breakfast_no);
-        //Date date = Calendar.getInstance().getTime();
-        //String today = date.toString();
 
         /* 36 days*/
         myDb.insertData_food("2019-02-07",1,"Normal diet");
@@ -73,7 +61,18 @@ public class Record_Food extends AppCompatActivity {
         myDb.insertData_food("2019-03-12",1,"Normal diet");
         myDb.insertData_food("2019-03-13",1,"Normal diet");
         myDb.insertData_food("2019-03-14",1,"Normal diet");
+    }
 
+
+    public void FoodonClick(View view){
+        SeekBar food_seekBar = findViewById(R.id.food_seekBar);
+        int food_level = food_seekBar.getProgress();
+        food_level+=1;
+
+        RadioButton breakfast_true = findViewById(R.id.breakfast_yes);
+        RadioButton breakfast_false = findViewById(R.id.breakfast_no);
+        //Date date = Calendar.getInstance().getTime();
+        //String today = date.toString();
 
 
         if (breakfast_false.isChecked()){

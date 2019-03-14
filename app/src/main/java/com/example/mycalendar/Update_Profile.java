@@ -115,7 +115,7 @@ public class Update_Profile extends AppCompatActivity {
 
         ArrayList<String> nextInfo = Algorithm.next_period_info(startdata,cycleLenghth,periodLenghth);
 
-        myDb.insertData_cycle(0,nextInfo.get(0), nextInfo.get(1),cycleLenghth,periodLenghth);
+        myDb.insertData_cycle(10000,nextInfo.get(0), nextInfo.get(1),cycleLenghth,periodLenghth);
 
 
 

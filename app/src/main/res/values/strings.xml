@@ -104,6 +104,9 @@
     <string name="past_states_history_recommendations"><![CDATA[Past States History & Recommendations]]></string>
     <string name="welcome_to_ladybug">Welcome to Ladybug!</string>
     <string name="todo">TODO</string>
+    <string name="ladybug">Ladybug</string>
+    <string name="view_recommendations_summaries"><![CDATA[view recommendations & summaries!]]></string>
+    <string name="recommendations_summaries"><![CDATA[Recommendations & Summaries]]></string>
 
 
 </resources>

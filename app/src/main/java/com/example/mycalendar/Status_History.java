@@ -45,10 +45,11 @@ public class Status_History extends AppCompatActivity {
                 result += " \n";
 
                 result += "Substate--Exercise:  ";
-                result += data.getString(5) + "\n\n";
+                result += data.getString(5) + "\n";
 
-                //result += "Recommendation: ";
-                //result += data.getString(7) + "\n";
+                result += "Recommendation:" + "\n";
+                result += data.getString(7) + "\n\n";
+
                 data.moveToPrevious();
             }
             result += "Month: ";
@@ -65,6 +66,8 @@ public class Status_History extends AppCompatActivity {
             result += "\n";
 
 
+
+
             result += "Substate--Sleep:  ";
             result += data.getString(3);
             result += "\n";
@@ -74,10 +77,10 @@ public class Status_History extends AppCompatActivity {
             result += "\n";
 
             result += "Substate--Exercise:  ";
-            result += data.getString(5) + "\n\n";
+            result += data.getString(5) + "\n";
 
-            //result += "Recommendation: ";
-            //result += data.getString(7) + "\n";
+            result += "Recommendation:" + "\n";
+            result += data.getString(7)  + "\n\n";
 
             status_history.setText(result);
 

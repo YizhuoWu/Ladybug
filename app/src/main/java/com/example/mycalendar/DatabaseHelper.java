@@ -221,7 +221,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param cycle_len_change
      * @return
      */
-    public boolean insertData_summary(String summary_date,String overall_state,String food, String sleep, String stress, String exercise,int cycle_len_change){
+    public boolean insertData_summary(String summary_date,String overall_state,String food, String sleep,
+                                      String stress, String exercise,int cycle_len_change, String recommendations){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(SUMMARY_COL_1,summary_date);
@@ -231,6 +232,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(SUMMARY_COL_5,stress);
         contentValues.put(SUMMARY_COL_6,exercise);
         contentValues.put(SUMMARY_COL_7,cycle_len_change);
+        contentValues.put(SUMMARY_COL_8,recommendations);
         long result = db.insert(TABLE_NAME_SUMMARY,null,contentValues);
         if(result == -1){
             return false;
@@ -289,7 +291,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public boolean deleteData_cycle_predicted_row(){
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(TABLE_NAME_CYCLE,"cycle_id = ?",new String[]{Integer.toString(0)});
+        long result = db.delete(TABLE_NAME_CYCLE,"cycle_id = ?",new String[]{Integer.toString(10000)});
         if(result == -1){
             return false;
         }

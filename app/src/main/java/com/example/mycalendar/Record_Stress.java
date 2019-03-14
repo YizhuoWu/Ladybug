@@ -22,10 +22,6 @@ public class Record_Stress extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_stress);
 
-    }
-
-    public void StressonClick(View view){
-
         /* 36 days*/
         myDb.insertData_stress("2019-02-7", "Medium");
         myDb.insertData_stress("2019-02-8", "Relaxed");
@@ -63,6 +59,11 @@ public class Record_Stress extends AppCompatActivity {
         myDb.insertData_stress("2019-03-12", "Relaxed");
         myDb.insertData_stress("2019-03-13", "Medium");
         myDb.insertData_stress("2019-03-14", "Medium");
+
+    }
+
+    public void StressonClick(View view){
+
 
         SeekBar stress_seekBar = findViewById(R.id.emotion_seekBar);
         int stress_level = stress_seekBar.getProgress();

@@ -37,11 +37,11 @@ public class Record_Cycle extends AppCompatActivity {
             Format formatter = new SimpleDateFormat("yyyy-MM-dd");
             String today = formatter.format(date);
             myDb.deleteData_cycle_predicted_row();
-            add_data(0, today, "NULL", 0, 0);
+            add_data(10000, today, "NULL", 0, 0);
         }
 
         //Inserting data for 1 month
-        myDb.insertData_summary("2019-01-15","Unhealthy/Irregular","Low fat and low sugar with No Breakfast","healthy" ,"healthy","healthy",-5);
+        //myDb.insertData_summary("2019-01-15","Unhealthy/Irregular","Low fat and low sugar with No Breakfast","healthy" ,"healthy","healthy",-5);
 
         Intent goHome = new Intent(this, MainActivity.class);
         startActivity(goHome);
@@ -66,24 +66,31 @@ public class Record_Cycle extends AppCompatActivity {
 
             String startdateString = data.getString(1);
 
+            //System.out.print(startdateString);
 
             data.moveToPrevious();
             String laststartdateString = data.getString(1);
             String lastenddateString = data.getString(2);
+            int lastcycleChange = data.getInt(3);
             int ID = data.getInt(0) + 1;
+            System.out.print(ID);
 
+            //Cycle length
             int cycle_difference = Algorithm.period_differentce(laststartdateString, startdateString);
 
-
+            //Period length
             int difference = Algorithm.period_differentce(startdateString, today);
+
+            //cycle length change
+            int cycle_change = cycle_difference - lastcycleChange;
             myDb.deleteData_cycle();
 
 
             myDb.insertData_cycle(ID, startdateString, today, cycle_difference, difference);
 
-            myAlgorithm.Record_Summary(myDb, lastenddateString, today);
+            myAlgorithm.Record_Summary(myDb, lastenddateString, today, cycle_change);
 
-            Algorithm.predict_next_period(myDb);
+            myAlgorithm.predict_next_period(myDb);
             //Get current time
         }
 

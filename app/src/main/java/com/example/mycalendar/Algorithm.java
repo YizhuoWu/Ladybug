@@ -20,7 +20,6 @@ public class Algorithm extends AppCompatActivity{
     String stress_state;
     String sleep_state;
     String Overall_state;
-    String Recom = "";
     Recommendation recommendation = new Recommendation();
     HashMap<String, String> recommendation_dictionary = recommendation.Build();
 
@@ -224,7 +223,7 @@ public class Algorithm extends AppCompatActivity{
         }
     }
 
-    public void Record_Summary(DatabaseHelper Db, String LastEndDate, String CurrentDate){
+    public void Record_Summary(DatabaseHelper Db, String LastEndDate, String CurrentDate, int cycle_len_change){
         food_summary(Db, LastEndDate);
         stress_summary(Db, LastEndDate);
         sleep_summary(Db, LastEndDate);
@@ -237,6 +236,7 @@ public class Algorithm extends AppCompatActivity{
                 Overall_state = "Unhealthy/Irregular";
             }
 
+            String Recom = "";
             String arrays[] = {food_state,exercise_state,stress_state,sleep_state};
             for (String s: arrays) {
                 for (Map.Entry<String, String> map : recommendation_dictionary.entrySet()) {
@@ -247,7 +247,7 @@ public class Algorithm extends AppCompatActivity{
             }
             //Recom is Overall Recommendation
             //System.out.println(map.getKey() + " " + map.getValue());
-            Db.insertData_summary(CurrentDate,Overall_state,food_state,sleep_state ,stress_state,exercise_state,300);
+            Db.insertData_summary(CurrentDate,Overall_state,food_state,sleep_state ,stress_state,exercise_state, cycle_len_change, Recom);
         }
 
     }
@@ -432,7 +432,7 @@ public class Algorithm extends AppCompatActivity{
 
         if (overall_status == "Healthy/Regular"){
             ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day,average_cycle,average_period);
-            db.insertData_cycle(0,period_INFO.get(0),period_INFO.get(1),average_cycle,average_period);
+            db.insertData_cycle(10000,period_INFO.get(0),period_INFO.get(1),average_cycle,average_period);
         }
         else{
             int average_change = 0;
@@ -462,14 +462,14 @@ public class Algorithm extends AppCompatActivity{
 
                 ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day,
                         average_cycle+average_change,average_period);
-                db.insertData_cycle(0,period_INFO.get(0),period_INFO.get(1),
+                db.insertData_cycle(10000,period_INFO.get(0),period_INFO.get(1),
                         average_cycle+average_change,average_period);
             }
             else{
                 int randomnumber = (int) (Math.random() * 10) +(-5);
                 ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day,
                         average_cycle+randomnumber,average_period);
-                db.insertData_cycle(0,period_INFO.get(0),period_INFO.get(1),
+                db.insertData_cycle(10000,period_INFO.get(0),period_INFO.get(1),
                         average_cycle+randomnumber,average_period);
             }
 
