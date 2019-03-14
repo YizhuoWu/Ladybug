@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "231756645768",
+    "firebase_url": "https://ladybug-df329.firebaseio.com",
+    "project_id": "ladybug-df329",
+    "storage_bucket": "ladybug-df329.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231756645768:android:e8e3221524491832",
+        "android_client_info": {
+          "package_name": "com.example.mycalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231756645768-iru4nfhq2oujmatc7qng3qe5qrmps39o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD994M-z9Rr_L4gGWUi4zwbhjwK_gQkHi4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

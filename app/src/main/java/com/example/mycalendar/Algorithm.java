@@ -476,6 +476,8 @@ public class Algorithm extends AppCompatActivity{
         }
     }
 
+
+
     public static int period_differentce(String startdate, String enddate){
         ArrayList<Integer> oneMoreDay = new ArrayList<>();
         oneMoreDay.add(1);
