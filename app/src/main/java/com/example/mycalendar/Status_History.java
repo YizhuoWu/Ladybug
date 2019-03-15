@@ -22,8 +22,8 @@ public class Status_History extends AppCompatActivity {
         if (data.getCount() != 0) {
             while (data.isFirst() == false) {
                 //Get Sleep date (Columnn0)
-                result += "Month: ";
-                result += data.getString(0);
+                result += "Month:  ";
+                result += data.getString(0).substring(0,7);
                 result += "\n";
 
                 //Get Sleep Start time
@@ -52,8 +52,8 @@ public class Status_History extends AppCompatActivity {
 
                 data.moveToPrevious();
             }
-            result += "Month: ";
-            result += data.getString(0);
+            result += "Month:  ";
+            result += data.getString(0).substring(0,7);
             result += "\n";
 
             //Get Sleep Start time

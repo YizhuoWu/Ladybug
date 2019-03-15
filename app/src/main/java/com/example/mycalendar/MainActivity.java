@@ -1,6 +1,7 @@
 package com.example.mycalendar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
@@ -14,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
 
-
+        Button Recom = (Button) findViewById(R.id.RecomButt);
 
 
         Cursor periodTable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
@@ -111,6 +114,24 @@ public class MainActivity extends AppCompatActivity {
 
         );*/
     }
+
+    public void changeButtonVisibility(boolean visibility){
+        Button Recom = (Button) findViewById(R.id.RecomButt);
+        if(visibility){
+            Recom.setVisibility(View.VISIBLE);
+        }else{
+            Recom.setVisibility(View.GONE);
+        }
+    }
+
+    public void RecomonClick(View view){
+        Button Recom = (Button) findViewById(R.id.RecomButt);
+        Intent goRecom = new Intent(this,Status_History.class);
+        startActivity(goRecom);
+
+        //Toast.makeText(Record_Food.this,Integer.toString(food_level),Toast.LENGTH_LONG).show();
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override

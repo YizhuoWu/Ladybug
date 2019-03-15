@@ -18,19 +18,19 @@ public class Stress_History extends AppCompatActivity {
         Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_STRESS);
         data.moveToLast();
         String print = "";
-        print += "     Date";
-        print += "      Stress Level\n";
+        print += "   Date";
+        print += "                       Stress Level\n";
 
         if (data.getCount() != 0) {
 
             while (data.isFirst() == false) {
                 print += data.getString(0);
-                print += "     ";
+                print += "                       ";
                 print += data.getString(1) + "\n";
                 data.moveToPrevious();
             }
             print += data.getString(0);
-            print += "     ";
+            print += "                       ";
             print += data.getString(1) + "\n";
             data.moveToPrevious();
 

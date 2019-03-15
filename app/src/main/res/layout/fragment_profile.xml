@@ -27,38 +27,37 @@
         android:layout_width="61dp"
         android:layout_height="56dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/ic_action_recordmyday"
         android:lineSpacingExtra="52sp"
         android:onClick="CycleOnClick"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/HomeButt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecordCycleText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/ProfilePic"
         android:layout_width="121dp"
         android:layout_height="137dp"
-        android:layout_marginEnd="172dp"
         android:contentDescription="@string/profileimage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imageview_profilefragpic" />
 
     <TextView
         android:id="@+id/UserInfoText"
-        android:layout_width="331dp"
-        android:layout_height="157dp"
+        android:layout_width="266dp"
+        android:layout_height="313dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="165dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="casual"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,8 +65,8 @@
         android:id="@+id/RecordCycleText"
         android:layout_width="170dp"
         android:layout_height="28dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="casual"
         android:text="@string/record_your_cycle_here"
         android:textAlignment="viewStart"
@@ -76,7 +75,7 @@
         android:textSize="15sp"
         android:typeface="sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserInfoText" />
+        app:layout_constraintTop_toBottomOf="@+id/cycle_record_button" />
 
     <Button
         android:id="@+id/EditProfileButt"
@@ -99,55 +98,53 @@
 
     <Button
         android:id="@+id/PastStatusButt"
-        android:layout_width="131dp"
-        android:layout_height="41dp"
+        android:layout_width="89dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="91dp"
         android:layout_marginEnd="8dp"
         android:background="@color/colorPrimaryDark"
         android:fontFamily="casual"
         android:text="@string/view_past_status"
-        android:textColor="@android:color/background_dark"
         android:textSize="12sp"
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.729"
         app:layout_constraintStart_toEndOf="@+id/ProfilePic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/cycle_history_button"
-        android:layout_width="64dp"
-        android:layout_height="59dp"
+        android:layout_width="65dp"
+        android:layout_height="57dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="53dp"
         android:background="@drawable/ic_action_viewhistory"
         android:lineSpacingExtra="52sp"
         android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/HomeButt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/cycle_record_button"
-        app:layout_constraintTop_toBottomOf="@+id/ViewCycleText" />
+        app:layout_constraintStart_toEndOf="@+id/cycle_record_button" />
 
     <TextView
         android:id="@+id/ViewCycleText"
         android:layout_width="116dp"
         android:layout_height="0dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="casual"
         android:text="@string/view_cycle_record"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@android:color/background_dark"
         android:textSize="15sp"
         android:typeface="sans"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toEndOf="@+id/RecordCycleText"
-        app:layout_constraintTop_toBottomOf="@+id/UserInfoText" />
+        app:layout_constraintTop_toBottomOf="@+id/cycle_history_button" />
 
 
 

@@ -58,6 +58,9 @@ public class FoodFragment extends Fragment {
             }
         });
 
+        MainActivity activity = (MainActivity) getActivity();
+        activity.changeButtonVisibility(false);
+
 
         return view;
     }

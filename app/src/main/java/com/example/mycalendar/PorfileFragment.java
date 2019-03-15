@@ -121,6 +121,8 @@ public class PorfileFragment extends Fragment{
             userInfo.setText("Edit your profile to get started!");
         }
 
+        MainActivity activity = (MainActivity) getActivity();
+        activity.changeButtonVisibility(false);
 
         return view;}
 

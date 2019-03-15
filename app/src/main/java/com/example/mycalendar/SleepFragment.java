@@ -50,5 +50,8 @@ public class SleepFragment extends Fragment {
                 startActivity(goSleepHistory);
             }
         });
+
+        MainActivity activity = (MainActivity) getActivity();
+        activity.changeButtonVisibility(false);
         return view;}
 }
