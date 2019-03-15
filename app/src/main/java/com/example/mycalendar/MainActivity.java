@@ -72,14 +72,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        /*Insert Cycle sample here
+        //Insert Cycle sample here
         DatabaseHelper myDb = new DatabaseHelper(this);
-        boolean r = myDb.insertData_cycle(2,"2019-03-13","2019-03-18",28,7);
-        String start = get_start_date_from_db(myDb);
-        String end = get_end_date_from_db(myDb);
-        Date st = get_date(start);
-        Date e = get_date(end);
-        getDatesBetween(st,e);
+
+        boolean r = myDb.insertData_cycle(167,"2019-03-13","2019-03-20",28,7);
+        add_all_from_db(myDb);
+        //String start = get_start_date_from_db(myDb);
+        //String end = get_end_date_from_db(myDb);
+        //Date st = get_date(start);
+        //Date e = get_date(end);
+        //addDatesBetween(st,e);
+        //removeDatesBetween(st,e);
+
         final String s = "2019-03-03";
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
@@ -91,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 if (dateClicked.toString().compareTo(make_compare_str(s)) == 0){
                     String temp = dateClicked.toString();
                     Log.d("mytag",temp);
-                    Toast.makeText(context, "This is a period day", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -100,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     String temp = dateClicked.toString();
                     Log.d("mytag",temp);
 
-                    Toast.makeText(context, "Not a Period day", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -112,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        );*/
+        );
     }
 
     public void changeButtonVisibility(boolean visibility){
@@ -192,11 +196,21 @@ public class MainActivity extends AppCompatActivity {
         compactCalendar.addEvent(ev1);
     }
 
-
     private void add_event_date(Date d){
         long long_date = d.getTime();
         Event ev1 = new Event(Color.RED,long_date,"Period day");
         compactCalendar.addEvent(ev1);
+    }
+
+    private void remove_date_str(String s){
+        Date d = get_date(s);
+        long long_date = d.getTime();
+        compactCalendar.removeEvents(long_date);
+    }
+
+    private void remove_event_date(Date d){
+        long long_date = d.getTime();
+        compactCalendar.removeEvents(long_date);
     }
 
     /**
@@ -239,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
         return end_date;
     }
 
-    public List<Date> getDatesBetween(Date startDate, Date endDate){
+    public List<Date> addDatesBetween(Date startDate, Date endDate){
         List<Date> datesInRange = new ArrayList<>();
         Calendar calendar = new GregorianCalendar();
         calendar.setTime(startDate);
@@ -254,10 +268,79 @@ public class MainActivity extends AppCompatActivity {
 
             add_event_date(result);
 
-
         }
         add_event_date(endDate);
         return datesInRange;
+    }
+
+    public List<Date> removeDatesBetween(Date startDate, Date endDate){
+        List<Date> datesInRange = new ArrayList<>();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(startDate);
+
+        Calendar endCalendar = new GregorianCalendar();
+        endCalendar.setTime(endDate);
+
+        while (calendar.before(endCalendar)) {
+            Date result = calendar.getTime();
+            datesInRange.add(result);
+            calendar.add(Calendar.DATE, 1);
+
+            remove_event_date(result);
+
+        }
+        remove_event_date(endDate);
+        return datesInRange;
+    }
+
+    public void add_all_from_db(DatabaseHelper db){
+        Cursor data = db.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
+        data.moveToLast();
+        if (data.getCount() != 0){
+            while(data.isFirst() == false){
+
+                int edge = data.getInt(0);
+                if (edge != 10000) {
+                    String start_date;
+                    start_date = data.getString(1);
+
+                    String end_date;
+                    end_date = data.getString(2);
+
+                    if(start_date == null || end_date == null ) {}
+                    else{
+                        Date st = get_date(start_date);
+                        Date ed = get_date(end_date);
+                        addDatesBetween(st, ed);
+                    }
+                    data.moveToPrevious();
+                }
+            }
+            int edge_1 = data.getInt(0);
+            if (edge_1 != 10000) {
+                String start_date_1;
+                start_date_1 = data.getString(1);
+                String end_date_1;
+                end_date_1 = data.getString(2);
+
+                if((!start_date_1.equals("NULL")) && !end_date_1.equals("NULL")) {
+
+                        System.out.println("case1:");
+                        System.out.println(start_date_1);
+                        System.out.println(end_date_1);
+
+                        Date st_1 = get_date(start_date_1);
+                        Date ed_1 = get_date(end_date_1);
+                        addDatesBetween(st_1, ed_1);
+
+                }
+                else{
+                    System.out.println("case2:");
+                    System.out.println(start_date_1);
+                    System.out.println(end_date_1);
+                }
+            }
+        }
     }
 
 
