@@ -27,6 +27,9 @@ import java.util.List;
 import java.util.Calendar;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Date;
 import java.util.Locale;
 
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     DatabaseHelper mainDb = new DatabaseHelper(this);
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
+
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
 
     //new
     //private static int SPLASH_TIME_OUT = 4000;
@@ -117,6 +123,100 @@ public class MainActivity extends AppCompatActivity {
 
 
         );
+
+
+        upload_dataset();
+
+
+
+
+
+    }
+
+    private void upload_dataset(){
+        Cursor profiletable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_PROFILE);
+        profiletable.moveToLast();
+        if (profiletable.getCount()!=0){
+            String username = profiletable.getString(0);
+            database = FirebaseDatabase.getInstance();
+            myRef = database.getReference(username);
+
+            //This is for uploading the cycle table.
+            Cursor cycletable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
+            cycletable.moveToLast();
+            while (cycletable.isFirst() != true && cycletable.getCount() > 0){
+                String ID = Integer.toString(cycletable.getInt(0));
+                String Startday = cycletable.getString(1);
+                String Endday = cycletable.getString(2);
+                String cycleLength = cycletable.getString(3);
+                String periodLength = cycletable.getString(4);
+                myRef.child("Cycle").child(ID).child("StartDay").setValue(Startday);
+                myRef.child("Cycle").child(ID).child("Endday").setValue(Endday);
+                myRef.child("Cycle").child(ID).child("CycleLength").setValue(cycleLength);
+                myRef.child("Cycle").child(ID).child("PeriodLength").setValue(periodLength);
+                cycletable.moveToPrevious();
+            }
+            cycletable.close();
+
+            //This is for uploading the Food table
+            Cursor foodtable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_FOOD);
+            foodtable.moveToLast();
+            while (foodtable.isFirst() != true && foodtable.getCount() > 0){
+                String Date = foodtable.getString(0);
+                String is_breakfast = Integer.toString(foodtable.getInt(1));
+                String sugar_fat_level = foodtable.getString(2);
+                myRef.child("Food").child(Date).child("is_breakfast").setValue(is_breakfast);
+                myRef.child("Food").child(Date).child("sugar_fat_level").setValue(sugar_fat_level);
+                foodtable.moveToPrevious();
+            }
+            foodtable.close();
+
+            //This is for uploading the Exercise table
+            Cursor exercisetable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_EXERCISE);
+            exercisetable.moveToLast();
+            while (exercisetable.isFirst() != true && exercisetable.getCount() > 0){
+                String Date = exercisetable.getString(0);
+                String type = exercisetable.getString(1);
+                String weight = Integer.toString(exercisetable.getInt(2));
+                myRef.child("Exercise").child(Date).child("type").setValue(type);
+                myRef.child("Exercise").child(Date).child("weight").setValue(weight);
+                exercisetable.moveToPrevious();
+            }
+            exercisetable.close();
+
+            //This is for uploading the Sleep table
+
+            Cursor sleeptable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_SLEEP);
+            sleeptable.moveToLast();
+            while (sleeptable.isFirst() != true && sleeptable.getCount() > 0){
+                String Date = sleeptable.getString(0);
+                String Startday = sleeptable.getString(1);
+                String Endday = sleeptable.getString(2);
+                String cycleLength = sleeptable.getString(3);
+                String periodLength = sleeptable.getString(4);
+                myRef.child("Sleep").child(Date).child("StartTime").setValue(Startday);
+                myRef.child("Sleep").child(Date).child("EndTime").setValue(Endday);
+                myRef.child("Sleep").child(Date).child("SleepLength").setValue(cycleLength);
+                myRef.child("Sleep").child(Date).child("Quality").setValue(periodLength);
+                sleeptable.moveToPrevious();
+            }
+            sleeptable.close();
+
+            //This is for uploading the Stress table
+            Cursor stresstable = mainDb.getAllData(DatabaseHelper.TABLE_NAME_STRESS);
+            stresstable.moveToLast();
+            while (stresstable.isFirst() != true && stresstable.getCount() > 0){
+                String Date = stresstable.getString(0);
+                String stress_level = stresstable.getString(1);
+                myRef.child("Stress").child(Date).child("stress_level").setValue(stress_level);
+                stresstable.moveToPrevious();
+            }
+            stresstable.close();
+
+
+        }
+
+
     }
 
     public void changeButtonVisibility(boolean visibility){
