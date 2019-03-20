@@ -3,9 +3,13 @@
 Ladybug is an Android application which predicts women's cycle based on the information it collected.
 
 ![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s1.png "Home Page 1")
-![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s2.png "Home Page 1")
-![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s3.png "Home Page 1")
-![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s4.png "Home Page 1")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s2.png "Page 2")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s3.png "Page 3")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s4.png "Page 4")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s5.png "Page 5")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s6.png "Page 6")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s7.png "Page 7")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s8.png "Page 8")
 
 
 # Getting Started
