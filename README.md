@@ -26,13 +26,13 @@ These instructions will get you a copy of the project up and running on your loc
 :heavy_check_mark:Java 7 or higher version
 
 # Give examples
-Installing
+More coming...
 
 # Built With
-Android Studio\
-SQLite\
-Firebase\
-Java 7
+:heavy_check_mark:Android Studio\
+:heavy_check_mark:SQLite\
+:heavy_check_mark:Firebase\
+:heavy_check_mark:Java 7
 
 # Contributing
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
