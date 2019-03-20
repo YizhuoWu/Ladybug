@@ -22,8 +22,8 @@ These instructions will get you a copy of the project up and running on your loc
 5. Run the application.
 
 # Prerequisites
-Android Studio\
-Java 7 or higher version
+:heavy_check_mark:Android Studio\
+:heavy_check_mark:Java 7 or higher version
 
 # Give examples
 Installing
@@ -38,7 +38,7 @@ Java 7
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 
-# Authors
+# :tm:Authors
 1.Jiashuo Liu:smiling_imp: - Initial work\
 2.Yizhuo Wu:stuck_out_tongue_winking_eye: - Initial work\
 3.Yunlu Ma:yum: - Initial work\
