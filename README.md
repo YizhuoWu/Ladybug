@@ -15,10 +15,10 @@ Ladybug is an Android application which predicts women's cycle based on the info
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-1. Clone the whole project repositories to your local environment.\
-2. Import the whole repositories as a local project into your Android Studio.\
-3. Make sure you have installed all the tools for building and running the project.\
-4. Build the project in with your Android Studio.\
+1. Clone the whole project repositories to your local environment.
+2. Import the whole repositories as a local project into your Android Studio.
+3. Make sure you have installed all the tools for building and running the project.
+4. Build the project in with your Android Studio.
 5. Run the application.
 
 # Prerequisites
