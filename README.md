@@ -39,12 +39,12 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 
 # Authors
-1.Jiashuo Liu - Initial work\
-2.Yizhuo Wu - Initial work\
-3.Yunlu Ma - Initial work\
-4.Wenyu Ouyang - Initial work
+1.Jiashuo Liu:smiling_imp: - Initial work\
+2.Yizhuo Wu:stuck_out_tongue_winking_eye: - Initial work\
+3.Yunlu Ma:yum: - Initial work\
+4.Wenyu Ouyang:innocent: - Initial work
 
-See also the list of contributors who participated in this project.
+:point_right:See also the list of contributors who participated in this project.
 
 
 # Versioning
