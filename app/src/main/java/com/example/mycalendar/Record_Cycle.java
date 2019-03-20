@@ -37,6 +37,7 @@ public class Record_Cycle extends AppCompatActivity {
             Format formatter = new SimpleDateFormat("yyyy-MM-dd");
             String today = formatter.format(date);
             myDb.deleteData_cycle_predicted_row();
+            System.out.println(today);
             add_data(10000, today, "NULL", 0, 0);
         }
 

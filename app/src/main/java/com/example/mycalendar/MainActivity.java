@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
-
+        //compactCalendar.removeAllEvents();
         Button Recom = (Button) findViewById(R.id.RecomButt);
 
 
@@ -81,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
         //Insert Cycle sample here
         DatabaseHelper myDb = new DatabaseHelper(this);
 
-        boolean r = myDb.insertData_cycle(167,"2019-03-13","2019-03-20",28,7);
+        boolean r = myDb.insertData_cycle(160,"2019-04-21","2019-04-30",28,7);
         add_all_from_db(myDb);
+        //compactCalendar.removeAllEvents();
         //String start = get_start_date_from_db(myDb);
         //String end = get_end_date_from_db(myDb);
         //Date st = get_date(start);
@@ -366,10 +367,24 @@ public class MainActivity extends AppCompatActivity {
             datesInRange.add(result);
             calendar.add(Calendar.DATE, 1);
 
-            add_event_date(result);
 
+
+            List<Event> L =  compactCalendar.getEvents(result);
+            if(L.size() == 0) {
+                add_event_date(result);
+            }
+
+
+            //add_event_date(result);
         }
-        add_event_date(endDate);
+
+
+        List<Event> L1 =  compactCalendar.getEvents(endDate);
+        if(L1.size() == 0) {
+            add_event_date(endDate);
+        }
+
+        //add_event_date(endDate);
         return datesInRange;
     }
 
@@ -415,6 +430,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     data.moveToPrevious();
                 }
+                data.moveToPrevious();
             }
             int edge_1 = data.getInt(0);
             if (edge_1 != 10000) {
