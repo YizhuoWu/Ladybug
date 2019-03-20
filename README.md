@@ -35,16 +35,16 @@ See also the list of contributors who participated in this project.
 # Versioning
 
 Ladybug\
-######V1.0 with Calendar
+##### V1.0 with Calendar
 
 Ladybug is an application for women.
 
-######V1.1\
+##### V1.1\
 UI Updated.\
 Navigation bar, several pages created.
 
 
-######V1.1\
+##### V1.1\
 Created Database for application.\
 One table created.\
 Sample data inserted.
@@ -56,7 +56,7 @@ Sample data inserted.
 
 
 
-######V1.2
+##### V1.2
 Database now supported delete specific rows for cycle table, profile table and sleep_record table.\
 UI features implemented.\
 Support:\
