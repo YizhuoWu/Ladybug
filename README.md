@@ -1,29 +1,29 @@
-Ladybug
+# Ladybug
 
 Ladybug is an Android application which predicts women's cycle based on the information it collected.
 
 
-Getting Started
+# Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Prerequisites
+# Prerequisites
 Android Studio
 Java 7 or higher version
 
-Give examples
+# Give examples
 Installing
 
-Built With
+# Built With
 Android Studio
 SQLite
 Firebase
 Java 7
 
-Contributing
+# Contributing
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 
-Authors
+# Authors
 Jiashuo Liu - Initial work
 Yizhuo Wu - Initial work
 Yunlu Ma - Initial work
@@ -32,9 +32,9 @@ Wenyu Ouyang - Initial work
 See also the list of contributors who participated in this project.
 
 
-Versioning
+# Versioning
 
-# Ladybug
+Ladybug
 V1.0 with Calendar
 
 Ladybug is an application for women.
