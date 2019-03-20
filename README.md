@@ -2,6 +2,11 @@
 
 Ladybug is an Android application which predicts women's cycle based on the information it collected.
 
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s1.png "Home Page 1")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s2.png "Home Page 1")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s3.png "Home Page 1")
+![alt text](https://raw.githubusercontent.com/YizhuoWu/Screenshots_Ladybug/master/s4.png "Home Page 1")
+
 
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
