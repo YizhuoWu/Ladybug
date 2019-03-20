@@ -35,24 +35,24 @@ See also the list of contributors who participated in this project.
 # Versioning
 
 Ladybug\
-V1.0 with Calendar\
+V1.0 with Calendar
 
-Ladybug is an application for women.\
+Ladybug is an application for women.
 
 V1.1\
 UI Updated.\
-Navigation bar, several pages created.\
+Navigation bar, several pages created.
 
 
 V1.1\
 Created Database for application.\
 One table created.\
-Sample data inserted.\
+Sample data inserted.
 
 /**
 *Database supported methods:\
 *InsertData to cycle table.\
-*getAllData from main databse.\
+*getAllData from main databse.
 */
 
 
@@ -62,4 +62,4 @@ UI features implemented.\
 Support:\
   *Record food data,sleep data, exercise data, stress_level data.\
   *Different pages can jump to each other.\
-  *View different activities' history.\
+  *View different activities' history.
