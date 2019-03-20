@@ -81,5 +81,5 @@ Support:\
 
 ##### :pushpin:V1.4
 Ladybug now supports all functionalities. Every user will input the profile information at the first time.\
-The system will predict the first cycle date at the beginning.\
+The system will predict the first cycle date at the beginning.
  
