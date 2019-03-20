@@ -24,30 +24,30 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 
 # Authors
--Jiashuo Liu - Initial work
--Yizhuo Wu - Initial work
--Yunlu Ma - Initial work
--Wenyu Ouyang - Initial work
+1.Jiashuo Liu - Initial work\
+2.Yizhuo Wu - Initial work\
+3.Yunlu Ma - Initial work\
+4.Wenyu Ouyang - Initial work\
 
 See also the list of contributors who participated in this project.
 
 
 # Versioning
 
-Ladybug
-V1.0 with Calendar
+Ladybug\
+V1.0 with Calendar\
 
-Ladybug is an application for women.
+Ladybug is an application for women.\
 
-V1.1
-UI Updated.
-Navigation bar, several pages created.
+V1.1\
+UI Updated.\
+Navigation bar, several pages created.\
 
 
-V1.1
-Created Database for application.
-One table created.
-Sample data inserted.
+V1.1\
+Created Database for application.\
+One table created.\
+Sample data inserted.\
 
 /**
 *Database supported methods:
