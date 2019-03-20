@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         if (periodTable.getCount() != 0) {
             TextView toNextPeriod = findViewById(R.id.to_period);
 
-            periodTable.moveToFirst();
+            periodTable.moveToLast();
             Date date = Calendar.getInstance().getTime();
             Format formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
             String today = formatter.format(date);

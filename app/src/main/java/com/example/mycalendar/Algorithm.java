@@ -435,7 +435,8 @@ public class Algorithm extends AppCompatActivity{
         if (overall_status == "Healthy/Regular") {
             ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day, average_cycle, average_period);
             db.insertData_cycle(10000, period_INFO.get(0), period_INFO.get(1), average_cycle, average_period);
-        } else {
+        }
+        else {
             int average_change = 0;
             int count = 0;
             if (recommendation.getCount() > 1) {
@@ -486,6 +487,8 @@ public class Algorithm extends AppCompatActivity{
         oneMoreDay.add(8);
         oneMoreDay.add(10);
         oneMoreDay.add(12);
+
+        System.out.print(enddate);
 
 
         int startmonth = Integer.parseInt(startdate.substring(5,7));
