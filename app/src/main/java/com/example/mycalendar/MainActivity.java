@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
-        //compactCalendar.removeAllEvents();
         Button Recom = (Button) findViewById(R.id.RecomButt);
 
 
@@ -81,15 +80,8 @@ public class MainActivity extends AppCompatActivity {
         //Insert Cycle sample here
         DatabaseHelper myDb = new DatabaseHelper(this);
 
-        boolean r = myDb.insertData_cycle(160,"2019-04-21","2019-04-30",28,7);
+
         add_all_from_db(myDb);
-        //compactCalendar.removeAllEvents();
-        //String start = get_start_date_from_db(myDb);
-        //String end = get_end_date_from_db(myDb);
-        //Date st = get_date(start);
-        //Date e = get_date(end);
-        //addDatesBetween(st,e);
-        //removeDatesBetween(st,e);
 
         final String s = "2019-03-03";
 

@@ -83,41 +83,39 @@ public class Update_Profile extends AppCompatActivity {
         while (true) {
 
             if (Start.matches("")) {
-                Toast.makeText(this, "plz enter your name ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "plz enter your startdata ", Toast.LENGTH_SHORT).show();
                 break;
             } else if (End.matches("")) {
-                Toast.makeText(this, "plz enter your age ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "plz enter your enddata ", Toast.LENGTH_SHORT).show();
                 break;
             } else if (Cycle.matches("")) {
-                Toast.makeText(this, "plz enter your weight ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "plz enter your cycle length ", Toast.LENGTH_SHORT).show();
                 break;
+
             } else if (Period.matches("")) {
-                Toast.makeText(this, "plz enter your height ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "plz enter your period length ", Toast.LENGTH_SHORT).show();
                 break;
             } else {
                 int finalCycleLength = Integer.parseInt(Cycle);
                 int finalPeriodLength = Integer.parseInt(Period);
-
-                Intent goHome = new Intent(this, MainActivity.class);
-                startActivity(goHome);
-
                 myDb.insertData_cycle(1, Start, End, finalCycleLength,finalPeriodLength);
                 break;
             }
         }
 
         Cursor data = myDb.getAllData(DatabaseHelper.TABLE_NAME_CYCLE);
-        data.moveToLast();
+        if (data.getCount() != 0){
+            data.moveToLast();
+            String startdata = data.getString(1);
+            int cycleLenghth = data.getInt(3);
+            int periodLenghth = data.getInt(4);
 
-        String startdata = data.getString(1);
-        int cycleLenghth = data.getInt(3);
-        int periodLenghth = data.getInt(4);
+            ArrayList<String> nextInfo = Algorithm.next_period_info(startdata,cycleLenghth,periodLenghth);
 
-        ArrayList<String> nextInfo = Algorithm.next_period_info(startdata,cycleLenghth,periodLenghth);
-
-        myDb.insertData_cycle(10000,nextInfo.get(0), nextInfo.get(1),cycleLenghth,periodLenghth);
-
-
+            myDb.insertData_cycle(10000,nextInfo.get(0), nextInfo.get(1),cycleLenghth,periodLenghth);
+            System.out.print("Test");
+            Intent goHome = new Intent(this, MainActivity.class);
+            startActivity(goHome);}
 
     }
 }

@@ -396,9 +396,10 @@ public class Algorithm extends AppCompatActivity{
 
 
 
-    public static void predict_next_period(DatabaseHelper db){
+    public static void predict_next_period(DatabaseHelper db) {
 
         Cursor recommendation = db.getAllData(DatabaseHelper.TABLE_NAME_SUMMARY);
+
 
         recommendation.moveToLast();
 
@@ -407,7 +408,6 @@ public class Algorithm extends AppCompatActivity{
         String sleep_status = recommendation.getString(3);
         String stress_status = recommendation.getString(4);
         String exercise_status = recommendation.getString(5);
-
 
 
         //Calculate average data of cycle
@@ -421,56 +421,55 @@ public class Algorithm extends AppCompatActivity{
         int last_cycle_length = cycle_table.getInt(3);
         int last_period_length = cycle_table.getInt(4);
 
-        while (cycle_table.isFirst() != true){
+        while (cycle_table.isFirst() != true) {
             average_cycle += cycle_table.getInt(3);
             average_period += cycle_table.getInt(4);
             cycle_table.moveToPrevious();
         }
+        average_cycle += cycle_table.getInt(3);
+        average_period += cycle_table.getInt(4);
 
-        average_cycle = average_cycle/cycle_table.getCount()-1;
-        average_period = average_period/cycle_table.getCount()-1;
+        average_cycle = average_cycle / cycle_table.getCount() - 1;
+        average_period = average_period / cycle_table.getCount() - 1;
 
-        if (overall_status == "Healthy/Regular"){
-            ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day,average_cycle,average_period);
-            db.insertData_cycle(10000,period_INFO.get(0),period_INFO.get(1),average_cycle,average_period);
-        }
-        else{
+        if (overall_status == "Healthy/Regular") {
+            ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day, average_cycle, average_period);
+            db.insertData_cycle(10000, period_INFO.get(0), period_INFO.get(1), average_cycle, average_period);
+        } else {
             int average_change = 0;
             int count = 0;
-            recommendation.moveToPrevious();
-            while(recommendation.isFirst() != true){
-                if (food_status != "Healthy" && recommendation.getString(2) != "Healthy"){
-                    average_change += recommendation.getInt(6);
-                    count += 1;
-                }
-                else if (sleep_status != "Healthy" && recommendation.getString(3) != "Healthy"){
-                    average_change += recommendation.getInt(6);
-                    count += 1;
-                }
-                else if (stress_status != "Healthy" && recommendation.getString(4) != "Healthy"){
-                    average_change += recommendation.getInt(6);
-                    count += 1;
-                }
-                else if (exercise_status != "Healthy" && recommendation.getString(5) != "Healthy"){
-                    average_change += recommendation.getInt(6);
-                    count += 1;
-                }
+            if (recommendation.getCount() > 1) {
                 recommendation.moveToPrevious();
+                while (recommendation.isFirst() != true) {
+                    if (food_status != "Healthy" && recommendation.getString(2) != "Healthy") {
+                        average_change += recommendation.getInt(6);
+                        count += 1;
+                    } else if (sleep_status != "Healthy" && recommendation.getString(3) != "Healthy") {
+                        average_change += recommendation.getInt(6);
+                        count += 1;
+                    } else if (stress_status != "Healthy" && recommendation.getString(4) != "Healthy") {
+                        average_change += recommendation.getInt(6);
+                        count += 1;
+                    } else if (exercise_status != "Healthy" && recommendation.getString(5) != "Healthy") {
+                        average_change += recommendation.getInt(6);
+                        count += 1;
+                    }
+                    recommendation.moveToPrevious();
+                }
             }
-            if (count != 0){
-                average_change = average_change/count;
+            if (count != 0) {
+                average_change = average_change / count;
 
                 ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day,
-                        average_cycle+average_change,average_period);
-                db.insertData_cycle(10000,period_INFO.get(0),period_INFO.get(1),
-                        average_cycle+average_change,average_period);
-            }
-            else{
-                int randomnumber = (int) (Math.random() * 10) +(-5);
+                            average_cycle + average_change, average_period);
+                db.insertData_cycle(10000, period_INFO.get(0), period_INFO.get(1),
+                            average_cycle + average_change, average_period);
+            } else {
+                int randomnumber = (int) (Math.random() * 10) + (-5);
                 ArrayList<String> period_INFO = Algorithm.next_period_info(last_start_day,
-                        average_cycle+randomnumber,average_period);
-                db.insertData_cycle(10000,period_INFO.get(0),period_INFO.get(1),
-                        average_cycle+randomnumber,average_period);
+                            average_cycle + randomnumber, average_period);
+                db.insertData_cycle(10000, period_INFO.get(0), period_INFO.get(1),
+                            average_cycle + randomnumber, average_period);
             }
 
         }
