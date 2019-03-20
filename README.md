@@ -50,16 +50,16 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 # Versioning
 
 ##### Ladybug
-##### V1.0 with Calendar
+##### :pushpin:V1.0 with Calendar
 
 Ladybug is an application for women.
 
-##### V1.1
+##### :pushpin:V1.1
 UI Updated.\
 Navigation bar, several pages created.
 
 
-##### V1.2
+##### :pushpin:V1.2
 Created Database for application.\
 One table created.\
 Sample data inserted.
@@ -71,7 +71,7 @@ Sample data inserted.
 
 
 
-##### V1.3
+##### :pushpin:V1.3
 Database now supported delete specific rows for cycle table, profile table and sleep_record table.\
 UI features implemented.\
 Support:\
@@ -79,7 +79,7 @@ Support:\
   *Different pages can jump to each other.\
   *View different activities' history.
 
-##### V1.4
+##### :pushpin:V1.4
 Ladybug now supports all functionalities. Every user will input the profile information at the first time.\
 The system will predict the first cycle date at the beginning.\
  
