@@ -24,10 +24,10 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 
 # Authors
-Jiashuo Liu - Initial work
-Yizhuo Wu - Initial work
-Yunlu Ma - Initial work
-Wenyu Ouyang - Initial work
+-Jiashuo Liu - Initial work
+-Yizhuo Wu - Initial work
+-Yunlu Ma - Initial work
+-Wenyu Ouyang - Initial work
 
 See also the list of contributors who participated in this project.
 
